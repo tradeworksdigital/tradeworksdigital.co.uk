@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Tradeworks Digital</title>
+<meta name="description" content="How Tradeworks Digital (Trade Works Digital Ltd) collects, uses and protects your personal data.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1C2024">
+<link rel="canonical" href="https://www.tradeworksdigital.co.uk/privacy-policy.html">
+<link rel="icon" type="image/svg+xml" href="logo-v2-icon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap" rel="stylesheet"></noscript>
+
+<style>
+  :root{
+    --ink:#1C2024; --paper:#F6F3EC; --paper-dim:#EDE8DC;
+    --orange:#E85D2C; --orange-dark:#C44A20; --steel:#2C4A5E; --yellow:#F0B429; --grey:#8A8680;
+    --line: rgba(28,32,36,0.14);
+  }
+  /* Metric-matched fallback fonts — prevents layout shift when the webfont swaps in */
+  @font-face{
+    font-family:'Inter Fallback';
+    src:local('Arial');
+    ascent-override:89.43%;
+    descent-override:22.29%;
+    line-gap-override:0%;
+    size-adjust:108.33%;
+  }
+  @font-face{
+    font-family:'Archivo Black Fallback';
+    src:local('Arial');
+    ascent-override:90.16%;
+    descent-override:21.57%;
+    line-gap-override:0%;
+    size-adjust:97.39%;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono Fallback';
+    src:local('Courier New');
+    ascent-override:89.31%;
+    descent-override:23.96%;
+    line-gap-override:0%;
+    size-adjust:114.76%;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper); color:var(--ink); font-family:'Inter', 'Inter Fallback', sans-serif; line-height:1.6;}
+  .wrap{max-width:820px; margin:0 auto; padding:0 28px;}
+  h1,h2{font-family:'Archivo Black', 'Archivo Black Fallback', sans-serif; font-weight:400; letter-spacing:-0.01em; line-height:1.1;}
+  .mono{font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:12px; font-weight:600; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--orange-dark); display:flex; align-items:center; gap:10px; margin-bottom:12px;
+  }
+  .eyebrow::before{content:""; width:18px; height:2px; background:var(--orange); display:inline-block;}
+
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,243,236,0.92); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{max-width:1120px; display:flex; align-items:center; justify-content:space-between; height:72px;}
+  .logo{display:flex; align-items:center; text-decoration:none;}
+  .logo svg{height:38px; width:auto; display:block;}
+  .flogo svg{height:34px; width:auto; display:block;}
+  .navlinks{display:flex; align-items:center; gap:32px;}
+  .navlinks a{text-decoration:none; font-size:14px; font-weight:600; color:var(--ink); opacity:0.75;}
+  .navlinks a:hover{opacity:1;}
+
+  .nav-toggle{display:none;}
+  .hamburger{
+    display:none; flex-direction:column; gap:4px;
+    width:40px; height:40px; align-items:center; justify-content:center;
+    border:1.5px solid var(--ink); border-radius:2px; background:var(--paper);
+    cursor:pointer; flex-shrink:0;
+  }
+  .hamburger span{width:18px; height:2px; background:var(--ink); display:block;}
+  .navlinks .nav-cta{display:none;}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:14px;
+    padding:12px 22px; border-radius:3px; text-decoration:none; border:2px solid var(--ink);
+    transition:transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .btn-primary{background:var(--orange); color:var(--paper); border-color:var(--orange);}
+  .btn-primary:hover{background:var(--orange-dark); border-color:var(--orange-dark); transform:translateY(-1px);}
+  .btn-sm{padding:9px 16px; font-size:13px;}
+
+  .hero{padding:60px 0 16px;}
+  .hero h1{font-size:clamp(30px,4vw,44px); margin-bottom:12px;}
+  .hero p{color:#4a5054; font-size:15px;}
+
+  main{padding:8px 0 72px;}
+  .doc h2{font-size:20px; margin:40px 0 12px;}
+  .doc h2:first-child{margin-top:0;}
+  .doc p{color:#3c4247; font-size:15px; margin-bottom:14px;}
+  .doc ul{color:#3c4247; font-size:15px; padding-left:20px; margin-bottom:14px;}
+  .doc li{margin-bottom:8px;}
+  .doc a{color:var(--orange-dark); font-weight:600;}
+  .doc strong{font-weight:700; color:var(--ink);}
+
+  .notice{
+    background:var(--paper-dim); border:1.5px dashed var(--line); border-radius:6px;
+    padding:18px 20px; margin-bottom:36px; font-size:13.5px; color:var(--steel);
+  }
+
+  .updated{
+    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:12px; color:var(--grey);
+    margin-bottom:36px; display:block;
+  }
+
+  footer{background:var(--ink); color:rgba(246,243,236,0.7); padding:40px 0 26px;}
+  .footer-wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+  footer .fwrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  footer a{color:rgba(246,243,236,0.7); text-decoration:none; font-size:13px;}
+  footer a:hover{color:var(--yellow);}
+  footer .fbottom{
+    margin-top:20px; padding-top:16px; border-top:1px solid rgba(246,243,236,0.14);
+    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:11px; color:rgba(246,243,236,0.4);
+  }
+
+  @media (max-width:860px){
+    nav.wrap{position:relative;}
+    .hamburger{display:flex;}
+    .desktop-cta{display:none;}
+    .navlinks{
+      display:flex; flex-direction:column; align-items:stretch; gap:16px;
+      position:absolute; top:72px; left:0; right:0;
+      background:var(--paper); border-bottom:1px solid var(--line);
+      padding:20px 28px 26px;
+      opacity:0; transform:translateY(-8px); pointer-events:none;
+      transition:opacity 0.18s ease, transform 0.18s ease;
+    }
+    .nav-toggle:checked ~ .navlinks{opacity:1; transform:translateY(0); pointer-events:auto;}
+    .navlinks .nav-cta{display:inline-flex; justify-content:center; margin-top:4px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html#top" class="logo" aria-label="Tradeworks Digital — home">
+      <svg viewBox="0 0 160 62" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="8" width="8" height="36" fill="#E85D2C"/>
+        <text x="16" y="20" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="16" fill="#1C2024" letter-spacing="2">TRADEWORKS</text>
+        <text x="14" y="44" font-family="Archivo Black, Arial, sans-serif" font-size="26" fill="#E85D2C" letter-spacing="-0.4">DIGITAL</text>
+      </svg>
+    </a>
+    <input type="checkbox" id="navToggle" class="nav-toggle">
+    <div class="navlinks" id="mobileNav">
+      <a href="index.html#offer">The Offer</a>
+      <a href="index.html#process">The Process</a>
+      <a href="index.html#faq">FAQs</a>
+      <a href="index.html#book" class="btn btn-primary btn-sm nav-cta">Book a Call</a>
+    </div>
+    <a href="index.html#book" class="btn btn-primary btn-sm desktop-cta">Book a Call</a>
+    <label for="navToggle" class="hamburger" aria-label="Open menu" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </label>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p>How we collect, use and protect your personal data when you visit this site, book a call, or become a client.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap doc">
+      <span class="updated mono">LAST UPDATED: 21 AUGUST 2026</span>
+
+      <div class="notice">
+        This policy is a template and not a substitute for legal advice. If you rely on this for a business handling more sensitive data than a straightforward lead-generation site, have a solicitor review it before you go live.
+      </div>
+
+      <h2>Who we are</h2>
+      <p>This website is operated by <strong>Trade Works Digital Ltd</strong>, trading as <strong>Tradeworks Digital</strong>, a company registered in England and Wales under company number <strong>17391710</strong>. Our registered office is at 71&#8211;75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</p>
+      <p>For any question about this policy or your data, contact us at <a href="mailto:mosa@tradeworksdigital.co.uk">mosa@tradeworksdigital.co.uk</a>. We are the data controller for the personal data described below.</p>
+
+      <h2>What data we collect</h2>
+      <p>We only collect what we need to respond to your enquiry, book a call, or deliver a website build. Depending on how you interact with us, this may include:</p>
+      <ul>
+        <li><strong>Contact details</strong> you give us directly — name, email address, phone number, and business name — when you book a call, send an email, or fill in a form.</li>
+        <li><strong>Booking details</strong> when you schedule a call through our calendar tool — the date and time you select, and any notes you add.</li>
+        <li><strong>Project content</strong> you send us for your website build — service lists, business copy, photos, logos and reviews.</li>
+        <li><strong>Basic technical data</strong> such as browser type and approximate location, generated automatically by the fonts and booking widget embedded on this site (see "Third-party services" below). We do not run our own analytics or tracking scripts on this site.</li>
+      </ul>
+
+      <h2>How we use your data</h2>
+      <p>We use your data only to:</p>
+      <ul>
+        <li>Respond to enquiries and arrange discovery calls;</li>
+        <li>Provide a quote and deliver a website build you've agreed to pay for;</li>
+        <li>Send you invoices and manage the ongoing care plan, if you take one out;</li>
+        <li>Meet our own legal and accounting obligations.</li>
+      </ul>
+      <p>The legal basis for this processing is either that it's necessary to perform a contract with you (or take steps towards one at your request), or our legitimate interest in running the business — for example, replying to a message you've sent us. Where neither applies, we'll ask for your consent.</p>
+
+      <h2>Third-party services</h2>
+      <p>We keep the number of third parties involved deliberately small. The ones this site does use are:</p>
+      <ul>
+        <li><strong>Cal.com</strong> — powers the "Book a Call" scheduler embedded on this site. When you book a call, the details you enter are processed by Cal.com on our behalf so we can manage the booking. See <a href="https://cal.com/privacy" target="_blank" rel="noopener">Cal.com's privacy policy</a> for details.</li>
+        <li><strong>Google Fonts</strong> — the typefaces on this site are loaded from Google's servers, which may log your IP address as part of serving the font files. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</li>
+      </ul>
+      <p>We don't sell your data to anyone, and we don't share it with third parties beyond what's needed to provide the services above.</p>
+
+      <h2>Cookies</h2>
+      <p>This site does not set its own cookies or run analytics software. The embedded Cal.com booking widget may set its own cookies to manage your scheduling session — these are set by Cal.com, not by us, and are covered by their privacy policy linked above.</p>
+
+      <h2>How long we keep your data</h2>
+      <p>We keep enquiry and booking details for as long as needed to respond to you, plus a reasonable period afterwards in case you get back in touch. Client and invoicing records are kept for as long as UK tax law requires (currently at least 6 years). We delete or anonymise data we no longer have a reason to hold.</p>
+
+      <h2>Your rights</h2>
+      <p>Under UK GDPR, you have the right to:</p>
+      <ul>
+        <li>Ask what personal data we hold about you, and get a copy of it;</li>
+        <li>Ask us to correct inaccurate data;</li>
+        <li>Ask us to delete your data, where we don't have a legal reason to keep it;</li>
+        <li>Object to, or ask us to restrict, certain processing;</li>
+        <li>Ask for your data in a portable format;</li>
+        <li>Withdraw consent at any time, where consent is the basis for processing.</li>
+      </ul>
+      <p>To exercise any of these, email <a href="mailto:mosa@tradeworksdigital.co.uk">mosa@tradeworksdigital.co.uk</a>. If you're unhappy with how we've handled your data, you also have the right to complain to the UK's data protection regulator, the <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">Information Commissioner's Office (ICO)</a>.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy from time to time — for example, if we start using a new tool on the site. The version at the top of this page always reflects our current practice, and we'll update the "last updated" date whenever it changes.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-wrap">
+    <div class="fwrap">
+      <span class="flogo">
+        <svg viewBox="0 0 160 62" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="8" width="8" height="36" fill="#E85D2C"/>
+          <text x="16" y="20" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="16" fill="#F6F3EC" letter-spacing="2">TRADEWORKS</text>
+          <text x="14" y="44" font-family="Archivo Black, Arial, sans-serif" font-size="26" fill="#E85D2C" letter-spacing="-0.4">DIGITAL</text>
+        </svg>
+      </span>
+      <div style="display:flex; gap:24px; flex-wrap:wrap;">
+        <a href="index.html#offer">The Offer</a>
+        <a href="index.html#process">The Process</a>
+        <a href="index.html#faq">FAQs</a>
+        <a href="index.html#book">Book a Call</a>
+        <a href="mailto:mosa@tradeworksdigital.co.uk">mosa@tradeworksdigital.co.uk</a>
+      </div>
+    </div>
+    <div class="fbottom">© 2026 Tradeworks Digital, a trading name of Trade Works Digital Ltd (Company No. 17391710). Registered office: 71&#8211;75 Shelton Street, Covent Garden, London, WC2H 9JQ.</div>
+  </div>
+</footer>
+
+</body>
+</html>
