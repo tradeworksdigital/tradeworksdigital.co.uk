@@ -762,15 +762,39 @@
 <script>
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 
-  Cal("init", "tradeworks-15min", {origin:"https://cal.com"});
+  // Defer loading the Cal.com widget until the booking section is about to
+  // enter view, instead of on every page load. The widget lives well down
+  // the page, but fetching + initializing it immediately competes with the
+  // main thread for early clicks (nav, CTAs, FAQ), which hurts INP.
+  function initCalBooking() {
+    if (window.calBookingLoaded) return;
+    window.calBookingLoaded = true;
 
-  Cal.ns["tradeworks-15min"]("inline", {
-    elementOrSelector:"#cal-inline",
-    config: {"layout":"month_view"},
-    calLink: "tradeworks.digital/15min",
-  });
+    Cal("init", "tradeworks-15min", {origin:"https://cal.com"});
 
-  Cal.ns["tradeworks-15min"]("ui", {"hideEventTypeDetails":false, "layout":"month_view"});
+    Cal.ns["tradeworks-15min"]("inline", {
+      elementOrSelector:"#cal-inline",
+      config: {"layout":"month_view"},
+      calLink: "tradeworks.digital/15min",
+    });
+
+    Cal.ns["tradeworks-15min"]("ui", {"hideEventTypeDetails":false, "layout":"month_view"});
+  }
+
+  var calBookingSection = document.getElementById("book");
+  if (calBookingSection && "IntersectionObserver" in window) {
+    var calBookingObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          initCalBooking();
+          calBookingObserver.disconnect();
+        }
+      });
+    }, { rootMargin: "600px 0px" });
+    calBookingObserver.observe(calBookingSection);
+  } else {
+    initCalBooking();
+  }
 </script>
 
 </body>
