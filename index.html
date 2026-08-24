@@ -19,11 +19,12 @@
 <meta name="twitter:title" content="Tradeworks Digital — Websites That Book The Job">
 <meta name="twitter:description" content="We build websites for plumbers, electricians, roofers, and trades. Pay one flat price: £397. Live in 5-7 days.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-700.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-800.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-black-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/ibm-plex-mono-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/ibm-plex-mono-600.woff2" crossorigin>
 
 <script type="application/ld+json">
 {
@@ -62,6 +63,53 @@
     --line: rgba(28,32,36,0.14);
     --radius: 3px;
   }
+  /* Self-hosted fonts — served from this domain instead of Google's
+     servers, and preloaded above, so the browser doesn't need an extra
+     DNS lookup + connection before it can start downloading them. This
+     shrinks the fallback-to-real-font swap window to nearly nothing. */
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('fonts/inter-400.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('fonts/inter-700.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('fonts/inter-800.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'Archivo Black';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('fonts/archivo-black-400.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('fonts/ibm-plex-mono-400.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('fonts/ibm-plex-mono-600.woff2') format('woff2');
+  }
+
   /* Metric-matched fallback fonts — sized and positioned to match the real
      webfonts almost exactly, so when the webfont finishes loading and swaps
      in, nothing on the page moves. Values computed from each font's real

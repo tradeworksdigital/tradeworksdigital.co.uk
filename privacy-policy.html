@@ -10,11 +10,12 @@
 <link rel="canonical" href="https://www.tradeworksdigital.co.uk/privacy-policy.html">
 <link rel="icon" type="image/svg+xml" href="logo-v2-icon.svg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-700.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-800.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-black-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/ibm-plex-mono-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/ibm-plex-mono-600.woff2" crossorigin>
 
 <style>
   :root{
@@ -22,6 +23,51 @@
     --orange:#E85D2C; --orange-dark:#C44A20; --steel:#2C4A5E; --yellow:#F0B429; --grey:#8A8680;
     --line: rgba(28,32,36,0.14);
   }
+  /* Self-hosted fonts — served from this domain, preloaded above, so the
+     browser skips the extra DNS/connection round trip to Google's servers */
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('fonts/inter-400.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('fonts/inter-700.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('fonts/inter-800.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'Archivo Black';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('fonts/archivo-black-400.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('fonts/ibm-plex-mono-400.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('fonts/ibm-plex-mono-600.woff2') format('woff2');
+  }
+
   /* Metric-matched fallback fonts — prevents layout shift when the webfont swaps in */
   @font-face{
     font-family:'Inter Fallback';
