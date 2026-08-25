@@ -10,56 +10,18 @@
 <link rel="canonical" href="https://www.tradeworksdigital.co.uk/privacy-policy.html">
 <link rel="icon" type="image/svg+xml" href="logo-v2-icon.svg">
 
-<link rel="preload" as="font" type="font/woff2" href="fonts/inter-400.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="fonts/inter-700.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-black-400.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="fonts/ibm-plex-mono-400.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="fonts/ibm-plex-mono-600.woff2" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;700;800&display=swap" rel="stylesheet"></noscript>
 
 <style>
   :root{
     --ink:#1C2024; --paper:#F6F3EC; --paper-dim:#EDE8DC;
-    --orange:#E85D2C; --orange-dark:#B0431D; --steel:#2C4A5E; --yellow:#F0B429; --grey:#686460;
+    --orange:#E85D2C; --orange-dark:#C44A20; --steel:#2C4A5E; --yellow:#F0B429; --grey:#8A8680;
     --line: rgba(28,32,36,0.14);
   }
-  /* Self-hosted fonts — served from this domain, preloaded above, so the
-     browser skips the extra DNS/connection round trip to Google's servers */
-  @font-face{
-    font-family:'Inter';
-    font-style:normal;
-    font-weight:400;
-    font-display:swap;
-    src:url('fonts/inter-400.woff2') format('woff2');
-  }
-  @font-face{
-    font-family:'Inter';
-    font-style:normal;
-    font-weight:700;
-    font-display:swap;
-    src:url('fonts/inter-700.woff2') format('woff2');
-  }
-  @font-face{
-    font-family:'Archivo Black';
-    font-style:normal;
-    font-weight:400;
-    font-display:swap;
-    src:url('fonts/archivo-black-400.woff2') format('woff2');
-  }
-  @font-face{
-    font-family:'IBM Plex Mono';
-    font-style:normal;
-    font-weight:400;
-    font-display:swap;
-    src:url('fonts/ibm-plex-mono-400.woff2') format('woff2');
-  }
-  @font-face{
-    font-family:'IBM Plex Mono';
-    font-style:normal;
-    font-weight:600;
-    font-display:swap;
-    src:url('fonts/ibm-plex-mono-600.woff2') format('woff2');
-  }
-
   /* Metric-matched fallback fonts — prevents layout shift when the webfont swaps in */
   @font-face{
     font-family:'Inter Fallback';
@@ -71,19 +33,19 @@
   }
   @font-face{
     font-family:'Archivo Black Fallback';
-    src:local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'), local('Arimo Bold'), local('Arial');
+    src:local('Arial');
     ascent-override:90.16%;
     descent-override:21.57%;
     line-gap-override:0%;
-    size-adjust:114.71%;
+    size-adjust:97.39%;
   }
   @font-face{
     font-family:'IBM Plex Mono Fallback';
-    src:local('Courier New'), local('Liberation Mono'), local('Consolas');
+    src:local('Courier New');
     ascent-override:89.31%;
     descent-override:23.96%;
     line-gap-override:0%;
-    size-adjust:100%;
+    size-adjust:114.76%;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -105,7 +67,6 @@
   nav.wrap{max-width:1120px; display:flex; align-items:center; justify-content:space-between; height:72px;}
   .logo{display:flex; align-items:center; text-decoration:none;}
   .logo svg{height:38px; width:auto; display:block;}
-  .flogo svg{height:34px; width:auto; display:block;}
   .navlinks{display:flex; align-items:center; gap:32px;}
   .navlinks a{text-decoration:none; font-size:14px; font-weight:600; color:var(--ink); opacity:0.75;}
   .navlinks a:hover{opacity:1;}
@@ -125,8 +86,8 @@
     padding:12px 22px; border-radius:3px; text-decoration:none; border:2px solid var(--ink);
     transition:transform 0.15s ease, background 0.15s ease, color 0.15s ease;
   }
-  .btn-primary{background:var(--orange); color:var(--ink); border-color:var(--orange);}
-  .btn-primary:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--orange); color:var(--paper); border-color:var(--orange);}
+  .btn-primary:hover{background:var(--orange-dark); border-color:var(--orange-dark); transform:translateY(-1px);}
   .btn-sm{padding:9px 16px; font-size:13px;}
 
   .hero{padding:60px 0 16px;}
@@ -195,6 +156,8 @@
       <a href="index.html#offer">The Offer</a>
       <a href="index.html#process">The Process</a>
       <a href="index.html#faq">FAQs</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
       <a href="index.html#book" class="btn btn-primary btn-sm nav-cta">Book a Call</a>
     </div>
     <a href="index.html#book" class="btn btn-primary btn-sm desktop-cta">Book a Call</a>
@@ -218,12 +181,12 @@
       <span class="updated mono">LAST UPDATED: 21 AUGUST 2026</span>
 
       <div class="notice">
-        This policy is a template and not a substitute for legal advice. If you rely on this for a business handling more sensitive data than a straightforward lead-generation site, have a solicitor review it before you go live.
+        This policy is written in plain English to be genuinely useful, but it's a template and not a substitute for legal advice. If you rely on this for a business handling more sensitive data than a straightforward lead-generation site, have a solicitor review it before you go live.
       </div>
 
       <h2>Who we are</h2>
       <p>This website is operated by <strong>Trade Works Digital Ltd</strong>, trading as <strong>Tradeworks Digital</strong>, a company registered in England and Wales under company number <strong>17391710</strong>. Our registered office is at 71&#8211;75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</p>
-      <p>For any question about this policy or your data, contact us at <a href="mailto:adam@tradeworksdigital.co.uk">adam@tradeworksdigital.co.uk</a>. We are the data controller for the personal data described below.</p>
+      <p>For any question about this policy or your data, contact us at <a href="mailto:mosa@tradeworksdigital.co.uk">mosa@tradeworksdigital.co.uk</a>. We are the data controller for the personal data described below.</p>
 
       <h2>What data we collect</h2>
       <p>We only collect what we need to respond to your enquiry, book a call, or deliver a website build. Depending on how you interact with us, this may include:</p>
@@ -249,6 +212,7 @@
       <ul>
         <li><strong>Cal.com</strong> — powers the "Book a Call" scheduler embedded on this site. When you book a call, the details you enter are processed by Cal.com on our behalf so we can manage the booking. See <a href="https://cal.com/privacy" target="_blank" rel="noopener">Cal.com's privacy policy</a> for details.</li>
         <li><strong>Google Fonts</strong> — the typefaces on this site are loaded from Google's servers, which may log your IP address as part of serving the font files. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</li>
+        <li><strong>Google Business Profile</strong> — our "Reviews" page links out to our Google Business Profile so you can read verified reviews. Google, not us, controls the data on that page.</li>
       </ul>
       <p>We don't sell your data to anyone, and we don't share it with third parties beyond what's needed to provide the services above.</p>
 
@@ -268,7 +232,10 @@
         <li>Ask for your data in a portable format;</li>
         <li>Withdraw consent at any time, where consent is the basis for processing.</li>
       </ul>
-      <p>To exercise any of these, email <a href="mailto:adam@tradeworksdigital.co.uk">adam@tradeworksdigital.co.uk</a>.</p>
+      <p>To exercise any of these, email <a href="mailto:mosa@tradeworksdigital.co.uk">mosa@tradeworksdigital.co.uk</a>. If you're unhappy with how we've handled your data, you also have the right to complain to the UK's data protection regulator, the <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">Information Commissioner's Office (ICO)</a>.</p>
+
+      <h2>Children</h2>
+      <p>Our services are aimed at trades businesses and their owners, not children. We don't knowingly collect data from anyone under 18.</p>
 
       <h2>Changes to this policy</h2>
       <p>We may update this policy from time to time — for example, if we start using a new tool on the site. The version at the top of this page always reflects our current practice, and we'll update the "last updated" date whenever it changes.</p>
@@ -279,18 +246,14 @@
 <footer>
   <div class="footer-wrap">
     <div class="fwrap">
-      <span class="flogo">
-        <svg viewBox="0 0 160 62" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="8" width="8" height="36" fill="#E85D2C"/>
-          <text x="16" y="20" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="16" fill="#F6F3EC" letter-spacing="2">TRADEWORKS</text>
-          <text x="14" y="44" font-family="Archivo Black, Arial, sans-serif" font-size="26" fill="#E85D2C" letter-spacing="-0.4">DIGITAL</text>
-        </svg>
-      </span>
+      <span class="mono" style="color:var(--paper); font-weight:700;">Tradeworks Digital</span>
       <div style="display:flex; gap:24px; flex-wrap:wrap;">
         <a href="index.html#offer">The Offer</a>
         <a href="index.html#process">The Process</a>
         <a href="index.html#faq">FAQs</a>
         <a href="index.html#book">Book a Call</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="about.html">About</a>
         <a href="mailto:mosa@tradeworksdigital.co.uk">mosa@tradeworksdigital.co.uk</a>
       </div>
     </div>
