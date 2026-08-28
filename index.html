@@ -182,13 +182,12 @@
   .hazard{
     height:10px;
     background:repeating-linear-gradient(135deg, var(--yellow) 0 18px, var(--ink) 18px 36px);
-    opacity:0.9;
   }
 
   /* ---------- NAV ---------- */
   header{
     position:sticky; top:0; z-index:50;
-    background:var(--paper);
+    background:var(--paper); backdrop-filter:none; -webkit-backdrop-filter:none;
     border-bottom:1px solid var(--line);
   }
   nav.wrap{
@@ -272,12 +271,14 @@
     position:relative;
   }
   .hero p.lede{
+    text-align:justify; hyphens:auto; text-wrap:initial;
     font-size:18px;
     color:#3c4247;
     max-width:520px;
     margin-bottom:32px;
   }
   .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:34px;}
+  .hero-ctas .btn{flex:1 1 0; min-width:230px; min-height:56px; padding:0 22px; font-size:15.5px; justify-content:center; text-align:center;}
   .trust-row{
     display:flex; gap:26px; flex-wrap:wrap;
     font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace;
@@ -550,7 +551,9 @@
   .cta-bar{display:none;}
   html{scroll-timeline:--page block;}
   #offer{view-timeline:--offer block;}
-  body{timeline-scope:--offer;}
+  #book{view-timeline:--book block;}
+  footer{view-timeline:--foot block;}
+  body{timeline-scope:--offer, --book, --foot;}
   @keyframes cta-hold{from,to{transform:translateY(118%);}}
   @keyframes cta-reveal{
     0%, 6%{transform:translateY(118%);}
@@ -567,9 +570,9 @@
     }
     /* retract while the offer card's own £397 rail is on screen */
     .cta-bar-inner{
-      animation:cta-hold linear none;
-      animation-timeline:--offer;
-      animation-range:cover 2% cover 98%;
+      animation:cta-hold linear none, cta-hold linear none, cta-hold linear none;
+      animation-timeline:--offer, --book, --foot;
+      animation-range:cover 2% cover 98%, cover 0% cover 100%, cover 0% cover 100%;
     }
     .cta-bar-inner{
       display:flex; align-items:center; gap:12px;
