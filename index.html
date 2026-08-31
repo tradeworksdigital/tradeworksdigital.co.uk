@@ -273,11 +273,11 @@
   }
   .hero p.lede{
     text-wrap:pretty; max-width:52ch;
-    font-size:18px;
+    font-size:18px; line-height:1.55;
     color:#3c4247;
-    max-width:520px;
-    margin-bottom:32px;
+    margin-bottom:14px;
   }
+  .hero p.lede-sub{font-size:16px; color:#5a6167; margin-bottom:32px;}
   .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:34px;}
   .hero-ctas .btn{flex:1 1 0; min-width:230px; min-height:56px; padding:0 22px; font-size:15.5px; justify-content:center; text-align:center;}
   .trust-row{
@@ -365,10 +365,28 @@
   .offer-col.dark .offer-list svg{stroke:var(--yellow);}
   .price-tag{
     margin-top:26px; padding-top:22px; border-top:1.5px solid rgba(246,243,236,0.2);
+    display:flex; align-items:center; justify-content:space-between; gap:18px;
   }
+  .price-tag .pt-copy{min-width:0;}
+  .price-tag .btn{flex-shrink:0;}
   .price-tag .amt{font-family:'Archivo Black', 'Archivo Black Fallback', sans-serif; font-size:34px; color:var(--paper);}
   .price-tag .sub{font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:12px; color:rgba(246,243,236,0.55); margin-top:4px;}
-  .price-tag .btn{display:none;}
+
+  /* ---------- VALUE ---------- */
+  .value{background:var(--paper); border-top:1px solid var(--line); padding:76px 0;}
+  .value-grid{display:grid; grid-template-columns:repeat(3,1fr); border-top:1.5px solid var(--ink); margin-top:44px;}
+  .value-cell{padding:30px 26px; border-bottom:1.5px solid var(--ink); border-left:1px dashed var(--line);}
+  .value-cell:first-child{border-left:none; padding-left:0;}
+  .value-cell:last-child{padding-right:0;}
+  .value-cell .stat{font-family:'Archivo Black', 'Archivo Black Fallback', sans-serif; font-size:56px; line-height:1; color:var(--orange); margin-bottom:16px;}
+  .value-cell h3{font-size:18px; line-height:1.2; margin:0 0 10px;}
+  .value-cell p{font-size:15px; line-height:1.55; color:#4a5054; margin:0 0 14px; text-wrap:pretty;}
+  .value-cell .src{font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:#8a9096;}
+  .value-foot{
+    display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:34px;
+    background:var(--ink); color:var(--paper); padding:22px 26px;
+  }
+  .value-foot p{margin:0; flex:1 1 320px; font-size:15.5px; line-height:1.5; text-wrap:pretty;}
 
   /* ---------- PROCESS ---------- */
   .process-list{
@@ -508,6 +526,8 @@
   /* ---------- FAQ ---------- */
   .faq{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .faq-list{display:flex; flex-direction:column;}
+  .faq-more{display:none;}
+  .faq-reveal{display:none;}
   .faq-item{border-top:1.5px solid var(--ink);}
   .faq-list .faq-item:last-child{border-bottom:1.5px solid var(--ink);}
   .faq-item summary{
@@ -531,6 +551,8 @@
 
   @media (max-width:860px){
     .hero-grid{grid-template-columns:1fr;}
+    .hero p.lede{font-size:16.5px; line-height:1.6; max-width:none; margin-bottom:12px; hyphens:none;}
+    .hero p.lede-sub{font-size:15px; margin-bottom:26px;}
     .offer-grid{grid-template-columns:1fr;}
     .offer-col + .offer-col{border-left:none; border-top:1.5px solid var(--ink);}
     .book-body{grid-template-columns:1fr;}
@@ -566,17 +588,19 @@
 
     .cta-bar{
       display:block; position:fixed; left:0; right:0; bottom:0; z-index:60;
+      background:var(--ink);
+      padding-bottom:env(safe-area-inset-bottom);
     }
     /* retract while the offer card's own £397 rail is on screen */
     .cta-bar-inner{
-      animation:cta-hold linear none, cta-hold linear none, cta-hold linear none;
-      animation-timeline:--offer, --book, --foot;
-      animation-range:cover 2% cover 98%, cover 0% cover 100%, cover 0% cover 100%;
+      animation:cta-hold linear none, cta-hold linear none;
+      animation-timeline:--book, --foot;
+      animation-range:cover 0% cover 100%, cover 0% cover 100%;
       transition:opacity 0.2s ease;
     }
     .cta-bar-inner{
       display:flex; align-items:center; gap:12px;
-      padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+      padding:12px 16px;
       background:var(--ink); border-top:1.5px solid var(--orange);
     }
     .cta-bar .amt{font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:20px; color:var(--orange); line-height:1;}
@@ -598,10 +622,30 @@
     .p-toggle:checked + .p-step .pm{transform:rotate(45deg);}
     .p-step-body p{font-size:14.5px;}
 
-    .offer-list{max-height:260px; overflow-y:auto; overscroll-behavior:contain;}
 
-    .trust-row{display:grid; grid-template-columns:1fr 1fr; gap:12px 16px; align-items:start;}
-    .trust-row > *{font-size:12.5px; line-height:1.35;}
+    /* FAQ: show 4, reveal the rest (mockup parity) */
+    .faq-list .faq-item:nth-of-type(n+5){display:none;}
+    .faq-more:checked ~ .faq-list .faq-item:nth-of-type(n+5){display:block;}
+    .faq-reveal{
+      display:flex; align-items:center; min-height:44px; cursor:pointer;
+      font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace;
+      font-size:12px; color:var(--orange-dark); margin-top:12px;
+    }
+    .faq-more:checked ~ .faq-reveal{display:none;}
+
+    .trust-row{display:grid; grid-template-columns:1fr 1fr; gap:14px 16px; align-items:stretch;}
+    .trust-row span{align-items:flex-start; gap:8px; font-size:12.5px; line-height:1.35;}
+    .trust-row svg{width:14px; height:14px; margin-top:1px;}
+    .value{padding:44px 0;}
+    .value-grid{grid-template-columns:1fr; margin-top:28px;}
+    .value-cell{padding:22px 0; border-left:none;}
+    .value-cell:last-child{padding-right:0;}
+    .value-cell .stat{font-size:42px; margin-bottom:10px;}
+    .value-cell h3{font-size:16.5px;}
+    .value-cell p{font-size:14.5px;}
+    .value-foot{padding:18px; margin-top:24px;}
+    .value-foot p{font-size:14.5px;}
+    .value-foot .btn{width:100%; justify-content:center; text-align:center;}
     .booking{padding-bottom:28px;}
     .trades-bar{padding:22px 0;}
     .trades-bar .wrap{gap:14px;}
@@ -628,7 +672,7 @@
     }
     .price-tag .amt{font-size:22px; color:var(--orange);}
     .price-tag .sub{font-size:9.5px; margin-top:3px; white-space:nowrap;}
-    .price-tag .btn{display:flex; flex:1; justify-content:center; text-align:center;}
+    .price-tag .btn{display:none;}
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -651,6 +695,7 @@
     <input type="checkbox" id="navToggle" class="nav-toggle">
     <div class="navlinks" id="mobileNav">
       <a href="#offer">The Offer</a>
+      <a href="#value">The Value</a>
       <a href="#process">The Process</a>
       <a href="#faq">FAQs</a>
       <a href="#book" class="btn btn-primary btn-sm nav-cta">Book a Call</a>
@@ -670,7 +715,8 @@
       <div>
         <span class="ticket-stamp mono"><span class="stamp-dot"></span>WORK ORDER · WEBSITE BUILD</span>
         <h1>A website that <em>turns visitors into paying customers</em> — and you own it.</h1>
-        <p class="lede">Get a website for your trade. Pay one price: £397. Your site goes live in 5 to 7 days. Get more calls. Get more quotes. Book more jobs. Based in Aberdeen, working with trades across Scotland and the UK.</p>
+        <p class="lede">A website for your trade — a new build, or a rebuild of the one you already have. One flat price of £397, live in 5 to 7 days.</p>
+        <p class="lede lede-sub">More calls, more quotes, more jobs booked. Based in Aberdeen, working with trades across the UK.</p>
         <div class="hero-ctas">
           <a href="#book" class="btn btn-primary">Book My Free Call</a>
           <a href="#offer" class="btn btn-ghost">See What You Own</a>
@@ -678,7 +724,7 @@
         <div class="trust-row">
           <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg> Live in 5-7 days</span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg> Get a monthly clicks &amp; leads report</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Cancel the care plan any time. Keep the site.</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Cancel the care plan any time, keep the site</span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.33-7-11a7 7 0 0 1 14 0c0 5.67-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Aberdeen-based, UK-wide</span>
         </div>
       </div>
@@ -707,7 +753,7 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">The Offer</span>
-        <h2>£397 — we build it from scratch. It goes live in 5-7 days.</h2>
+        <h2>£397 — built around your trade. It goes live in 5-7 days.</h2>
         <p>We build every site to turn strangers into paying customers. A small monthly plan keeps your site safe and working well, but you own the site and the code. Cancel the plan any time.</p>
       </div>
 
@@ -715,19 +761,17 @@
         <div class="offer-col">
           <h3>What You Get</h3>
           <ul class="offer-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> You own the site and the code — we do not license it back to you</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Your site brings in leads: a quote form, a click-to-call button, and a link to your Google Business Profile</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Show before and after job photos. Show real reviews. This proof wins new customers.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Your site loads fast, in under 1.5 seconds. It follows good SEO practice, so search engines find you.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> You get one round of changes before we launch</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> You own the site and the code — we do not license it back to you.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Built to win work: quote form, click-to-call, Google Business Profile, plus job photos and reviews as proof.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Loads in under 1.5 seconds, follows good SEO practice, and includes a round of changes before launch.</li>
           </ul>
         </div>
         <div class="offer-col dark">
           <h3>What It Costs You</h3>
           <ul class="offer-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg> You pay one flat price, not an hourly rate</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg> You know the full price today. The monthly plan pays for hosting, security, and backups.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg> We build your site just for your trade, from scratch every time</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13"/><path d="m12 6 6 6-6 6"/></svg> You pay one flat price, not an hourly rate.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13"/><path d="m12 6 6 6-6 6"/></svg> You know the full cost today — the £29 a month plan covers hosting, security, and backups.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13"/><path d="m12 6 6 6-6 6"/></svg> We write the code from the ground up and tune it to your trade, so it loads fast and ranks for the work you want.</li>
           </ul>
           <div class="price-tag">
             <div class="pt-copy">
@@ -737,6 +781,41 @@
             <a href="#book" class="btn btn-primary btn-sm">Book the call</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE -->
+  <section class="value" id="value">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The Value</span>
+        <h2>A slow, cluttered site quietly costs you jobs.</h2>
+        <p>Most people find a trade on their phone, on the move. If your page is slow or hard to read, they are back on Google looking at the next name on the list — and you never know it happened.</p>
+      </div>
+      <div class="value-grid">
+        <div class="value-cell">
+          <div class="stat">53%</div>
+          <h3>Three seconds and they are gone</h3>
+          <p>Over half of mobile visitors abandon a page that takes longer than three seconds to load. That is your quote form, never seen.</p>
+          <div class="src">Source: Google / SOASTA mobile research</div>
+        </div>
+        <div class="value-cell">
+          <div class="stat">3×</div>
+          <h3>Fast pages convert far better</h3>
+          <p>A site loading in one second converts around three times better than one taking five. Same traffic, same trade — three times the enquiries.</p>
+          <div class="src">Source: Portent, 100m+ pageviews</div>
+        </div>
+        <div class="value-cell">
+          <div class="stat">1.65s</div>
+          <h3>Google favours the quick</h3>
+          <p>The average first-page Google result loads in about 1.65 seconds. Speed is a ranking signal, so a slow site loses twice: fewer visitors, and fewer of them stay.</p>
+          <div class="src">Source: Backlinko ranking-factors study</div>
+        </div>
+      </div>
+      <div class="value-foot">
+        <p>We build every site to load in under 1.5 seconds, so you are on the right side of all three numbers.</p>
+        <a href="#book" class="btn btn-primary">Book My Free Call</a>
       </div>
     </div>
   </section>
@@ -754,8 +833,8 @@
         <input type="checkbox" class="p-toggle" id="pstep1" checked><div class="p-step">
           <div class="step-num mono">STEP<span class="big">01</span></div>
           <div class="p-step-body">
-            <label class="p-head" for="pstep1"><h3>Free 15-minute call</h3><span class="pm" aria-hidden="true">+</span></label>
-            <div class="p-collapse"><p>We ask about your trade, your service area, and where your leads come from now. No pitch, no pressure. If we are not a good fit, we say so on the call.</p>
+            <label class="p-head" for="pstep1"><h3>Free 15-minute call &amp; site audit</h3><span class="pm" aria-hidden="true">+</span></label>
+            <div class="p-collapse"><p>We ask about your trade, your service area, and where your leads come from now. No pitch, no pressure. If we are not a good fit, we say so on the call. Already have a site? We audit it free on the call, so you leave knowing what is holding it back either way.</p>
             <div class="meta">
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 15 minutes</span>
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M15 10 20 5v14l-5-5"/><rect x="4" y="5" width="11" height="14" rx="1"/></svg> Video or phone</span>
@@ -829,6 +908,7 @@
         <p>These are the questions we hear most on our first call. We answer them here, so you know what to expect.</p>
       </div>
 
+      <input type="checkbox" id="faq-more" class="faq-more">
       <div class="faq-list">
         <details class="faq-item">
           <summary><span class="qhead"><span class="qnum mono">Q1</span><span class="qtext">Do I own my website, or do you license it back to me?</span></span><span class="plus">+</span></summary>
@@ -859,6 +939,7 @@
           <p class="faq-a">No. The £397 is a one-time build fee. The £29 a month plan has no contract. Cancel it any time.</p>
         </details>
       </div>
+      <label for="faq-more" class="faq-reveal">See all 7 questions +</label>
     </div>
   </section>
 
@@ -868,7 +949,7 @@
       <div class="section-head">
         <span class="eyebrow">Book a Call</span>
         <h2>Take 15 minutes. See if we fit.</h2>
-        <p>Pick a time below. It books right into my calendar and you get an instant confirmation — no forms, no back-and-forth emails.</p>
+        <p>Pick a time below. It books right into my calendar and you get an instant confirmation — no forms, no back-and-forth emails. Already have a site? The call includes a free audit: you leave knowing exactly what is holding it back, whether you build with us or not.</p>
       </div>
 
       <div class="book-panel">
@@ -899,6 +980,7 @@
       </span>
       <div class="flinks">
         <a href="#offer">The Offer</a>
+        <a href="#value">The Value</a>
         <a href="#process">The Process</a>
         <a href="#faq">FAQs</a>
         <a href="#book">Book a Call</a>
