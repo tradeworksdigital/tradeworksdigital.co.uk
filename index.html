@@ -550,6 +550,13 @@
   .faq-item .faq-a{padding:0 2px 24px; color:#4a5054; font-size:15px; max-width:680px; padding-left:40px;}
 
   @media (max-width:860px){
+    html,body{height:100%; overflow:hidden;}
+    .scroller{
+      height:100%; overflow-y:auto; overflow-x:hidden;
+      -webkit-overflow-scrolling:touch; scroll-behavior:smooth;
+      overscroll-behavior-y:none;
+      padding-bottom:84px;
+    }
     .hero-grid{grid-template-columns:1fr;}
     .hero p.lede{font-size:16.5px; line-height:1.6; max-width:none; margin-bottom:12px; hyphens:none;}
     .hero p.lede-sub{font-size:15px; margin-bottom:26px;}
@@ -575,7 +582,7 @@
     .navlinks .nav-cta{display:inline-flex; justify-content:center; margin-top:4px;}
   }
 
-  /* ---------- MOBILE STICKY CTA (CSS-only, scroll-driven) ---------- */
+  /* ---------- MOBILE STICKY CTA ---------- */
   .cta-bar{display:none;}
 
   @media (max-width:860px){
@@ -585,7 +592,6 @@
       background:var(--ink);
       padding-bottom:env(safe-area-inset-bottom);
       transform:translate3d(0,0,0);
-      will-change:transform;
       transition:transform 0.22s ease;
     }
     .cta-bar.is-hidden{transform:translate3d(0,110%,0);}
@@ -674,6 +680,8 @@
 </head>
 <body>
 
+<div class="scroller">
+
 <header>
   <nav class="wrap">
     <a href="#top" class="logo" aria-label="Tradeworks Digital — home">
@@ -754,7 +762,7 @@
           <ul class="offer-list">
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> You own the site and the code — we do not license it back to you.</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Built to win work: quote form, click-to-call, Google Business Profile, plus job photos and reviews as proof.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Loads in under 1.5 seconds, follows good SEO practice, and includes a round of changes before launch.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Built mobile-first and loads in under 1.5 seconds, with full technical SEO implementation and a round of changes before launch.</li>
           </ul>
         </div>
         <div class="offer-col dark">
@@ -984,6 +992,8 @@
   </div>
 </footer>
 
+</div><!-- /.scroller -->
+
 <div class="cta-bar">
   <div class="cta-bar-inner">
     <div>
@@ -1025,7 +1035,7 @@
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
       bar.classList.toggle("is-hidden", seen.size > 0);
-    }, { threshold: 0 });
+    }, { root: matchMedia("(max-width:860px)").matches ? document.querySelector(".scroller") : null, threshold: 0 });
     zones.forEach(function (z) { io.observe(z); });
   })();
 
