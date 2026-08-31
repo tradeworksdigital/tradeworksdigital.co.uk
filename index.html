@@ -577,12 +577,6 @@
 
   /* ---------- MOBILE STICKY CTA (CSS-only, scroll-driven) ---------- */
   .cta-bar{display:none;}
-  html{scroll-timeline:--page block;}
-  #offer{view-timeline:--offer block;}
-  #book{view-timeline:--book block;}
-  footer{view-timeline:--foot block;}
-  body{timeline-scope:--offer, --book, --foot;}
-  @keyframes cta-hold{from,to{opacity:0; visibility:hidden;}}
 
   @media (max-width:860px){
 
@@ -590,14 +584,11 @@
       display:block; position:fixed; left:0; right:0; bottom:0; z-index:60;
       background:var(--ink);
       padding-bottom:env(safe-area-inset-bottom);
+      transform:translate3d(0,0,0);
+      will-change:transform;
+      transition:transform 0.22s ease;
     }
-    /* retract while the offer card's own £397 rail is on screen */
-    .cta-bar-inner{
-      animation:cta-hold linear none, cta-hold linear none;
-      animation-timeline:--book, --foot;
-      animation-range:cover 0% cover 100%, cover 0% cover 100%;
-      transition:opacity 0.2s ease;
-    }
+    .cta-bar.is-hidden{transform:translate3d(0,110%,0);}
     .cta-bar-inner{
       display:flex; align-items:center; gap:12px;
       padding:12px 16px;
@@ -834,7 +825,7 @@
           <div class="step-num mono">STEP<span class="big">01</span></div>
           <div class="p-step-body">
             <label class="p-head" for="pstep1"><h3>Free 15-minute call &amp; site audit</h3><span class="pm" aria-hidden="true">+</span></label>
-            <div class="p-collapse"><p>We ask about your trade, your service area, and where your leads come from now. No pitch, no pressure. If we are not a good fit, we say so on the call. Already have a site? We audit it free on the call, so you leave knowing what is holding it back either way.</p>
+            <div class="p-collapse"><p>Your trade, your area, where your leads come from now. No pitch — if we are not a fit, we say so. Already have a site? We audit it free, so you leave knowing what is holding it back either way.</p>
             <div class="meta">
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 15 minutes</span>
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M15 10 20 5v14l-5-5"/><rect x="4" y="5" width="11" height="14" rx="1"/></svg> Video or phone</span>
@@ -1025,6 +1016,18 @@
 
     Cal.ns["tradeworks-15min"]("ui", {"hideEventTypeDetails":false, "layout":"month_view"});
   }
+
+  (function () {
+    var bar = document.querySelector(".cta-bar");
+    if (!bar || !("IntersectionObserver" in window)) return;
+    var zones = [document.getElementById("book"), document.querySelector("footer")].filter(Boolean);
+    var seen = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
+      bar.classList.toggle("is-hidden", seen.size > 0);
+    }, { threshold: 0 });
+    zones.forEach(function (z) { io.observe(z); });
+  })();
 
   var calBookingSection = document.getElementById("book");
   if (calBookingSection && "IntersectionObserver" in window) {
