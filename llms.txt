@@ -9,6 +9,7 @@ Tradeworks Digital is Trade Works Digital Ltd, company no. 17391710, registered 
 - [Home](https://www.tradeworksdigital.co.uk/): the £397 website build, the optional care plan, the 4-step process and FAQs
 - [Work](https://www.tradeworksdigital.co.uk/work.html): case studies, with before-and-after numbers
 - [Granite City Cars case study](https://www.tradeworksdigital.co.uk/granite-city-cars.html): an Aberdeen car dealer moved off a rented dealer platform onto a site and stock, leads and invoicing system they own; mobile speed score 48 to 98
+- [Build diary: moving a car dealer off Car Dealer 5](https://www.tradeworksdigital.co.uk/gcc-build-diary.html): what we found on the old site, before and after screens, the buyer journey and the admin
 - [Build Spec](https://www.tradeworksdigital.co.uk/product.html): the technical standard every site is built to (speed, security, accessibility, search) and how it's checked
 - [About](https://www.tradeworksdigital.co.uk/about.html): the founder, and larger scoped projects
 - [Reviews](https://www.tradeworksdigital.co.uk/reviews.html): client reviews, hosted on Google

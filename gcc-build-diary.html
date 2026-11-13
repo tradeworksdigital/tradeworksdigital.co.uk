@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
+<title>Build Diary: Moving a Car Dealer off Car Dealer 5 | Tradeworks Digital</title>
+<meta name="description" content="How we moved Granite City Cars, an Aberdeen car dealer, off Car Dealer 5: what we found, every screen before and after, the buyer journey and the admin they run from a phone.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1C2024">
+<link rel="canonical" href="https://www.tradeworksdigital.co.uk/gcc-build-diary.html">
+<link rel="icon" type="image/svg+xml" href="favicon-circle.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-circle-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-circle-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tradeworks Digital">
+<meta property="og:title" content="Build Diary: Moving a Car Dealer off Car Dealer 5 | Tradeworks Digital">
+<meta property="og:description" content="How we moved Granite City Cars, an Aberdeen car dealer, off Car Dealer 5: what we found, every screen before and after, the buyer journey and the admin they run from a phone.">
+<meta property="og:url" content="https://www.tradeworksdigital.co.uk/gcc-build-diary.html">
+<!-- Share image (4 Nov 2026): source is build-scripts/share-image/share.html, rendered at 1200×630. -->
+<meta property="og:image" content="https://www.tradeworksdigital.co.uk/images/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tradeworks Digital: a website that brings in the calls. Built in a week. Yours to keep.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.tradeworksdigital.co.uk/images/share.jpg">
+<meta name="twitter:title" content="Build Diary: Moving a Car Dealer off Car Dealer 5 | Tradeworks Digital">
+<meta name="twitter:description" content="How we moved Granite City Cars, an Aberdeen car dealer, off Car Dealer 5: what we found, every screen before and after, the buyer journey and the admin they run from a phone.">
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-black-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-400.woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+  .page-hero{padding:72px 0 48px;}
+  .page-hero h1{font-size:clamp(34px,4.6vw,54px); margin:16px 0 18px; max-width:820px;}
+  .page-hero h1 em{font-style:normal; color:var(--orange);}
+  .page-hero p.lede{font-size:18px; color:var(--ink-soft); max-width:640px;}
+  @media (max-width:860px){ .page-hero{padding:44px 0 32px;} }
+
+  .cta-band{background:var(--ink); color:var(--paper);}
+  .cta-band .wrap{display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;}
+  .cta-band h2{font-size:clamp(26px,3vw,36px); max-width:620px;}
+  .cta-band p{color:rgba(246,243,236,.78); margin-top:10px; max-width:560px;}
+
+  .cs-facts{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); border:1.5px solid var(--ink); border-radius:6px; overflow:hidden; margin-top:34px; background:var(--paper);}
+  .cs-facts div{padding:16px 18px; border-right:1px dashed var(--line);}
+  .cs-facts div:last-child{border-right:none;}
+  .cs-facts span{display:block; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:11px; letter-spacing:.08em; color:var(--grey);}
+  .cs-facts b{display:block; margin-top:4px; font-size:15px;}
+  .cs-shot{padding-top:0;}
+  .browser{background:var(--paper); border:1.5px solid var(--ink); border-radius:8px; overflow:hidden; box-shadow:10px 10px 0 var(--ink);}
+  .browser-bar{display:flex; gap:6px; padding:10px 12px; background:var(--ink);}
+  .browser-bar i{width:9px; height:9px; border-radius:50%; background:rgba(246,243,236,.35); display:block;}
+  .browser img{width:100%; aspect-ratio:16/9; object-fit:cover; object-position:top;}
+  .shot-ph{aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:var(--paper-dim); font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:13px; color:var(--grey); text-align:center; padding:20px;}
+  .cs-two{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;}
+  .cs-two h2{font-size:clamp(26px,3vw,34px); margin:14px 0 16px;}
+  .cs-two p{color:var(--ink-soft); font-size:16px; margin-bottom:14px;}
+  .ticks{list-style:none; border-top:1.5px solid var(--ink);}
+  .ticks li{display:flex; gap:12px; padding:12px 0; border-bottom:1px dashed var(--line); font-size:15px;}
+  .ticks svg{width:16px; height:16px; flex-shrink:0; margin-top:3px; stroke:var(--orange);}
+  .built{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .built-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .built-card{background:var(--paper); border:1.5px solid var(--ink); border-radius:6px; padding:28px 26px;}
+  .built-card h3{font-size:22px; margin:10px 0 14px;}
+  .built-card .tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
+  .results{width:100%; border-collapse:collapse; border:1.5px solid var(--ink); background:var(--paper); font-size:15px;}
+  .results th, .results td{padding:14px 18px; text-align:left; border-bottom:1px dashed var(--line);}
+  .results thead th{background:var(--ink); color:var(--paper); font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.08em;}
+  .results td.after{font-weight:700;}
+  .results .up{color:#1F6B3A;}
+  .table-note{margin-top:12px; font-size:13px; color:var(--grey);}
+  .stat-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px; margin-top:34px;}
+  .stat b.pending{color:var(--orange-dark); font-size:22px;}
+  .stat{border:1.5px solid var(--ink); border-radius:6px; padding:20px 18px; background:var(--paper);}
+  .stat b{display:block; font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-weight:400; font-size:30px; line-height:1;}
+  .stat span{display:block; margin-top:10px; font-size:14px; color:var(--ink-muted);}
+  .quote-block{border-left:4px solid var(--orange); padding:6px 0 6px 26px; max-width:760px;}
+  .quote-block blockquote{font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:clamp(22px,2.6vw,30px); line-height:1.25;}
+  .quote-block p{margin-top:14px; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:13px; color:var(--grey);}
+  @media (max-width:860px){
+    .cs-facts{grid-template-columns:1fr 1fr;}
+    .cs-facts div:nth-child(2){border-right:none;}
+    .cs-facts div:nth-child(-n+2){border-bottom:1px dashed var(--line);}
+    .cs-two, .built-grid{grid-template-columns:1fr; gap:24px;}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .results{font-size:14px;}
+    .results th, .results td{padding:12px 10px;}
+    .browser{box-shadow:6px 6px 0 var(--ink);}
+  }
+
+
+  /* ---------- 14 Nov: deeper case study ---------- */
+  .found{padding-top:24px;}
+  .found-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:20px;}
+  .found-card{background:var(--paper); border:1.5px solid var(--ink); border-radius:6px; padding:24px 24px 22px;}
+  .found-card .tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:11.5px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
+  .found-card h3{font-size:19px; margin:10px 0 8px; font-family:'Inter','Inter Fallback',sans-serif; font-weight:800;}
+  .found-card p{color:var(--ink-soft); font-size:15px;}
+  .found-card code{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:13px; background:var(--paper-dim); padding:1px 5px; border-radius:3px; overflow-wrap:anywhere;}
+  .ph{margin:0;}
+  .ph-frame{border:1.5px solid var(--ink); border-radius:20px; overflow:hidden; background:#111; box-shadow:6px 6px 0 rgba(28,32,36,.14);}
+  .ph-frame img{display:block; width:100%; height:auto; aspect-ratio:600/1299;}
+  .ph figcaption{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; color:var(--grey); margin-top:10px; letter-spacing:.04em;}
+  .ph.after .ph-frame{border-color:var(--orange); box-shadow:6px 6px 0 rgba(232,93,44,.22);}
+  .ph.after figcaption{color:var(--orange-dark); font-weight:600;}
+  .side{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .pairs{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:28px;}
+  .pair h3{font-size:17px; font-family:'Inter','Inter Fallback',sans-serif; font-weight:800; margin-bottom:12px;}
+  .pair-ph{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .journey{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .j-col{background:var(--paper); border:1.5px solid var(--ink); border-radius:6px; padding:24px; display:flex; flex-direction:column; gap:16px;}
+  .j-col.after{border-color:var(--orange); box-shadow:0 0 0 4px rgba(232,93,44,.10);}
+  .j-head .tag{display:block; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:11.5px; font-weight:600; letter-spacing:.08em; color:var(--grey);}
+  .j-col.after .j-head .tag{color:var(--orange-dark);}
+  .j-head b{display:block; font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:clamp(22px,2.4vw,28px); margin-top:6px; line-height:1.15;}
+  .j-steps{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;}
+  .j-steps li{display:flex; gap:12px; align-items:flex-start; font-size:15px; line-height:1.45;}
+  .j-steps .n{flex-shrink:0; width:26px; height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:inline-flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600;}
+  .j-col.after .j-steps .n{background:var(--orange);}
+  .j-steps li.extra .n, .j-steps li.type .n{background:var(--paper-dim); color:var(--ink); border:1px dashed var(--grey);}
+  .j-steps li.type{font-weight:600;}
+  .j-msg{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:13px; background:#E7F4EA; color:#14532D; border-radius:10px; padding:12px 14px;}
+  .j-shot{max-width:220px;}
+  .j-bars{margin-top:28px; border:1.5px solid var(--ink); border-radius:6px; padding:20px 22px; background:var(--paper);}
+  .j-bars-h{font-weight:700; margin-bottom:12px;}
+  .bar-row{display:grid; grid-template-columns:64px 1fr 56px; gap:12px; align-items:center; margin-top:8px; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:13px;}
+  .bar{height:14px; background:var(--paper-dim); border-radius:7px; overflow:hidden;}
+  .bar i{display:block; height:100%; background:var(--grey); border-radius:7px;}
+  .bar-row.after .bar i{background:var(--orange);}
+  .bar-row b{text-align:right;}
+  .admin-wrap{background:var(--paper-dim); border-top:1px solid var(--line);}
+  .admin-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:28px 24px;}
+  .admin-grid .ph figcaption{font-family:inherit; font-size:14.5px; letter-spacing:0; color:var(--ink-soft); line-height:1.5;}
+  .admin-grid .ph figcaption b{display:block; color:var(--ink); font-size:15px; margin-bottom:2px;}
+  .admin-grid .ph-frame img{aspect-ratio:600/1000; object-fit:cover; object-position:top;}
+  .admin-desk{margin:40px 0 0; max-width:820px;}
+  .admin-desk figcaption{font-size:14px; color:var(--grey); margin-top:14px;}
+  .admin-desk .browser img{aspect-ratio:auto; height:auto;}
+  @media (max-width:1000px){ .pairs{grid-template-columns:1fr; max-width:520px;} .admin-grid{grid-template-columns:repeat(2, minmax(0,1fr));} }
+  @media (max-width:760px){ .found-grid, .journey{grid-template-columns:1fr;} .j-shot{max-width:180px;} }
+  @media (max-width:480px){ .admin-grid{grid-template-columns:1fr 1fr; gap:22px 14px;} .admin-grid .ph figcaption{font-size:13px;} }
+
+  .cs-sum{padding-top:8px;}
+  .sum-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:16px;}
+  .sum{border:1.5px solid var(--ink); border-radius:6px; background:var(--paper); padding:18px;}
+  .sum b{display:block; font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:clamp(22px,2.4vw,30px); color:var(--orange-dark); line-height:1.1;}
+  .sum span{display:block; margin-top:6px; font-size:14px; color:var(--ink-soft);}
+  .sum-pair{display:grid; grid-template-columns:minmax(0,420px) 1fr; gap:40px; align-items:center; margin-top:40px;}
+  .sum-copy h2{font-size:clamp(24px,2.8vw,32px); margin-bottom:12px;}
+  .sum-copy p{color:var(--ink-soft); margin-bottom:18px; max-width:520px;}
+  .sum-copy .small-note{font-size:14px; color:var(--grey); margin-top:14px;}
+  .diary-band{padding:28px 0; background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .diary-band .wrap{display:flex; flex-wrap:wrap; gap:8px 24px; align-items:center; justify-content:space-between;}
+  .diary-band .tlink{display:inline-flex; align-items:center; min-height:44px; font-weight:700;}
+  .moved{padding-top:24px;}
+  @media (max-width:900px){ .sum-grid{grid-template-columns:1fr 1fr;} .sum-pair{grid-template-columns:1fr;} .sum-pair .pair-ph{max-width:420px;} }
+</style>
+<script src="site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap sh-nav" aria-label="Main">
+    <a href="index.html" class="sh-logo" aria-label="Tradeworks Digital, home">
+      <svg viewBox="0 0 160 62" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tradeworks Digital">
+        <rect x="0" y="8" width="8" height="36" fill="#E85D2C"/>
+        <text x="16" y="20" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="16" fill="#F6F3EC" letter-spacing="2">TRADEWORKS</text>
+        <text x="14" y="44" font-family="Archivo Black, Arial, sans-serif" font-size="26" fill="#E85D2C" letter-spacing="-0.4">DIGITAL</text>
+      </svg>
+    </a>
+    <div class="sh-links" id="site-menu">
+      <a href="work.html" class="sh-link" aria-current="page">Work</a>
+      <a href="reviews.html" class="sh-link">Reviews</a>
+      <a href="about.html" class="sh-link">About</a>
+      <a href="contact.html" class="sh-link">Contact Us</a>
+      <a href="tel:+441224XXXXXX" class="sh-link sh-tel tel-slot" data-slot="Phone number"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>01224 XXX XXX</span></a>
+      <a href="index.html#book" class="btn btn-primary btn-sm">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+    <button type="button" class="sh-menu" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <a href="granite-city-cars.html" class="tlink back-link">← Case study summary</a>
+      <div style="margin-top:10px;"><span class="eyebrow">Build diary · Car dealer · Aberdeen · November 2026</span></div>
+      <h1>Moving a car dealer off Car Dealer 5, onto a system they <em>own</em>.</h1>
+      <p class="lede">The full story behind the Granite City Cars build: what we found on the old site, every screen before and after, how long it takes a buyer to get in touch, how we moved everything across, and the admin GCC run from a phone.</p>
+    </div>
+  </section>
+
+  <section class="found">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What we found</span>
+        <h2>Before building anything, we checked the old site.</h2>
+        <p>Every point here is dated and measured, so you can see exactly what changed.</p>
+      </div>
+      <div class="found-grid reveal-stagger">
+        <div class="found-card"><span class="tag">SPEED · 10 NOV 2026</span><h3>Slow on a phone</h3><p>Google's PageSpeed test on a phone scored the homepage 48 out of 100. Its main content took 9.9 seconds to appear, and the page jumped about as it loaded (layout shift 0.834; Google counts anything over 0.25 as poor).</p></div>
+        <div class="found-card"><span class="tag">SEARCH · 6 OCT 2026</span><h3>The stock page pointed Google at Nottingham</h3><p>The homepage's “View Stock” link went to <code>/used/cars/nottingham/</code>. The page said Aberdeen, but its code gave Google the Nottingham address as its official one. It has since been changed to an Aberdeen address.</p></div>
+        <div class="found-card"><span class="tag">GOOGLE · SEARCH CONSOLE</span><h3>No sitemap given to Google</h3><p>Google had never been sent a list of the site's pages. The new site's sitemap, with every car on it, is submitted in Search Console at launch.</p></div>
+        <div class="found-card"><span class="tag">CONTACT · CAR PAGES</span><h3>No WhatsApp, and the buttons were below the photos</h3><p>Car pages offered Enquire Now, Request Callback and Test Drive further down the page. Each opened a form asking for a name, phone number and email.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="side">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Side by side</span>
+        <h2>The same pages, on the same phone.</h2>
+        <p>Before on the left, after on the right.</p>
+      </div>
+      <div class="pairs">
+        <div class="pair reveal"><h3>Homepage</h3><div class="pair-ph"><figure class="ph "><div class="ph-frame"><img src="images/cs/cd5-home.webp" width="600" height="1299" alt="Old homepage on Car Dealer 5, on a phone" loading="lazy" decoding="async"></div><figcaption>Before</figcaption></figure><figure class="ph after"><div class="ph-frame"><img src="images/cs/new-home.webp" width="600" height="1299" alt="New Granite City Cars homepage on a phone" loading="lazy" decoding="async"></div><figcaption>After</figcaption></figure></div></div>
+        <div class="pair reveal"><h3>Stock list</h3><div class="pair-ph"><figure class="ph "><div class="ph-frame"><img src="images/cs/cd5-stock.webp" width="600" height="1299" alt="Old stock list on Car Dealer 5, on a phone" loading="lazy" decoding="async"></div><figcaption>Before</figcaption></figure><figure class="ph after"><div class="ph-frame"><img src="images/cs/new-stock.webp" width="600" height="1299" alt="New stock list on a phone" loading="lazy" decoding="async"></div><figcaption>After</figcaption></figure></div></div>
+        <div class="pair reveal"><h3>Car page</h3><div class="pair-ph"><figure class="ph "><div class="ph-frame"><img src="images/cs/cd5-car.webp" width="600" height="1299" alt="Old car page for the Volkswagen up!, on a phone" loading="lazy" decoding="async"></div><figcaption>Before</figcaption></figure><figure class="ph after"><div class="ph-frame"><img src="images/cs/new-car.webp" width="600" height="1299" alt="New car page for the Volkswagen up!, with WhatsApp and Call on screen" loading="lazy" decoding="async"></div><figcaption>After</figcaption></figure></div></div>
+      </div>
+      <p class="table-note">Phone-sized screen, 13 Nov 2026. The old site's cookie banner is shown as visitors saw it. The new site is shown on its preview address, ahead of the switch.</p>
+    </div>
+  </section>
+
+  <section class="journey-wrap">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Time to get in touch</span>
+        <h2>From the homepage to a message about a car.</h2>
+        <p>The same task on both sites: a buyer on their phone wants to ask about the Volkswagen up!</p>
+      </div>
+      <div class="journey">
+        <div class="j-col reveal">
+          <div class="j-head"><span class="tag">BEFORE · CAR DEALER 5</span><b>6 taps, 3 things to type</b></div>
+          <ol class="j-steps">
+            <li><span class="n">1</span>Accept cookies (the only button)</li>
+            <li><span class="n">2</span>Tap Search</li>
+            <li><span class="n">3</span>Tap the car</li>
+            <li class="extra"><span class="n">↓</span>Scroll past the photos</li>
+            <li><span class="n">4</span>Tap Enquire Now</li>
+            <li class="type"><span class="n">⌨</span>Type name, phone number and email</li>
+            <li><span class="n">5</span>Tick the consent box</li>
+            <li><span class="n">6</span>Send, then wait for a reply</li>
+          </ol>
+          <figure class="ph j-shot"><div class="ph-frame"><img src="images/cs/cd5-form.webp" width="600" height="1299" alt="The old enquiry form: full name, telephone, email, message and a consent box" loading="lazy" decoding="async"></div><figcaption>The form at the end</figcaption></figure>
+        </div>
+        <div class="j-col after reveal">
+          <div class="j-head"><span class="tag">AFTER · NEW SITE</span><b>5 taps, nothing to type</b></div>
+          <ol class="j-steps">
+            <li><span class="n">1</span>Choose cookies (Accept or Reject)</li>
+            <li><span class="n">2</span>Tap Browse all cars</li>
+            <li><span class="n">3</span>Tap the car: WhatsApp and Call are already on screen</li>
+            <li><span class="n">4</span>Tap WhatsApp: the message is already written, with the car, its reg and a link</li>
+            <li><span class="n">5</span>Send, straight to GCC's WhatsApp</li>
+          </ol>
+          <p class="j-msg">“Hi, I'm interested in the 2014 Volkswagen up! (EK14 SOA) – granitecitycars.co.uk/cars/…”</p>
+          <figure class="ph j-shot after"><div class="ph-frame"><img src="images/cs/new-car.webp" width="600" height="1299" alt="The new car page with the WhatsApp and Call bar at the bottom of the screen" loading="lazy" decoding="async"></div><figcaption>WhatsApp on screen from the start</figcaption></figure>
+        </div>
+      </div>
+      <div class="j-bars reveal" aria-label="Car page main photo on a slow phone connection: 32 seconds before, 2.7 seconds after">
+        <p class="j-bars-h">Car page, main photo on screen (slow phone connection)</p>
+        <div class="bar-row"><span>Before</span><div class="bar"><i style="width:100%"></i></div><b>32 s</b></div>
+        <div class="bar-row after"><span>After</span><div class="bar"><i style="width:8.4%"></i></div><b>2.7 s</b></div>
+      </div>
+      <p class="table-note">Taps counted on a phone-sized screen, 13 Nov 2026. Load times from Google PageSpeed Insights (mobile, slow 4G), 10–11 Nov 2026.</p>
+    </div>
+  </section>
+
+  <section class="admin-wrap">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The system behind it</span>
+        <h2>Run from a phone.</h2>
+        <p>GCC manage their stock, enquiries and invoices from a phone. Nothing goes through a platform.</p>
+      </div>
+      <div class="admin-grid reveal-stagger">
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-stock.webp" width="600" height="1299" alt="Admin stock list on a phone" loading="lazy" decoding="async"></div><figcaption><b>Stock</b> Every car, its status, days in stock and WhatsApp and Call taps</figcaption></figure>
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-car.webp" width="600" height="1299" alt="Adding a car: number plate and Look up button" loading="lazy" decoding="async"></div><figcaption><b>Add a car</b> Type the plate and press Look up: make, model, spec and features fill in</figcaption></figure>
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-photos.webp" width="600" height="1299" alt="Car photos in the admin with reorder buttons" loading="lazy" decoding="async"></div><figcaption><b>Photos</b> Shrunk on the phone before upload, then reordered with one tap</figcaption></figure>
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-leads.webp" width="600" height="1299" alt="Leads inbox on a phone" loading="lazy" decoding="async"></div><figcaption><b>Leads</b> Every website enquiry lands here, plus WhatsApp and phone enquiries added in seconds</figcaption></figure>
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-lead.webp" width="600" height="1299" alt="One enquiry with WhatsApp and Call buttons and status buttons" loading="lazy" decoding="async"></div><figcaption><b>One enquiry</b> One-tap WhatsApp or call, a status and private notes</figcaption></figure>
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-invoices.webp" width="600" height="1299" alt="Invoice list on a phone" loading="lazy" decoding="async"></div><figcaption><b>Invoices</b> PDF invoices shared on WhatsApp, with a CSV export for the accountant</figcaption></figure>
+      </div>
+      <figure class="admin-desk reveal"><div class="browser"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="images/cs/admin-desktop-stock.webp" width="800" height="500" alt="The admin stock list on a desktop screen" loading="lazy" decoding="async"></div><figcaption>The same admin on a desktop.</figcaption></figure>
+      <p class="table-note">Customer names, phone numbers, sale prices and totals are hidden. The enquiries shown are our own pre-launch test enquiries.</p>
+    </div>
+  </section>
+
+  <section class="moved">
+    <div class="wrap cs-two">
+      <div class="reveal">
+        <span class="eyebrow">The move</span>
+        <h2>Off the old platform, without losing anything.</h2>
+        <p>The riskiest part of the job wasn't the new site. It was getting everything out of the old one before it was switched off.</p>
+      </div>
+      <ul class="ticks reveal">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Photos first.</b> Every car photo was downloaded from the old platform while it was still live, compressed and re-uploaded in the same order, with the originals kept as a backup.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Stock, sales, invoices and enquiries</b> were exported and imported, so the new system started with real history. Invoice numbers carry on from the old system.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Every old address still works.</b> All 87 old addresses (car pages, stock searches, forms, reviews) go to the right new page, so links in Google, old adverts and customers' messages don't break.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>A final export on switch day</b> picked up the last enquiries and a sale that came in during the build.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="diary-band">
+    <div class="wrap reveal"><p><b>The results in one page:</b> speed, links and the numbers before and after.</p><a href="granite-city-cars.html" class="tlink">Read the case study summary →</a></div>
+  </section>
+
+  <section class="cta-band on-dark">
+    <div class="wrap reveal">
+      <div>
+        <span class="eyebrow">Next step</span>
+        <h2 style="margin-top:14px;">Want the same for your business?</h2>
+        <p>Book a free 15-minute call and we'll tell you straight what your current site is costing you.</p>
+      </div>
+      <a href="index.html#book" class="btn btn-primary">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap sf-grid">
+    <div class="sf-brand">
+      <svg viewBox="0 0 160 62" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tradeworks Digital">
+        <rect x="0" y="8" width="8" height="36" fill="#E85D2C"/>
+        <text x="16" y="20" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="16" fill="#F6F3EC" letter-spacing="2">TRADEWORKS</text>
+        <text x="14" y="44" font-family="Archivo Black, Arial, sans-serif" font-size="26" fill="#E85D2C" letter-spacing="-0.4">DIGITAL</text>
+      </svg>
+      <p>Websites for UK trades. One flat price, live in 5 to 7 days, and you own the site and the code.</p>
+    </div>
+    <nav class="sf-col" aria-label="Footer">
+      <h2 class="sf-h">Pages</h2>
+      <ul>
+        <li><a href="work.html" class="sf-link">Work</a></li>
+        <li><a href="reviews.html" class="sf-link">Reviews</a></li>
+        <li><a href="about.html" class="sf-link">About</a></li>
+        <li><a href="contact.html" class="sf-link">Contact Us</a></li>
+        <li><a href="product.html" class="sf-link">Build Spec</a></li>
+      </ul>
+    </nav>
+    <div class="sf-col">
+      <h2 class="sf-h">Find us</h2>
+      <ul>
+        <li class="sf-plain">Aberdeen · UK-wide</li>
+        <li class="tel-slot" data-slot="Phone number"><a href="tel:+441224XXXXXX" class="sf-link">01224 XXX XXX</a></li>
+        <li><a href="mailto:mosa@tradeworksdigital.co.uk" class="sf-link">mosa@tradeworksdigital.co.uk</a></li>
+        <!-- SLOT: OPENING HOURS — add a line here written exactly as your Google Business Profile shows it, e.g.
+             <li class="sf-plain">Mon–Fri 9am–5pm</li>
+             and add the matching "openingHours" to the JSON-LD in index.html. -->
+        <li><a href="https://maps.app.goo.gl/9SJKQKRJXjYDFWzR6" class="sf-link" target="_blank" rel="noopener">Find us on Google ↗</a></li>
+        <li><a href="https://g.page/r/CUqKTYzic4E9EBI/review" class="sf-link" target="_blank" rel="noopener">Leave a review ↗</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>Trade Works Digital Ltd · Company No. 17391710</span>
+    <a href="privacy-policy.html" class="sf-link">Privacy Policy</a>
+  </div>
+</footer>
+
+<div class="m-cta" aria-label="Quick booking">
+  <a href="index.html#book" class="btn btn-primary">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a>
+  <a href="tel:+441224XXXXXX" class="m-cta-mail tel-slot" data-slot="Phone" aria-label="Call us on 01224 XXX XXX"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+  <a href="mailto:mosa@tradeworksdigital.co.uk" class="m-cta-mail" aria-label="Email us"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+</div>
+
+</body>
+</html>
