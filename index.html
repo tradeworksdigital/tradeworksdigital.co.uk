@@ -1,29 +1,442 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
 <title>Website Design for Trades in Aberdeen | Tradeworks Digital</title>
 <meta name="description" content="We build websites for plumbers, electricians, roofers, and other trades across Aberdeen and the UK. Pay one flat price: £397. Your site goes live in 5 to 7 days. It gets your phone ringing.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#1C2024">
 <link rel="canonical" href="https://www.tradeworksdigital.co.uk/">
-<link rel="icon" type="image/svg+xml" href="logo-v2-icon.svg">
-
+<link rel="icon" type="image/svg+xml" href="favicon-circle.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-circle-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-circle-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tradeworks Digital">
 <meta property="og:title" content="Website Design for Trades in Aberdeen | Tradeworks Digital">
-<meta property="og:description" content="We build websites for plumbers, electricians, roofers, and trades across Aberdeen and the UK. Pay one flat price: £397. Live in 5-7 days.">
+<meta property="og:description" content="We build websites for plumbers, electricians, roofers, and other trades across Aberdeen and the UK. Pay one flat price: £397. Your site goes live in 5 to 7 days. It gets your phone ringing.">
 <meta property="og:url" content="https://www.tradeworksdigital.co.uk/">
-<meta name="twitter:card" content="summary">
+<!-- Share image (4 Nov 2026): source is build-scripts/share-image/share.html, rendered at 1200×630. -->
+<meta property="og:image" content="https://www.tradeworksdigital.co.uk/images/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tradeworks Digital: a website that brings in the calls. Built in a week. Yours to keep.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.tradeworksdigital.co.uk/images/share.jpg">
 <meta name="twitter:title" content="Website Design for Trades in Aberdeen | Tradeworks Digital">
-<meta name="twitter:description" content="We build websites for plumbers, electricians, roofers, and trades across Aberdeen and the UK. Pay one flat price: £397. Live in 5-7 days.">
-
-<link rel="preload" as="font" type="font/woff2" href="fonts/inter-700.woff2" crossorigin>
+<meta name="twitter:description" content="We build websites for plumbers, electricians, roofers, and other trades across Aberdeen and the UK. Pay one flat price: £397. Your site goes live in 5 to 7 days. It gets your phone ringing.">
 <link rel="preload" as="font" type="font/woff2" href="fonts/archivo-black-400.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="fonts/ibm-plex-mono-400.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="fonts/ibm-plex-mono-600.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-400.woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+  /* ---------- HERO ---------- */
+  .hero{padding:72px 0 76px; position:relative; overflow:hidden;}
+  .hero::before{content:""; position:absolute; right:-140px; top:-120px; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle, rgba(232,93,44,0.10), rgba(232,93,44,0) 65%); pointer-events:none;}
+  .hero-grid{display:grid; grid-template-columns:1.12fr 0.88fr; gap:56px; align-items:center; position:relative;}
+  .ticket-stamp{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; color:var(--steel); display:inline-flex; align-items:center; letter-spacing:0.06em; margin-bottom:18px;}
+  .ticket-stamp .stamp-dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--orange); margin-right:7px;}
+  .hero h1{font-size:clamp(38px,5vw,60px); margin-bottom:22px;}
+  .hero h1 em{font-style:normal; color:var(--orange);}
+  .hero p.lede{font-size:18px; color:var(--ink-soft); max-width:520px; margin-bottom:32px;}
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:34px;}
+  .trust-row{display:flex; gap:12px 26px; flex-wrap:wrap; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; color:var(--grey); letter-spacing:0.03em;}
+  .trust-row span{display:flex; align-items:center; gap:7px;}
+  .trust-row svg{width:15px; height:15px; stroke:var(--grey); flex-shrink:0;}
 
+  /* phone + mini ticket */
+  .hero-visual{position:relative; display:flex; justify-content:center; padding:10px 0 30px;}
+  .phone{width:260px; aspect-ratio:9/19; background:var(--ink); border-radius:38px; padding:12px; box-shadow:0 34px 60px -24px rgba(28,32,36,.45), 14px 14px 0 rgba(232,93,44,.16); position:relative;}
+  .phone::before{content:""; position:absolute; top:20px; left:50%; width:70px; height:18px; margin-left:-35px; background:var(--ink); border-radius:12px; z-index:2;}
+  .phone-screen{width:100%; height:100%; border-radius:27px; overflow:hidden; background:var(--paper);}
+  .phone-screen img{width:100%; height:100%; object-fit:cover; object-position:top;}
+  .screen-mock{height:100%; display:flex; flex-direction:column;}
+  .sm-bar{background:var(--ink); padding:40px 14px 10px; display:flex; align-items:center; gap:6px;}
+  .sm-bar i{width:4px; height:16px; background:var(--orange); display:block;}
+  .sm-bar b{font:600 8px/1 'IBM Plex Mono',monospace; letter-spacing:.12em; color:var(--paper);}
+  .sm-body{padding:18px 14px; display:flex; flex-direction:column; gap:10px;}
+  .sm-eyebrow{font:600 7.5px/1 'IBM Plex Mono',monospace; letter-spacing:.1em; color:var(--orange-dark);}
+  .sm-h{font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:17px; line-height:1.12;}
+  .sm-h em{font-style:normal; color:var(--orange-dark);}
+  .sm-line{height:6px; border-radius:3px; background:rgba(28,32,36,.12);}
+  .sm-line.s{width:70%;}
+  .sm-btn{align-self:flex-start; margin-top:4px; background:var(--orange); color:var(--ink); font:700 9px/1 'Inter',sans-serif; padding:9px 12px; border:1.5px solid var(--ink); box-shadow:2px 2px 0 var(--ink); border-radius:2px;}
+  .sm-photo{margin:6px 14px 0; flex:1; min-height:120px; border-radius:6px; background:linear-gradient(160deg, #3a4a56, #1C2024); position:relative; overflow:hidden;}
+  .sm-photo::after{content:""; position:absolute; left:-10%; right:-10%; bottom:-30%; height:70%; background:repeating-linear-gradient(-12deg, rgba(240,180,41,.0) 0 14px, rgba(240,180,41,.18) 14px 16px);}
+  .sm-stars{padding:12px 14px 16px; font:600 9px/1 'IBM Plex Mono',monospace; color:var(--ink);}
+  .phone-cap{position:absolute; bottom:0; left:0; right:0; text-align:center; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; color:var(--grey); letter-spacing:.06em;}
+
+  .mini-ticket{position:absolute; left:0; bottom:68px; width:252px; background:var(--ink); color:var(--paper); border-radius:6px; overflow:hidden; box-shadow:8px 8px 0 rgba(232,93,44,.30);}
+  .mini-ticket::before{content:""; display:block; height:5px; background:var(--yellow);}
+  .mt-in{padding:12px 14px 14px;}
+  .mt-head{white-space:nowrap; display:flex; justify-content:space-between; align-items:center; gap:8px; padding-bottom:9px; border-bottom:1px dashed rgba(246,243,236,.22); font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:10.5px;}
+  .mt-head .num{color:rgba(246,243,236,.7);}
+  .mt-status{display:inline-flex; align-items:center; color:var(--yellow); font-weight:600; border:1px solid var(--yellow); border-radius:2px; padding:3px 6px;}
+  .mt-status .pulse-dot{width:6px; height:6px; margin-right:5px;}
+  .mt-row{display:flex; justify-content:space-between; gap:10px; padding:7px 0; border-bottom:1px solid rgba(246,243,236,.1); font-size:12.5px;}
+  .mt-row span{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:10.5px; color:rgba(246,243,236,.7);}
+  .mt-total{display:flex; justify-content:space-between; align-items:baseline; padding-top:9px;}
+  .mt-total span:first-child{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:10.5px; color:rgba(246,243,236,.7);}
+  .mt-price{font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:24px; color:var(--orange);}
+  .results-card{display:block; text-decoration:none; color:var(--paper); width:276px; transition:transform .2s var(--ease), box-shadow .2s var(--ease);}
+@media (hover:hover){ .results-card:hover{transform:translate(-3px,-3px); box-shadow:11px 11px 0 rgba(232,93,44,.45); color:var(--paper);} }
+  .results-card:focus-visible{outline:3px solid var(--orange); outline-offset:4px;}
+  .mt-big{display:flex; align-items:baseline; gap:10px; padding-top:12px; font-family:'Archivo Black','Archivo Black Fallback',sans-serif;}
+  .mt-from{font-size:22px; color:rgba(246,243,236,.66);}
+  .mt-arrow{font-size:18px; color:rgba(246,243,236,.66);}
+  .mt-big .mt-price{font-size:34px; line-height:1;}
+  .mt-biglabel{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:10.5px; color:rgba(246,243,236,.7); padding:4px 0 8px; border-bottom:1px solid rgba(246,243,236,.1);}
+  .results-card .mt-row{align-items:center;}
+  .results-card .mt-row span, .results-card .mt-row b{white-space:nowrap;}
+  .mt-row b.pending{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:11px; font-weight:600; color:var(--yellow);}
+  .mt-foot{display:flex; justify-content:space-between; align-items:center; gap:8px; padding-top:10px; font-size:11.5px; color:rgba(246,243,236,.75);}
+  .mt-go{font-weight:700; color:var(--paper); white-space:nowrap;}
+  .mt-go .arrow{display:inline-block; transition:transform .18s var(--ease);}
+@media (hover:hover){ .results-card:hover .mt-go .arrow{transform:translateX(4px);} }
+
+  /* ---------- PROOF STRIP ---------- */
+  .proof-strip{background:var(--steel); color:var(--paper); padding:18px 0;}
+  .proof-strip .wrap{display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:14px 40px;}
+  .proof-strip span{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:13px; font-weight:500; letter-spacing:0.02em; color:var(--paper); text-align:center;}
+
+  /* ---------- OFFER ---------- */
+  .offer{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .offer-grid{display:grid; grid-template-columns:1fr 1fr; border:1.5px solid var(--ink); border-radius:6px; overflow:hidden; background:var(--paper); box-shadow:8px 8px 0 var(--ink);}
+  .offer-col{padding:38px 36px;}
+  .offer-col + .offer-col{border-left:1.5px solid var(--ink); background:var(--ink); color:var(--paper);}
+  .offer-col h3{font-size:13px; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; letter-spacing:0.08em; text-transform:uppercase; color:var(--orange-dark); margin-bottom:20px;}
+  .offer-col.dark h3{color:var(--yellow);}
+  .offer-list{list-style:none;}
+  .offer-list li{display:flex; gap:12px; align-items:flex-start; padding:11px 0; border-bottom:1px dashed var(--line); font-size:15px; transition:transform .18s var(--ease);}
+  .offer-col.dark .offer-list li{border-bottom:1px dashed rgba(246,243,236,0.18);}
+  .offer-list li:last-child{border-bottom:none;}
+  .offer-list svg{width:16px; height:16px; flex-shrink:0; margin-top:3px; stroke:var(--orange);}
+  .offer-col.dark .offer-list svg{stroke:var(--yellow);}
+  @media (hover:hover){ .offer-list li:hover{transform:translateX(4px);} }
+  .price-tag{margin-top:26px; padding-top:22px; border-top:1.5px solid rgba(246,243,236,0.2); display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .price-tag .amt{font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:40px; color:var(--paper); line-height:1;}
+  .price-tag .sub{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; color:rgba(246,243,236,0.7); margin-top:6px;}
+
+  /* ---------- PROCESS ---------- */
+  .process-list{display:flex; flex-direction:column;}
+  .p-step{display:grid; grid-template-columns:90px 1fr; gap:28px; padding:30px 0; border-top:1.5px solid var(--ink);}
+  .process-list .p-step:last-child{border-bottom:1.5px solid var(--ink);}
+  .p-step .step-num{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:13px; font-weight:600; color:var(--orange-dark); align-self:start;}
+  .p-step .step-num .big{display:block; font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:34px; color:var(--ink); margin-top:2px;}
+  .p-step-body h3{font-size:20px; margin-bottom:8px; font-family:'Inter','Inter Fallback',sans-serif; font-weight:700;}
+  .p-step-body p{color:var(--ink-muted); font-size:15px; max-width:560px; margin-bottom:10px;}
+  .p-step-body .meta{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; color:var(--grey); display:flex; gap:16px; flex-wrap:wrap;}
+  .p-step-body .meta span{display:flex; align-items:center; gap:6px;}
+  .p-step-body .meta svg{width:13px; height:13px; stroke:var(--grey);}
+
+  /* ---------- WORK TEASER ---------- */
+  .work-teaser{background:var(--ink); color:var(--paper);}
+  .work-teaser .section-head p{color:rgba(246,243,236,.78);}
+  .case-card{display:grid; grid-template-columns:1.1fr 0.9fr; background:var(--paper); color:var(--ink); border:1.5px solid var(--paper); border-radius:6px; overflow:hidden; text-decoration:none;}
+@media (hover:hover){ .case-card.lift:hover{box-shadow:7px 7px 0 var(--orange);} }
+  .case-media{background:var(--paper-dim); padding:28px; display:flex; align-items:center; justify-content:center; border-right:1.5px solid var(--ink);}
+  .browser{width:100%; background:var(--paper); border:1.5px solid var(--ink); border-radius:6px; overflow:hidden; box-shadow:6px 6px 0 rgba(28,32,36,.12);}
+  .browser-bar{display:flex; gap:5px; padding:8px 10px; background:var(--ink);}
+  .browser-bar i{width:8px; height:8px; border-radius:50%; background:rgba(246,243,236,.35); display:block;}
+  .browser img{width:100%; aspect-ratio:16/10; object-fit:cover; object-position:top;}
+  .browser-mock{aspect-ratio:16/10; display:grid; grid-template-rows:auto 1fr; background:#F4F1EC;}
+  .bm-nav{display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:#141414; color:#fff; font:700 10px/1 'Inter',sans-serif; letter-spacing:.06em;}
+  .bm-nav b{color:#FF5A52;}
+  .bm-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; padding:14px;}
+  .bm-car{background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:4px; overflow:hidden;}
+  .bm-car i{display:block; aspect-ratio:4/3; background:linear-gradient(150deg,#c9ccd1,#8d939b);}
+  .bm-car s{display:block; height:5px; margin:7px 8px 3px; background:rgba(0,0,0,.14); border-radius:3px; text-decoration:none;}
+  .bm-car u{display:block; height:5px; width:45%; margin:0 8px 8px; background:#E0312B; border-radius:3px; text-decoration:none;}
+  .case-body{padding:34px 34px 32px; display:flex; flex-direction:column; gap:14px;}
+  .case-tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
+  .case-body h3, .case-body h2{font-size:28px;}
+  .case-body p{color:var(--ink-muted); font-size:15.5px;}
+  .case-stats{list-style:none; display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; margin:6px 0 8px;}
+  .case-stats li{border:1.5px solid var(--ink); border-radius:4px; padding:12px 12px 10px;}
+  .case-stats b{display:block; font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:22px; font-weight:400; line-height:1.1;}
+  .case-stats span{display:block; margin-top:4px; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:11px; color:var(--grey); line-height:1.35;}
+  .case-body .btn{align-self:flex-start; margin-top:auto;}
+  .work-more{margin-top:28px;}
+  .work-more .tlink{color:var(--yellow);}
+
+  /* ---------- REVIEWS TEASER ---------- */
+  .reviews-teaser{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .review-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:22px;}
+  .review-card{background:var(--paper); border:1.5px solid var(--ink); border-radius:6px; padding:26px 24px 22px; display:flex; flex-direction:column; gap:14px; text-decoration:none; color:var(--ink);}
+  .review-card .stars{color:#B7820F; font-size:16px; letter-spacing:2px;}
+  .review-card blockquote{font-size:15.5px; line-height:1.6; color:var(--ink-soft); flex-grow:1;}
+  .review-card .who{font-weight:700; font-size:14px; border-top:1px dashed var(--line); padding-top:12px;}
+  .review-card .who span{display:block; font-weight:400; font-size:13px; color:var(--grey);}
+  .review-card .go{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; color:var(--orange-dark);}
+  .review-ask{background:var(--ink); color:var(--paper); border-color:var(--ink); justify-content:space-between;}
+  .review-ask h3{font-size:22px;}
+  .review-ask p{color:rgba(246,243,236,.78); font-size:15px;}
+  .reviews-more{margin-top:28px;}
+
+  /* ---------- TRADES BAR ---------- */
+  .trades-bar{background:var(--ink); color:var(--paper); padding:44px 0;}
+  .trades-bar .wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:26px;}
+  .trades-bar .label{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(246,243,236,0.7);}
+  .trades-icons{display:flex; gap:34px; flex-wrap:wrap;}
+  .trades-icons span{display:flex; align-items:center; gap:9px; font-size:14px; font-weight:600;}
+  .trades-icons svg{width:20px; height:20px; stroke:var(--yellow);}
+
+  /* ---------- FAQ ---------- */
+  .faq{border-bottom:1px solid var(--line);}
+  .faq-list{display:flex; flex-direction:column;}
+  .faq-item{border-top:1.5px solid var(--ink);}
+  .faq-list .faq-item:last-child{border-bottom:1.5px solid var(--ink);}
+  .faq-item summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 12px; font-weight:700; font-size:17px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .qhead{display:flex; align-items:center; flex-grow:1;}
+  .faq-item summary .qnum{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; color:var(--orange-dark); margin-right:14px; flex-shrink:0;}
+  .faq-item summary .plus{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:22px; line-height:1; color:var(--orange-dark); flex-shrink:0;}
+  .faq-item .faq-a{padding:0 12px 24px 50px; color:var(--ink-muted); font-size:15px; max-width:720px;}
+
+  /* ---------- BOOKING ---------- */
+  .booking{background:var(--paper-dim); border-top:1px solid var(--line);}
+  .book-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:40px; align-items:start;}
+  .book-side h2{font-size:clamp(28px,3.4vw,40px); margin:14px 0 16px;}
+  .book-side > p{color:var(--ink-muted); font-size:16px; margin-bottom:26px;}
+  .call-list{list-style:none; display:flex; flex-direction:column; gap:0; border-top:1.5px solid var(--ink); margin-bottom:28px;}
+  .call-list li{display:grid; grid-template-columns:34px 1fr; gap:12px; padding:16px 0; border-bottom:1px dashed var(--line); font-size:15px;}
+  .call-list .n{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; color:var(--orange-dark); padding-top:2px;}
+  .call-list b{display:block;}
+  .call-list span{color:var(--ink-muted);}
+  .book-alt{background:var(--paper); border:1.5px dashed var(--line); border-radius:6px; padding:18px 20px; font-size:14.5px; color:var(--ink-soft); display:flex; flex-direction:column; gap:8px;}
+  .book-panel{background:var(--paper); border:1.5px solid var(--ink); border-radius:6px; overflow:hidden; box-shadow:8px 8px 0 var(--ink);}
+  .book-panel-head{background:var(--ink); color:var(--paper); padding:20px 26px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+  .book-panel-head .t{font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:18px;}
+  .book-panel-head .d{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; color:rgba(246,243,236,0.72);}
+  .book-body-single{padding:20px 20px 24px;}
+  .book-body-single #cal-inline{width:100%; height:650px; overflow-y:auto;}
+  .book-note{font-size:13px; color:var(--grey); margin-top:14px; line-height:1.5; text-align:center;}
+
+  @media (max-width:860px){
+    .hero{padding:44px 0 56px;}
+    .hero-grid, .offer-grid, .case-card, .book-grid{grid-template-columns:1fr;}
+    .offer-col + .offer-col{border-left:none; border-top:1.5px solid var(--ink);}
+    .hero-visual{padding-top:24px;}
+    .phone{width:230px;}
+    .mini-ticket{left:auto; right:50%; margin-right:20px; bottom:40px; width:268px;}
+    .case-media{border-right:none; border-bottom:1.5px solid var(--ink); padding:18px;}
+    .case-body{padding:24px 22px;}
+    .case-stats b{font-size:18px;}
+    .review-grid{grid-template-columns:1fr;}
+    .p-step{grid-template-columns:56px 1fr; gap:16px; padding:24px 0;}
+    .p-step::before{left:-12px;}
+    .p-step .step-num .big{font-size:24px;}
+    .faq-item .faq-a{padding-left:12px;}
+    .offer-grid{box-shadow:5px 5px 0 var(--ink);}
+  }
+  @media (max-width:420px){
+    .mini-ticket{right:auto; left:0; margin-right:0;}
+  }
+
+
+  /* BREATHE on the light hero: a warm amber glow behind the phone swells in time with the
+     MONITORED dot, about six breaths (~15s), then rests. Pauses off screen; still for reduced motion. */
+  .hero-visual{isolation:isolate;}
+  .breathe{position:absolute; left:50%; top:46%; width:540px; height:780px; margin:-390px 0 0 -270px; z-index:-1; pointer-events:none;
+    background:radial-gradient(closest-side, rgba(240,160,41,.38), rgba(240,160,41,.12) 55%, rgba(240,160,41,0));
+    opacity:.7; transform:scale(.97); animation:tw-breathe 2.4s ease-in-out 6 both; will-change:transform, opacity;}
+  @keyframes tw-breathe{0%,100%{opacity:.7; transform:scale(.97);}50%{opacity:1; transform:scale(1.07);}}
+  .results-card .pulse-dot{animation:tw-pulse 2.4s ease-in-out 6;}
+  .hero.is-offscreen .breathe, .hero.is-offscreen .pulse-dot{animation-play-state:paused;}
+  @media (max-width:860px){ .breathe{width:420px; height:620px; margin:-310px 0 0 -210px; top:50%;} }
+  .results-card:not(a){cursor:default;}
+  @media (hover:hover){ .results-card:not(a):hover{transform:none; box-shadow:8px 8px 0 rgba(232,93,44,.30);} }
+
+  /* ---------- CUSTOM SYSTEMS (premium) ---------- */
+  .custom-band{background:var(--ink); color:var(--paper);}
+  .custom-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:44px; align-items:center;}
+  .custom-grid h2{font-size:clamp(28px,3.4vw,40px); margin:14px 0 16px;}
+  .custom-grid > div > p{color:rgba(246,243,236,.82); font-size:16.5px; margin-bottom:26px; max-width:520px;}
+  .custom-card{background:var(--paper); color:var(--ink); border:1.5px solid var(--paper); border-radius:6px; padding:28px 26px; box-shadow:8px 8px 0 var(--orange); display:flex; flex-direction:column; gap:12px;}
+  .custom-card .tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
+  .custom-card h3{font-size:22px;}
+  .custom-card ul{list-style:none; border-top:1.5px solid var(--ink);}
+  .custom-card li{padding:11px 0; border-bottom:1px dashed var(--line); font-size:15px; color:var(--ink-soft);}
+  .custom-card .own{font-size:14px; color:var(--ink-muted);}
+  @media (max-width:860px){ .custom-grid{grid-template-columns:1fr; gap:32px;} }
+
+  /* ---------- 6 Nov: ownership pitch additions ---------- */
+  .own-badges{list-style:none; display:flex; flex-wrap:wrap; gap:10px;}
+  .own-badges li{display:flex; align-items:center; gap:9px; background:var(--ink); color:var(--paper); padding:11px 15px; border-radius:var(--radius); font-weight:700; font-size:15px;}
+  .own-badges svg{width:17px; height:17px; stroke:var(--yellow); flex-shrink:0;}
+  .o-card .text-bubble{margin-top:20px; background:var(--paper); color:var(--ink); border:1.5px solid var(--paper); border-radius:16px 16px 16px 4px; padding:12px 14px;}
+  .o-card .text-bubble .tb-label{display:block; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:11px; letter-spacing:.08em; color:var(--grey); margin-bottom:5px;}
+  .o-card .text-bubble p{font-size:14px; line-height:1.45;}
+
+  .work-tabs{display:flex; flex-wrap:wrap; gap:10px; margin:0 0 26px;}
+  .work-tab{font:inherit; font-weight:700; font-size:15px; min-height:44px; padding:10px 18px; border-radius:var(--radius); border:1.5px solid rgba(246,243,236,.45); background:transparent; color:var(--paper); cursor:pointer; display:inline-flex; align-items:center; gap:10px; transition:background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);}
+  .work-tab .count{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; opacity:.8;}
+  .work-tab[aria-selected="true"]{background:var(--paper); color:var(--ink); border-color:var(--paper);}
+  @media (hover:hover){ .work-tab[aria-selected="false"]:hover{border-color:var(--paper);} }
+  .work-tab:focus-visible{outline:3px solid var(--orange); outline-offset:3px;}
+  .work-panel[hidden]{display:none;}
+  .case-stats.four{grid-template-columns:repeat(2, minmax(0,1fr));}
+  .case-stats li.own-tile{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+  .case-stats li.own-tile b{color:var(--yellow);}
+  .case-stats li.own-tile span{color:rgba(246,243,236,.78);}
+  .gcc-system{margin-top:22px; border:1.5px dashed rgba(246,243,236,.4); border-radius:6px; padding:22px 24px;}
+  .gcc-system .tag{display:block; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; letter-spacing:.08em; color:var(--yellow); margin-bottom:10px;}
+  .gcc-system ul{list-style:none; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:4px 28px;}
+  .gcc-system li{padding:8px 0; border-bottom:1px dashed var(--line-dark); font-size:15px; color:rgba(246,243,236,.88);}
+  .blog-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:24px;}
+  .post-card{background:var(--paper); color:var(--ink); border:1.5px solid var(--paper); border-radius:6px; overflow:hidden; display:flex; flex-direction:column;}
+  .post-media{background:var(--steel); padding:20px; display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; min-height:150px; box-sizing:border-box;}
+  .post-media .pm-car{background:var(--paper); border-radius:4px; overflow:hidden; display:flex; flex-direction:column;}
+  .post-media .pm-car i{display:block; flex-grow:1; min-height:62px; background:var(--paper-dim);}
+  .post-media .pm-car b{display:block; padding:7px 8px; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:10px; font-weight:600; letter-spacing:.06em;}
+  .post-media .pm-car.dark{background:var(--ink);}
+  .post-media .pm-car.dark i{background:#2a3036;}
+  .post-media .pm-car.dark b{color:var(--yellow);}
+  .post-media.compare{grid-template-columns:1fr 1fr; gap:1px; padding:0; background:rgba(28,32,36,.2); font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:11px;}
+  .post-media.compare span{background:var(--ink); color:rgba(246,243,236,.75); padding:12px 14px;}
+  .post-media.compare span.o{background:var(--paper); color:var(--ink); font-weight:600;}
+  .post-body{padding:24px 26px 22px; display:flex; flex-direction:column; gap:12px; flex-grow:1;}
+  .post-body h3{font-size:22px; line-height:1.2;}
+  .post-body p{color:var(--ink-muted); font-size:15px;}
+  .post-status{margin-top:auto; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.06em; color:var(--grey);}
+
+  .two-jobs{padding:96px 0 40px;}
+  .jobs-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px;}
+  .job-card{background:#FFFFFF; border:1.5px solid var(--ink); border-radius:6px; padding:32px 30px; display:flex; flex-direction:column; gap:14px;}
+  .job-card.dark{background:var(--ink); color:var(--paper); border-color:var(--ink); box-shadow:8px 8px 0 var(--orange);}
+  .job-card .tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
+  .job-card.dark .tag, .job-card.dark .own b{color:var(--yellow);}
+  .job-card h3{font-size:26px;}
+  .job-card p{color:var(--ink-muted); font-size:16px;}
+  .job-card.dark p{color:rgba(246,243,236,.85);}
+  .job-card .own{font-size:15px; color:var(--ink);}
+  .job-card.dark .own{color:var(--paper);}
+  .job-card .tlink{margin-top:auto; align-self:flex-start; font-weight:700; padding:10px 0;}
+  .job-card.dark .tlink{color:var(--paper);}
+
+  .offer3{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px; align-items:stretch;}
+  .o-card{background:#FFFFFF; border:1.5px solid var(--ink); border-radius:6px; padding:30px 28px; display:flex; flex-direction:column;}
+  .o-card.dark{background:var(--ink); color:var(--paper); box-shadow:8px 8px 0 var(--orange);}
+  .o-card.cancel{background:var(--paper); border-style:dashed;}
+  .o-card .tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark); margin-bottom:8px;}
+  .o-card.dark .tag{color:var(--yellow);}
+  .o-card .amt{font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:42px; line-height:1; margin-bottom:6px;}
+  .o-card .amt small{font-family:'Inter','Inter Fallback',sans-serif; font-size:16px; font-weight:700;}
+  .o-card .note{font-size:14px; color:var(--ink-muted); margin-bottom:16px;}
+  .o-card.dark .note{color:rgba(246,243,236,.78);}
+  .o-card h3{font-size:24px; line-height:1.15; margin:4px 0 16px;}
+  .o-card ul, .o-card ol{padding-left:20px; font-size:15px; line-height:1.65; color:var(--ink-soft);}
+  .o-card.dark ul{color:rgba(246,243,236,.9);}
+  .o-card li{margin-bottom:6px;}
+  .o-card .fine{margin-top:16px; font-size:13px; color:rgba(246,243,236,.72);}
+  .o-card .btn{margin-top:auto; align-self:flex-start;}
+  .o-card .o-foot{margin-top:22px; padding-top:20px; border-top:1px dashed var(--line);}
+
+  #process .process-list{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:20px;}
+  #process .p-step{grid-template-columns:1fr; gap:12px; padding:24px 22px; border:1.5px solid var(--ink); border-radius:6px; background:var(--paper);}
+  #process .process-list .p-step:last-child{border-bottom:1.5px solid var(--ink); background:var(--ink); color:var(--paper);}
+  #process .p-step:last-child .step-num{color:var(--yellow);}
+  #process .p-step:last-child .step-num .big, #process .p-step:last-child h3{color:var(--paper);}
+  #process .p-step:last-child p{color:rgba(246,243,236,.85);}
+  #process .p-step:last-child .meta, #process .p-step:last-child .meta svg{color:rgba(246,243,236,.72); stroke:rgba(246,243,236,.72);}
+  #process .p-step .step-num .big{font-size:28px;}
+  #process .p-step-body h3{font-size:18px;}
+  #process .p-step-body p{font-size:14.5px;}
+
+  .book-side h2{font-size:clamp(26px,2.7vw,34px); line-height:1.12;}
+  .book-side h2 em{font-style:normal; color:var(--orange-dark);}
+  .spec{padding:96px 0;}
+  .spec-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:44px; align-items:start;}
+  .spec-grid h2{font-size:clamp(28px,3.4vw,40px); margin:14px 0 16px;}
+  .spec-grid > div > p{color:var(--ink-muted); font-size:16.5px; margin-bottom:24px;}
+  .spec-tiles{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .spec-tile{background:#FFFFFF; border:1.5px solid var(--ink); border-radius:6px; padding:18px 20px;}
+  .spec-tile span{display:block; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; letter-spacing:.08em; color:var(--orange-dark); margin-bottom:6px;}
+  .spec-tile b{font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-weight:400; font-size:22px; line-height:1.15;}
+  .handover{grid-column:1 / -1; background:var(--ink); color:var(--paper); border-radius:6px; padding:22px 24px;}
+  .handover .tag{display:block; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; letter-spacing:.08em; color:var(--yellow); margin-bottom:10px;}
+  .handover ul{padding-left:20px; columns:2 220px; column-gap:28px; font-size:15px; line-height:1.75;}
+
+  @media (max-width:1020px){
+    #process .process-list{grid-template-columns:repeat(2, minmax(0,1fr));}
+    .offer3{grid-template-columns:1fr 1fr;}
+    .o-card.cancel{grid-column:1 / -1;}
+  }
+  @media (max-width:860px){
+    .blog-grid, .jobs-grid, .offer3, .spec-grid, .spec-tiles{grid-template-columns:1fr;}
+    .gcc-system ul{grid-template-columns:1fr;}
+    .two-jobs{padding:72px 0 24px;}
+    .spec{padding:72px 0;}
+  }
+  @media (max-width:560px){ #process .process-list{grid-template-columns:1fr;} }
+
+  /* ---------- 6 Nov, second pass ---------- */
+  .hero .eyebrow{margin-bottom:22px;}
+  .proof-strip{background:var(--paper); color:var(--ink); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:14px 0;}
+  .proof-strip span, .proof-strip a{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:13px; font-weight:500; letter-spacing:0.02em; color:var(--ink-soft); text-align:center;}
+  .proof-strip a{color:var(--ink); font-weight:600; text-decoration:underline; text-underline-offset:3px; padding:10px 0; min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;}
+  @media (hover:hover){ .proof-strip a:hover{color:var(--orange-dark);} }
+  .work-teaser{padding-top:64px;}
+  .work-teaser a.case-card{color:var(--ink);}
+  .work-teaser .case-stats.four{grid-template-columns:repeat(2, minmax(0,1fr));}
+
+  .review-grid.two{grid-template-columns:repeat(2, minmax(0,1fr)); align-items:stretch; max-width:860px;}
+  .review-grid.two .review-card blockquote{flex-grow:1;}
+  .reviews-more{display:flex; flex-wrap:wrap; gap:8px 28px; align-items:center;}
+
+  .o-card ul.ticks{list-style:none; padding-left:0;}
+  .o-card ul.ticks li{display:flex; gap:10px; align-items:flex-start; padding:9px 0; margin:0; border-bottom:1px dashed var(--line); line-height:1.5;}
+  .o-card.dark ul.ticks li{border-bottom-color:rgba(246,243,236,.16);}
+  .o-card ul.ticks li:last-child{border-bottom:none;}
+  .o-card ul.ticks svg{width:16px; height:16px; flex-shrink:0; margin-top:3px; stroke:var(--orange);}
+  .o-card.dark ul.ticks svg{stroke:var(--yellow);}
+  .o-card ol{padding-left:22px;}
+  .o-card ol li{padding:4px 0; line-height:1.55;}
+  .o-card .note{margin-bottom:10px;}
+  .o-card .o-foot{border-top:none; padding-top:22px; margin-top:auto;}
+
+  #process .p-step{display:flex; flex-direction:column; gap:10px;}
+  #process .p-step-body{display:flex; flex-direction:column; flex-grow:1;}
+  #process .p-step-body h3{min-height:2.6em; display:flex; align-items:flex-end; margin-bottom:8px;}
+  #process .p-step-body p{flex-grow:1;}
+  #process .p-step-body .meta{margin-top:12px; padding-top:12px; border-top:1px dashed var(--line); flex-direction:column; gap:6px;}
+  #process .process-list .p-step:last-child{background:var(--paper); color:var(--ink); border-color:var(--orange); box-shadow:0 0 0 4px rgba(232,93,44,.12);}
+  #process .p-step:last-child .step-num{color:var(--orange-dark);}
+  #process .p-step:last-child .step-num .big, #process .p-step:last-child h3{color:var(--ink);}
+  #process .p-step:last-child p{color:var(--ink-muted);}
+  #process .p-step:last-child .meta, #process .p-step:last-child .meta svg{color:var(--grey); stroke:var(--grey);}
+
+  .spec-panel{background:var(--ink); color:var(--paper); border-radius:6px; padding:26px 28px; box-shadow:8px 8px 0 rgba(232,93,44,.25);}
+  .spec-panel::before{content:""; display:block; height:5px; background:var(--yellow); margin:-26px -28px 22px; border-radius:6px 6px 0 0;}
+  .spec-rows{display:grid; grid-template-columns:1fr 1fr; gap:0 32px; margin:0 0 20px;}
+  .spec-rows div{display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px dashed rgba(246,243,236,.18);}
+  .spec-rows dt{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; letter-spacing:.08em; color:rgba(246,243,236,.72);}
+  .spec-rows dd{font-weight:700; font-size:15px; margin:0; text-align:right; white-space:nowrap;}
+  .spec-rows div{align-items:baseline;}
+  .spec-panel .tag{display:block; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; letter-spacing:.08em; color:var(--yellow); margin-bottom:8px;}
+  .spec-panel ul{padding-left:20px; columns:2 220px; column-gap:28px; font-size:15px; line-height:1.75; color:rgba(246,243,236,.9);}
+  @media (max-width:860px){
+    .review-grid.two{grid-template-columns:1fr;}
+    .spec-rows{grid-template-columns:1fr;}
+  }
+  .phone-link{display:block; color:inherit; text-decoration:none; border-radius:38px;}
+  .phone-link:focus-visible{outline:3px solid var(--orange); outline-offset:6px;}
+  @media (hover:hover){ .phone-link .phone{transition:transform var(--dur) var(--ease);} .phone-link:hover .phone{transform:translateY(-4px);} }
+  .phone-cap a{display:inline-flex; align-items:center; min-height:44px; color:var(--orange-dark); font-weight:600; text-decoration:none;}
+  .phone-cap a:hover{text-decoration:underline;}
+  @media (min-width:761px) and (max-width:1100px){ .jobs-grid{grid-template-columns:1fr 1fr;} .jobs-grid .job-card.dark{grid-column:1 / -1;} }
+  /* 13 Nov: process cards, no side bar, soft glow on hover, final step in steel blue */
+  #process .p-step::before{display:none;}
+  #process .p-step:hover h3{transform:none;}
+  #process .p-step:hover .big{color:inherit;}
+  #process .p-step{transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);}
+  @media (hover:hover){ #process .p-step:hover{border-color:var(--orange); box-shadow:0 0 0 4px rgba(232,93,44,.14), 0 10px 24px -14px rgba(232,93,44,.45);} }
+  #process .process-list .p-step:last-child{border-color:var(--steel); box-shadow:0 0 0 4px rgba(44,74,94,.10);}
+  #process .p-step:last-child .step-num{color:var(--steel);}
+  @media (hover:hover){ #process .process-list .p-step:last-child:hover{border-color:var(--steel); box-shadow:0 0 0 4px rgba(44,74,94,.18), 0 10px 24px -14px rgba(44,74,94,.5);} }
+  .book-alt a.tlink{display:inline-flex; align-items:center; min-height:44px;}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,7 +463,9 @@
     "longitude": -2.0943
   },
   "email": "mosa@tradeworksdigital.co.uk",
-  "sameAs": ["https://g.page/r/digital-tradeworks/review"],
+  "sameAs": [
+    "https://g.page/r/CUqKTYzic4E9EBI/review"
+  ],
   "makesOffer": {
     "@type": "Offer",
     "name": "Lead-generating website build for trades businesses",
@@ -59,903 +474,494 @@
   }
 }
 </script>
-<style>
-  :root{
-    --ink:#1C2024;
-    --paper:#F6F3EC;
-    --paper-dim:#EDE8DC;
-    --orange:#E85D2C;
-    --orange-dark:#B0431D;
-    --steel:#2C4A5E;
-    --yellow:#F0B429;
-    --grey:#686460;
-    --line: rgba(28,32,36,0.14);
-    --radius: 3px;
-  }
-  /* Self-hosted fonts — served from this domain instead of Google's
-     servers, and preloaded above, so the browser doesn't need an extra
-     DNS lookup + connection before it can start downloading them. This
-     shrinks the fallback-to-real-font swap window to nearly nothing. */
-  @font-face{
-    font-family:'Inter';
-    font-style:normal;
-    font-weight:400;
-    font-display:swap;
-    /* Inlined as base64 (subset to the ~70 glyphs this site actually uses,
-       27KB raw / ~36KB base64) so the primary body-text weight is available
-       the instant CSS parses -- no network round trip, no visible swap on
-       first load. Falls back to the network file if the data URI ever
-       fails to decode. */
-    src:url(data:font/woff2;base64,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) format('woff2'),
-        url('fonts/inter-400.woff2') format('woff2');
-  }
-  @font-face{
-    font-family:'Inter';
-    font-style:normal;
-    font-weight:700;
-    font-display:swap;
-    src:url('fonts/inter-700.woff2') format('woff2');
-  }
-  @font-face{
-    font-family:'Archivo Black';
-    font-style:normal;
-    font-weight:400;
-    font-display:swap;
-    src:url('fonts/archivo-black-400.woff2') format('woff2');
-  }
-  @font-face{
-    font-family:'IBM Plex Mono';
-    font-style:normal;
-    font-weight:400;
-    font-display:swap;
-    src:url('fonts/ibm-plex-mono-400.woff2') format('woff2');
-  }
-  @font-face{
-    font-family:'IBM Plex Mono';
-    font-style:normal;
-    font-weight:600;
-    font-display:swap;
-    src:url('fonts/ibm-plex-mono-600.woff2') format('woff2');
-  }
-
-  /* Metric-matched fallback fonts — sized and positioned to match the real
-     webfonts almost exactly, so when the webfont finishes loading and swaps
-     in, nothing on the page moves. Values computed from each font's real
-     ascent/descent/unitsPerEm (via @capsizecss/metrics), not guessed. */
-  @font-face{
-    font-family:'Inter Fallback';
-    src:local('Arial');
-    ascent-override:89.43%;
-    descent-override:22.29%;
-    line-gap-override:0%;
-    size-adjust:108.33%;
-  }
-  @font-face{
-    font-family:'Archivo Black Fallback';
-    src:local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'), local('Arimo Bold'), local('Arial');
-    ascent-override:90.16%;
-    descent-override:21.57%;
-    line-gap-override:0%;
-    size-adjust:114.71%;
-  }
-  @font-face{
-    font-family:'IBM Plex Mono Fallback';
-    src:local('Courier New'), local('Liberation Mono'), local('Consolas');
-    ascent-override:89.31%;
-    descent-override:23.96%;
-    line-gap-override:0%;
-    size-adjust:100%;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  html{background:var(--ink);}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter', 'Inter Fallback', sans-serif;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-  }
-  img{max-width:100%; display:block;}
-  a{color:inherit;}
-  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
-  h1,h2,h3{font-family:'Archivo Black', 'Archivo Black Fallback', sans-serif; font-weight:400; letter-spacing:-0.01em; line-height:1.05;}
-  .mono{font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace;}
-  .eyebrow{
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace;
-    font-size:12px;
-    font-weight:600;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--orange-dark);
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .eyebrow::before{
-    content:"";
-    width:18px; height:2px;
-    background:var(--orange);
-    display:inline-block;
-  }
-
-  /* hazard stripe divider */
-  .hazard{
-    height:10px;
-    background:repeating-linear-gradient(135deg, var(--yellow) 0 18px, var(--ink) 18px 36px);
-  }
-
-  /* ---------- NAV ---------- */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:var(--paper); backdrop-filter:none; -webkit-backdrop-filter:none;
-    border-bottom:1px solid var(--line);
-  }
-  nav.wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    height:72px;
-  }
-  .logo{
-    display:flex; align-items:center;
-    text-decoration:none;
-  }
-  .logo svg{height:38px; width:auto; display:block;}
-  .flogo svg{height:34px; width:auto; display:block;}
-  .navlinks{display:flex; align-items:center; gap:32px;}
-  .navlinks a{
-    text-decoration:none; font-size:14px; font-weight:600;
-    color:var(--ink); opacity:0.75;
-  }
-  .navlinks a:hover{opacity:1;}
-
-  /* mobile nav toggle */
-  .nav-toggle{display:none;}
-  .hamburger{
-    display:none; flex-direction:column; gap:4px;
-    width:40px; height:40px; align-items:center; justify-content:center;
-    border:1.5px solid var(--ink); border-radius:2px; background:var(--paper);
-    cursor:pointer; flex-shrink:0;
-  }
-  .hamburger span{width:18px; height:2px; background:var(--ink); display:block;}
-  .navlinks .nav-cta{display:none;}
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'Inter', 'Inter Fallback', sans-serif; font-weight:700; font-size:14px;
-    padding:12px 22px;
-    border-radius:var(--radius);
-    text-decoration:none;
-    border:2px solid var(--ink);
-    transition:transform 0.15s ease, background 0.15s ease, color 0.15s ease;
-  }
-  .btn-primary{background:var(--orange); color:var(--ink); border-color:var(--orange);}
-  .btn-primary:hover{transform:translateY(-1px);}
-  .btn-ghost{background:transparent; color:var(--ink);}
-  .btn-ghost:hover{background:var(--ink); color:var(--paper);}
-  .btn-sm{padding:9px 16px; font-size:13px;}
-
-  /* ---------- HERO ---------- */
-  .hero{
-    padding:76px 0 64px;
-    position:relative;
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.15fr 0.85fr;
-    gap:56px;
-    align-items:center;
-  }
-  .ticket-stamp{
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace;
-    font-size:12px; font-weight:600;
-    color:var(--steel);
-    padding:5px 10px;
-    display:inline-flex;
-    align-items:center;
-    letter-spacing:0.06em;
-    margin-bottom:18px;
-  }
-  .ticket-stamp .stamp-dot{
-    display:inline-block;
-    width:6px; height:6px;
-    border-radius:50%;
-    background:var(--orange);
-    margin-right:7px;
-    flex-shrink:0;
-  }
-  .hero h1{
-    font-size:clamp(38px, 5vw, 60px);
-    margin-bottom:22px;
-  }
-  .hero h1 em{
-    font-style:normal;
-    color:var(--orange);
-    position:relative;
-  }
-  .hero p.lede{
-    text-wrap:pretty; max-width:52ch;
-    font-size:18px; line-height:1.55;
-    color:#3c4247;
-    margin-bottom:14px;
-  }
-  .hero p.lede-sub{font-size:16px; color:#5a6167; margin-bottom:32px;}
-  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:34px;}
-  .hero-ctas .btn{flex:1 1 0; min-width:230px; min-height:56px; padding:0 22px; font-size:15.5px; justify-content:center; text-align:center;}
-  .trust-row{
-    display:flex; gap:26px; flex-wrap:wrap;
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace;
-    font-size:12px; color:var(--grey); letter-spacing:0.03em;
-  }
-  .trust-row span{display:flex; align-items:center; gap:7px;}
-  .trust-row svg{width:15px; height:15px; stroke:var(--grey); flex-shrink:0;}
-
-  /* job ticket card visual in hero */
-  .job-card{
-    background:var(--ink);
-    color:var(--paper);
-    border-radius:6px;
-    padding:28px 26px 24px;
-    position:relative;
-    box-shadow:10px 10px 0 rgba(232,93,44,0.25);
-  }
-  .job-card::before{
-    content:"";
-    position:absolute; top:0; left:0; right:0; height:6px;
-    background:repeating-linear-gradient(135deg, var(--yellow) 0 12px, var(--ink) 12px 24px);
-    border-radius:6px 6px 0 0;
-  }
-  .job-card-head{
-    display:flex; justify-content:space-between; align-items:flex-start;
-    padding-top:14px;
-    border-bottom:1px dashed rgba(246,243,236,0.25);
-    padding-bottom:14px;
-    margin-bottom:16px;
-  }
-  .job-card-head .num{font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:11px; opacity:0.6;}
-  .job-card-head .status{
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:11px; font-weight:600;
-    color:var(--yellow); border:1px solid var(--yellow); border-radius:2px; padding:3px 8px;
-  }
-  .job-line{
-    display:flex; justify-content:space-between; gap:12px;
-    padding:9px 0;
-    border-bottom:1px solid rgba(246,243,236,0.1);
-    font-size:14px;
-  }
-  .job-line .label{color:rgba(246,243,236,0.55); font-size:12px; font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace;}
-  .job-line .val{font-weight:600; text-align:right;}
-  .job-total{
-    display:flex; justify-content:space-between; align-items:baseline;
-    margin-top:16px; padding-top:14px;
-    border-top:1.5px solid rgba(246,243,236,0.25);
-  }
-  .job-total .label{font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:12px; color:rgba(246,243,236,0.6);}
-  .job-total .val{font-family:'Archivo Black', 'Archivo Black Fallback', sans-serif; font-size:26px; color:var(--orange);}
-
-  /* ---------- SECTION HEADS ---------- */
-  section{padding:88px 0;}
-  .section-head{max-width:640px; margin-bottom:52px;}
-  .section-head h2{font-size:clamp(28px,3.4vw,40px); margin:14px 0 16px;}
-  .section-head p{color:#4a5054; font-size:16px;}
-
-  /* ---------- OFFER ---------- */
-  .offer{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .offer-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:0;
-    border:1.5px solid var(--ink);
-    border-radius:6px;
-    overflow:hidden;
-    background:var(--paper);
-  }
-  .offer-col{padding:38px 36px;}
-  .offer-col + .offer-col{border-left:1.5px solid var(--ink); background:var(--ink); color:var(--paper);}
-  .offer-col h3{font-size:13px; font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; letter-spacing:0.08em; text-transform:uppercase; color:var(--orange-dark); margin-bottom:20px;}
-  .offer-col.dark h3{color:var(--yellow);}
-  .offer-list{list-style:none;}
-  .offer-list li{
-    display:flex; gap:12px; align-items:flex-start;
-    padding:11px 0;
-    border-bottom:1px dashed var(--line);
-    font-size:15px;
-  }
-  .offer-col.dark .offer-list li{border-bottom:1px dashed rgba(246,243,236,0.18);}
-  .offer-list li:last-child{border-bottom:none;}
-  .offer-list svg{width:16px; height:16px; flex-shrink:0; margin-top:3px; stroke:var(--orange);}
-  .offer-col.dark .offer-list svg{stroke:var(--yellow);}
-  .price-tag{
-    margin-top:26px; padding-top:22px; border-top:1.5px solid rgba(246,243,236,0.2);
-    display:flex; align-items:center; justify-content:space-between; gap:18px;
-  }
-  .price-tag .pt-copy{min-width:0;}
-  .price-tag .btn{flex-shrink:0;}
-  .price-tag .amt{font-family:'Archivo Black', 'Archivo Black Fallback', sans-serif; font-size:34px; color:var(--paper);}
-  .price-tag .sub{font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:12px; color:rgba(246,243,236,0.55); margin-top:4px;}
-
-  /* ---------- VALUE ---------- */
-  .value{background:var(--paper); border-top:1px solid var(--line); padding:76px 0;}
-  .value-grid{display:grid; grid-template-columns:repeat(3,1fr); border-top:1.5px solid var(--ink); margin-top:44px;}
-  .value-cell{padding:30px 26px; border-bottom:1.5px solid var(--ink); border-left:1px dashed var(--line);}
-  .value-cell:first-child{border-left:none; padding-left:0;}
-  .value-cell:last-child{padding-right:0;}
-  .value-cell .stat{font-family:'Archivo Black', 'Archivo Black Fallback', sans-serif; font-size:56px; line-height:1; color:var(--orange); margin-bottom:16px;}
-  .value-cell h3{font-size:18px; line-height:1.2; margin:0 0 10px;}
-  .value-cell p{font-size:15px; line-height:1.55; color:#4a5054; margin:0 0 14px; text-wrap:pretty;}
-  .value-cell .src{font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:#8a9096;}
-  .value-foot{
-    display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:34px;
-    background:var(--ink); color:var(--paper); padding:22px 26px;
-  }
-  .value-foot p{margin:0; flex:1 1 320px; font-size:15.5px; line-height:1.5; text-wrap:pretty;}
-
-  /* ---------- PROCESS ---------- */
-  .process-list{
-    display:flex; flex-direction:column;
-  }
-  .p-step{
-    display:grid;
-    grid-template-columns:90px 1fr;
-    gap:28px;
-    padding:30px 0;
-    border-top:1.5px solid var(--ink);
-  }
-  .process-list .p-step:last-child{border-bottom:1.5px solid var(--ink);}
-  .p-step .step-num{
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace;
-    font-size:13px; font-weight:600; color:var(--orange-dark);
-    align-self:start;
-  }
-  .p-step .step-num .big{
-    display:block; font-family:'Archivo Black', 'Archivo Black Fallback', sans-serif; font-size:34px; color:var(--ink); margin-top:2px;
-  }
-  .p-step-body h3{font-size:20px; margin-bottom:8px; font-family:'Inter', 'Inter Fallback', sans-serif; font-weight:700;}
-  .p-step-body p{color:#4a5054; font-size:15px; max-width:560px; margin-bottom:10px;}
-  .p-step-body .meta{
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:12px; color:var(--grey);
-    display:flex; gap:16px; flex-wrap:wrap;
-  }
-  .p-step-body .meta span{display:flex; align-items:center; gap:6px;}
-  .p-step-body .meta svg{width:13px; height:13px; stroke:var(--grey);}
-
-  .p-toggle{position:absolute; opacity:0; pointer-events:none;}
-  .p-head{display:contents;}
-  .p-head .pm{display:none;}
-  .p-collapse{display:block;}
-
-  /* ---------- TRADES BAR ---------- */
-  .trades-bar{
-    background:var(--ink); color:var(--paper);
-    padding:26px 0;
-  }
-  .trades-bar .wrap{
-    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:26px;
-  }
-  .trades-bar .label{
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(246,243,236,0.55);
-  }
-  .trades-icons{display:flex; gap:14px 28px; flex-wrap:wrap;}
-  .trades-icons span{display:flex; align-items:center; gap:9px; font-size:14px; font-weight:600;}
-  .trades-icons svg{width:20px; height:20px; stroke:var(--yellow);}
-
-  /* ---------- BOOKING ---------- */
-  .booking{background:var(--paper-dim); border-top:1px solid var(--line);}
-  .book-panel{
-    background:var(--paper);
-    border:1.5px solid var(--ink);
-    border-radius:6px;
-    overflow:hidden;
-  }
-  .book-panel-head{
-    background:var(--ink); color:var(--paper);
-    padding:22px 30px;
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
-  }
-  .book-panel-head .t{font-family:'Archivo Black', 'Archivo Black Fallback', sans-serif; font-size:18px;}
-  .book-panel-head .d{font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:12px; color:rgba(246,243,236,0.6);}
-  .book-body{padding:32px 30px 34px; display:grid; grid-template-columns:1.1fr 1fr; gap:38px;}
-  .book-body-single{padding:24px 24px 30px;}
-  .book-body-single #cal-inline{width:100%; height:650px; overflow-y:auto;}
-  .book-body-single .book-note{margin-top:18px; text-align:center;}
-
-  .field-block .flabel{
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--grey); margin-bottom:12px; display:block;
-  }
-  .day-row{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px;}
-  .day-pill{
-    border:1.5px solid var(--ink); border-radius:2px;
-    padding:9px 4px; text-align:center; width:58px;
-    cursor:pointer; background:var(--paper);
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace;
-  }
-  .day-pill .dow{font-size:10px; color:var(--grey); display:block;}
-  .day-pill .dnum{font-size:15px; font-weight:600; display:block; margin-top:2px;}
-  .day-pill.active{background:var(--orange); border-color:var(--orange); color:var(--paper);}
-  .day-pill.active .dow{color:rgba(246,243,236,0.75);}
-  .slot-row{display:flex; gap:8px; flex-wrap:wrap;}
-  .slot{
-    border:1.5px solid var(--line); border-radius:2px;
-    padding:9px 14px; font-size:13px; font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace;
-    cursor:pointer; background:var(--paper); color:var(--ink);
-  }
-  .slot.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
-  .slot:hover:not(.active){border-color:var(--ink);}
-
-  form .frow{margin-bottom:14px;}
-  form label{
-    display:block; font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:11px; font-weight:600;
-    letter-spacing:0.06em; text-transform:uppercase; color:var(--grey); margin-bottom:6px;
-  }
-  form input, form select, form textarea{
-    width:100%; padding:11px 12px;
-    border:1.5px solid var(--line); border-radius:2px;
-    font-family:'Inter', 'Inter Fallback', sans-serif; font-size:14px; background:var(--paper); color:var(--ink);
-  }
-  form input:focus, form select:focus, form textarea:focus{
-    outline:2px solid var(--orange); outline-offset:1px; border-color:var(--orange);
-  }
-  form textarea{resize:vertical; min-height:64px;}
-  .book-summary{
-    margin-top:6px; margin-bottom:16px;
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:12.5px;
-    background:var(--paper-dim); border:1px dashed var(--line); border-radius:3px;
-    padding:10px 12px; color:var(--steel);
-  }
-  .book-note{
-    font-size:12.5px; color:var(--grey); margin-top:14px; line-height:1.5;
-  }
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    background:var(--ink); color:rgba(246,243,236,0.7);
-    padding:46px 0 30px; margin-bottom:0;
-  }
-  footer .fwrap{
-    display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:24px;
-    padding-bottom:26px; border-bottom:1px solid rgba(246,243,236,0.14);
-  }
-  footer .flogo{font-family:'Archivo Black', 'Archivo Black Fallback', sans-serif; color:var(--paper); font-size:17px;}
-  footer .flinks{display:flex; gap:26px; flex-wrap:wrap; font-size:13px;}
-  footer .flinks a{text-decoration:none; color:rgba(246,243,236,0.7);}
-  footer .flinks a:hover{color:var(--yellow);}
-  footer .fbottom{
-    padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:11.5px; color:rgba(246,243,236,0.4);
-  }
-
-  /* ---------- FAQ ---------- */
-  .faq{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .faq-list{display:flex; flex-direction:column;}
-  .faq-more{display:none;}
-  .faq-reveal{display:none;}
-  .faq-item{border-top:1.5px solid var(--ink);}
-  .faq-list .faq-item:last-child{border-bottom:1.5px solid var(--ink);}
-  .faq-item summary{
-    list-style:none; cursor:pointer;
-    display:flex; justify-content:space-between; align-items:center; gap:20px;
-    padding:22px 2px; font-weight:700; font-size:17px;
-  }
-  .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-item summary .qhead{display:flex; align-items:center; flex-grow:1;}
-  .faq-item summary .qnum{
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:12px; color:var(--orange-dark);
-    margin-right:14px; flex-shrink:0;
-  }
-  .faq-item summary .qtext{flex-grow:1;}
-  .faq-item summary .plus{
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:22px; line-height:1; color:var(--orange);
-    flex-shrink:0; transition:transform 0.2s ease;
-  }
-  .faq-item[open] summary .plus{transform:rotate(45deg);}
-  .faq-item .faq-a{padding:0 2px 24px; color:#4a5054; font-size:15px; max-width:680px; padding-left:40px;}
-
-  @media (max-width:860px){
-    html,body{height:100%; overflow:hidden;}
-    .scroller{
-      height:100%; overflow-y:auto; overflow-x:hidden;
-      -webkit-overflow-scrolling:touch; scroll-behavior:smooth;
-      overscroll-behavior-y:none;
-    }
-    .hero-grid{grid-template-columns:1fr;}
-    .hero p.lede{font-size:16.5px; line-height:1.6; max-width:none; margin-bottom:12px; hyphens:none;}
-    .hero p.lede-sub{font-size:15px; margin-bottom:26px;}
-    .offer-grid{grid-template-columns:1fr;}
-    .offer-col + .offer-col{border-left:none; border-top:1.5px solid var(--ink);}
-    .book-body{grid-template-columns:1fr;}
-    .p-step{grid-template-columns:56px 1fr; gap:16px;}
-    .p-step .step-num .big{font-size:24px;}
-    .faq-item .faq-a{padding-left:2px;}
-
-    nav.wrap{position:relative;}
-    .hamburger{display:flex;}
-    .desktop-cta{display:none;}
-    .navlinks{
-      display:flex; flex-direction:column; align-items:stretch; gap:16px;
-      position:absolute; top:72px; left:0; right:0;
-      background:var(--paper); border-bottom:1px solid var(--line);
-      padding:20px 28px 26px;
-      opacity:0; transform:translateY(-8px); pointer-events:none;
-      transition:opacity 0.18s ease, transform 0.18s ease;
-    }
-    .nav-toggle:checked ~ .navlinks{opacity:1; transform:translateY(0); pointer-events:auto;}
-    .navlinks .nav-cta{display:inline-flex; justify-content:center; margin-top:4px;}
-  }
-
-  /* ---------- MOBILE STICKY CTA ---------- */
-  .cta-bar{display:none;}
-
-  @media (max-width:860px){
-
-    .cta-bar{
-      display:block; position:fixed; left:0; right:0; bottom:0; z-index:60;
-      background:var(--ink);
-      padding-bottom:env(safe-area-inset-bottom);
-      transform:translate3d(0,0,0);
-      transition:transform 0.22s ease;
-    }
-    .cta-bar.is-hidden{transform:translate3d(0,110%,0);}
-    .cta-bar-inner{
-      display:flex; align-items:center; gap:12px;
-      padding:12px 16px;
-      background:var(--ink); border-top:1.5px solid var(--orange);
-    }
-    .cta-bar .amt{font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:20px; color:var(--orange); line-height:1;}
-    .cta-bar .sub{font-size:9.5px; letter-spacing:0.05em; color:rgba(246,243,236,0.6); margin-top:3px; white-space:nowrap;}
-    .cta-bar .btn{flex:1; justify-content:center; text-align:center;}
-    .p-step{grid-template-columns:56px 1fr; gap:14px; padding:16px 0;}
-    .p-step .step-num .big{font-size:24px;}
-    .p-head{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      cursor:pointer; min-height:44px;
-    }
-    .p-head h3{font-size:16.5px; margin:0;}
-    .p-head .pm{
-      display:block; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace;
-      font-size:22px; line-height:1; color:var(--orange); transition:transform 0.2s ease;
-    }
-    .p-collapse{display:none; padding-top:8px;}
-    .p-toggle:checked + .p-step .p-collapse{display:block;}
-    .p-toggle:checked + .p-step .pm{transform:rotate(45deg);}
-    .p-step-body p{font-size:14.5px;}
-
-
-    /* FAQ: show 4, reveal the rest (mockup parity) */
-    .faq-list .faq-item:nth-of-type(n+5){display:none;}
-    .faq-more:checked ~ .faq-list .faq-item:nth-of-type(n+5){display:block;}
-    .faq-reveal{
-      display:flex; align-items:center; min-height:44px; cursor:pointer;
-      font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace;
-      font-size:12px; color:var(--orange-dark); margin-top:12px;
-    }
-    .faq-more:checked ~ .faq-reveal{display:none;}
-
-    .trust-row{display:grid; grid-template-columns:1fr 1fr; gap:14px 16px; align-items:stretch;}
-    .trust-row span{align-items:flex-start; gap:8px; font-size:12.5px; line-height:1.35;}
-    .trust-row svg{width:14px; height:14px; margin-top:1px;}
-    .value{padding:44px 0;}
-    .value-grid{grid-template-columns:1fr; margin-top:28px;}
-    .value-cell{padding:22px 0; border-left:none;}
-    .value-cell:last-child{padding-right:0;}
-    .value-cell .stat{font-size:42px; margin-bottom:10px;}
-    .value-cell h3{font-size:16.5px;}
-    .value-cell p{font-size:14.5px;}
-    .value-foot{padding:18px; margin-top:24px;}
-    .value-foot p{font-size:14.5px;}
-    .value-foot .btn{width:100%; justify-content:center; text-align:center;}
-    .booking{padding-bottom:28px;}
-    .trades-bar{padding:22px 0;}
-    .trades-bar .wrap{gap:14px;}
-    .trades-icons{gap:12px 22px;}
-    .trades-icons span{font-size:13.5px;}
-    footer{padding:34px 0 96px;}
-    footer .fbottom{padding-top:16px;}
-
-    /* merged offer card + pinned price rail */
-    .offer-col{padding:22px 18px;}
-    .offer-col + .offer-col{
-      background:var(--paper); color:var(--ink);
-      border-top:1px dashed var(--line);
-      display:flex; flex-direction:column;
-    }
-    .offer-col.dark h3{color:var(--orange-dark);}
-    .offer-col.dark .offer-list li{border-bottom:1px dashed var(--line);}
-    .offer-col.dark .offer-list svg{stroke:var(--orange);}
-    .price-tag{
-      position:sticky; bottom:0; z-index:2;
-      margin:18px -18px -22px; padding:12px 16px;
-      background:var(--ink); border-top:1.5px solid var(--orange);
-      display:flex; align-items:center; gap:12px;
-    }
-    .price-tag .amt{font-size:22px; color:var(--orange);}
-    .price-tag .sub{font-size:9.5px; margin-top:3px; white-space:nowrap;}
-    .price-tag .btn{display:none;}
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{transition:none !important;}
-  }
-</style>
+<script src="site.js" defer></script>
 </head>
 <body>
-
-<div class="scroller">
-
-<header>
-  <nav class="wrap">
-    <a href="#top" class="logo" aria-label="Tradeworks Digital — home">
-      <svg viewBox="0 0 160 62" xmlns="http://www.w3.org/2000/svg">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap sh-nav" aria-label="Main">
+    <a href="index.html" class="sh-logo" aria-label="Tradeworks Digital, home">
+      <svg viewBox="0 0 160 62" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tradeworks Digital">
         <rect x="0" y="8" width="8" height="36" fill="#E85D2C"/>
-        <text x="16" y="20" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="16" fill="#1C2024" letter-spacing="2">TRADEWORKS</text>
+        <text x="16" y="20" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="16" fill="#F6F3EC" letter-spacing="2">TRADEWORKS</text>
         <text x="14" y="44" font-family="Archivo Black, Arial, sans-serif" font-size="26" fill="#E85D2C" letter-spacing="-0.4">DIGITAL</text>
       </svg>
     </a>
-    <input type="checkbox" id="navToggle" class="nav-toggle">
-    <div class="navlinks" id="mobileNav">
-      <a href="#offer">The Offer</a>
-      <a href="#value">The Value</a>
-      <a href="#process">The Process</a>
-      <a href="#faq">FAQs</a>
-      <a href="#book" class="btn btn-primary btn-sm nav-cta">Book a Call</a>
+    <div class="sh-links" id="site-menu">
+      <a href="work.html" class="sh-link">Work</a>
+      <a href="reviews.html" class="sh-link">Reviews</a>
+      <a href="about.html" class="sh-link">About</a>
+      <a href="contact.html" class="sh-link">Contact Us</a>
+      <a href="tel:+441224XXXXXX" class="sh-link sh-tel tel-slot" data-slot="Phone number"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>01224 XXX XXX</span></a>
+      <a href="#book" class="btn btn-primary btn-sm">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a>
     </div>
-    <a href="#book" class="btn btn-primary btn-sm desktop-cta">Book a Call</a>
-    <label for="navToggle" class="hamburger" aria-label="Open menu" aria-controls="mobileNav">
-      <span></span><span></span><span></span>
-    </label>
+    <button type="button" class="sh-menu" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
 </header>
 
-<main id="top">
-
+<main id="main">
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" data-pause-offscreen>
     <div class="wrap hero-grid">
       <div>
-        <span class="ticket-stamp mono"><span class="stamp-dot"></span>WORK ORDER · WEBSITE BUILD</span>
-        <h1>A website that <em>turns visitors into paying customers</em> — and you own it.</h1>
-        <p class="lede">A website for your trade — a new build, or a rebuild of the one you already have. One flat price of £397, live in 5 to 7 days.</p>
-        <p class="lede lede-sub">More calls, more quotes, more jobs booked. Based in Aberdeen, working with trades across the UK.</p>
+        <span class="eyebrow">Website build · £397 fixed price</span>
+        <h1>A website that <em>brings in the calls</em>. Built in a week. Yours to keep.</h1>
+        <p class="lede">One fixed price of £397. Live in 5–7 days. We write it, build it and set it up on Google, so you can get back to the job. Based in Aberdeen, working with trades across the UK.</p>
         <div class="hero-ctas">
-          <a href="#book" class="btn btn-primary">Book My Free Call</a>
-          <a href="#offer" class="btn btn-ghost">See What You Own</a>
+          <a href="#book" class="btn btn-primary">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="#spec" class="btn btn-ghost">See What You Own</a>
         </div>
         <div class="trust-row">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg> Live in 5-7 days</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg> Get a monthly clicks &amp; leads report</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Cancel the care plan any time, keep the site</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.33-7-11a7 7 0 0 1 14 0c0 5.67-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Aberdeen-based, UK-wide</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg> You own the site and the code</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg> No contract</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg> Monthly enquiries &amp; calls report</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg> Live in 5–7 days</span>
         </div>
       </div>
 
-      <div class="job-card">
-        <div class="job-card-head">
-          <span class="num mono">WORK ORDER #0417</span>
-          <span class="status">IN PROGRESS</span>
-        </div>
-        <div class="job-line"><span class="label mono">CLIENT TRADE</span><span class="val">Roofing &amp; Guttering</span></div>
-        <div class="job-line"><span class="label mono">SCOPE</span><span class="val">5-page lead site + quote form</span></div>
-        <div class="job-line"><span class="label mono">TURNAROUND</span><span class="val">5–7 business days</span></div>
-        <div class="job-line"><span class="label mono">CARE PLAN</span><span class="val">£29/mo, cancel anytime</span></div>
-        <div class="job-total">
-          <span class="label mono">PRICE</span>
-          <span class="val">£397</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="hazard"></div>
-
-  <!-- OFFER -->
-  <section class="offer" id="offer">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">The Offer</span>
-        <h2>£397 — built around your trade. It goes live in 5-7 days.</h2>
-        <p>We build every site to turn strangers into paying customers. A small monthly plan keeps your site safe and working well, but you own the site and the code. Cancel the plan any time.</p>
-      </div>
-
-      <div class="offer-grid">
-        <div class="offer-col">
-          <h3>What You Get</h3>
-          <ul class="offer-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> You own the site and the code — we do not license it back to you.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Built to win work: quote form, click-to-call, Google Business Profile, plus job photos and reviews as proof.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Built mobile-first and loads in under 1.5 seconds, with full technical SEO implementation and a round of changes before launch.</li>
-          </ul>
-        </div>
-        <div class="offer-col dark">
-          <h3>What It Costs You</h3>
-          <ul class="offer-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13"/><path d="m12 6 6 6-6 6"/></svg> You pay one flat price, not an hourly rate.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13"/><path d="m12 6 6 6-6 6"/></svg> You know the full cost today — the £29 a month plan covers hosting, security, and backups.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13"/><path d="m12 6 6 6-6 6"/></svg> We write the code from the ground up and tune it to your trade, so it loads fast and ranks for the work you want.</li>
-          </ul>
-          <div class="price-tag">
-            <div class="pt-copy">
-              <div class="amt">£397</div>
-              <div class="sub">+ £29/MO CARE PLAN · CANCEL ANYTIME</div>
-            </div>
-            <a href="#book" class="btn btn-primary btn-sm">Book the call</a>
+      <div class="hero-visual enter">
+        <div class="breathe" aria-hidden="true"></div>
+        <a href="granite-city-cars.html" class="phone-link" aria-label="Read the Granite City Cars case study"><figure class="phone">
+          <div class="phone-screen">
+            <img src="images/gcc-phone.webp" width="780" height="1733" alt="The Granite City Cars website on a phone" decoding="async" fetchpriority="high">
+          </div>
+        </figure></a>
+        <!-- RESULTS CARD — real, measured figures from the last build only.
+             SLOT: GCC 30-DAY STATS — on ~27 Nov (30 days after GCC went live) replace each
+             "Due 27 Nov" with the real number: enquiries from GCC's admin Leads inbox,
+             clicks from GCC's Search Console (Performance → last 28 days). Raw counts only, no
+             percentages unless Mumin has a real "before" figure. Also update the same two stats
+             on granite-city-cars.html. Needs Mumin's OK to publish. -->
+        <div class="mini-ticket results-card enter-2" aria-label="Last build, Granite City Cars: mobile speed score up from 48 to 98.">
+          <div class="mt-in">
+            <div class="mt-head"><span class="num">LAST BUILD · GCC</span><span class="mt-status"><span class="pulse-dot"></span>MONITORED</span></div>
+            <div class="mt-big"><span class="mt-from">48</span><span class="mt-arrow" aria-hidden="true">→</span><span class="mt-price" data-count="98" data-from="48">98</span></div>
+            <div class="mt-biglabel">Mobile speed score</div>
+            <div class="mt-row" data-slot="30-day enquiries"><span>ENQUIRIES (30 DAYS)</span><b class="pending">Due 13 Dec</b></div>
+            <div class="mt-row" data-slot="30-day Google clicks"><span>GOOGLE CLICKS (30 DAYS)</span><b class="pending">Due 13 Dec</b></div>
+            <div class="mt-foot"><span>Granite City Cars, Aberdeen</span></div>
           </div>
         </div>
+        <p class="phone-cap"><a href="granite-city-cars.html">GRANITE CITY CARS · READ THE CASE STUDY →</a></p>
       </div>
     </div>
   </section>
 
-  <!-- VALUE -->
-  <section class="value" id="value">
+  <!-- PROOF STRIP -->
+  <div class="proof-strip">
     <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">The Value</span>
-        <h2>A slow, cluttered site quietly costs you jobs.</h2>
-        <p>Most people find a trade on their phone, on the move. If your page is slow or hard to read, they are back on Google looking at the next name on the list — and you never know it happened.</p>
+      <span>Trade Works Digital Ltd &middot; Co. No. 17391710</span>
+      <!-- SLOT: REVIEW COUNT — keep this number matching your Google Business Profile. -->
+      <a href="https://maps.app.goo.gl/9SJKQKRJXjYDFWzR6" target="_blank" rel="noopener" data-slot="Review count">&#9733;&#9733;&#9733;&#9733;&#9733; 2 Google reviews ↗</a>
+      <span>Based in Aberdeen &middot; UK-wide</span>
+    </div>
+  </div>
+
+<!-- WORK TEASER -->
+  <section class="work-teaser on-dark" id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Recent Work</span>
+        <h2>Real builds. Real numbers. Owned by the client.</h2>
+        <p>Every job is measured before and after, and every one ends the same way: the client owns the site, the code and their data.</p>
       </div>
-      <div class="value-grid">
-        <div class="value-cell">
-          <div class="stat">53%</div>
-          <h3>Three seconds and they are gone</h3>
-          <p>Over half of mobile visitors abandon a page that takes longer than three seconds to load. That is your quote form, never seen.</p>
-          <div class="src">Source: Google / SOASTA mobile research</div>
+
+      <div class="work-tabs" role="tablist" aria-label="Recent work">
+        <button type="button" class="work-tab" role="tab" id="tab-cases" aria-controls="panel-cases" aria-selected="true">Case studies <span class="count">1</span></button>
+        <button type="button" class="work-tab" role="tab" id="tab-blog" aria-controls="panel-blog" aria-selected="false" tabindex="-1">Blog <span class="count">2</span></button>
+      </div>
+
+      <div class="work-panel" role="tabpanel" id="panel-cases" aria-labelledby="tab-cases">
+        <a href="granite-city-cars.html" class="case-card lift reveal">
+          <div class="case-media">
+            <div class="browser" data-slot="GCC desktop screenshot">
+              <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+              <!-- SLOT: GCC DESKTOP SCREENSHOT
+                   Replace the <div class="browser-mock"> block below with:
+                   <img src="images/gcc-desktop.webp" width="1600" height="1000" alt="The Granite City Cars website on a laptop" loading="lazy" decoding="async">
+                   (Landscape screenshot of the live homepage, 16:10, WebP, under 150KB.) -->
+              <div class="browser-mock" aria-hidden="true">
+                <div class="bm-nav"><span>GRANITE CITY <b>CARS</b></span><span>STOCK · SELL · CONTACT</span></div>
+                <div class="bm-grid">
+                  <span class="bm-car"><i></i><s></s><u></u></span>
+                  <span class="bm-car"><i></i><s></s><u></u></span>
+                  <span class="bm-car"><i></i><s></s><u></u></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="case-body">
+            <span class="case-tag">CAR DEALER · ABERDEEN</span>
+            <h3>Granite City Cars</h3>
+            <p>Moved off a slow dealer platform onto a fast site they own, plus a stock, leads and invoicing system they run from their phone.</p>
+            <!-- SLOT: GCC STATS — "44 → 97" is the PageSpeed Insights mobile score measured on 4 Nov 2026. Re-run PageSpeed Insights
+                 on the live domain after go-live and update the 97 if it differs. -->
+            <ul class="case-stats four reveal-stagger" data-slot="Confirm live PageSpeed score">
+              <li><b>48 → 98</b><span>Mobile speed score</span></li>
+              <li><b>87 / 87</b><span>Old links redirected</span></li>
+              <li><b>−50%</b><span>Photo weight per car</span></li>
+              <li class="own-tile"><b>£0</b><span>To get their own data back</span></li>
+            </ul>
+          <span class="case-go">Read the case study <span class="arrow" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <div class="gcc-system reveal">
+          <span class="tag">THE GCC SYSTEM · WHAT THEY RUN FROM THEIR PHONE</span>
+          <ul>
+            <li>Stock list: add a car with photos, mark it sold</li>
+            <li>Leads inbox, with WhatsApp and phone leads added in seconds</li>
+            <li>Customers and invoices, with a PDF in one tap</li>
+            <li>A CSV backup of every table, any time</li>
+          </ul>
         </div>
-        <div class="value-cell">
-          <div class="stat">3×</div>
-          <h3>Fast pages convert far better</h3>
-          <p>A site loading in one second converts around three times better than one taking five. Same traffic, same trade — three times the enquiries.</p>
-          <div class="src">Source: Portent, 100m+ pageviews</div>
-        </div>
-        <div class="value-cell">
-          <div class="stat">1.65s</div>
-          <h3>Google favours the quick</h3>
-          <p>The average first-page Google result loads in about 1.65 seconds. Speed is a ranking signal, so a slow site loses twice: fewer visitors, and fewer of them stay.</p>
-          <div class="src">Source: Backlinko ranking-factors study</div>
+        <!-- MORE WORK GRID (homepage shows the featured job plus up to 2 more).
+             Tip: once trade clients are in, put a trade client in the big featured card and move GCC down here. -->
+        <div class="case-grid cols-2 reveal-stagger slot-hidden" data-slot="More work (hidden until a client is added)">
+          <!-- SLOT: CLIENT CASE STUDY 2 — when this client's case study is signed off:
+               1) make its page from case-study-template.html (e.g. case-study-smith-plumbing.html) and set the href below,
+               2) fill the tag, name, number and screenshot, 3) delete class="slot-hidden" from this card
+               (and from the grid around it, if it's the first one). Until then the card is hidden on the live site. -->
+          <!-- SLOT: CLIENT CASE STUDY 3 — when this client's case study is signed off:
+               1) make its page from case-study-template.html (e.g. case-study-smith-plumbing.html) and set the href below,
+               2) fill the tag, name, number and screenshot, 3) delete class="slot-hidden" from this card
+               (and from the grid around it, if it's the first one). Until then the card is hidden on the live site. -->
         </div>
       </div>
-      <div class="value-foot">
-        <p>We build every site to load in under 1.5 seconds, so you are on the right side of all three numbers.</p>
-        <a href="#book" class="btn btn-primary">Book My Free Call</a>
+
+      <div class="work-panel" role="tabpanel" id="panel-blog" aria-labelledby="tab-blog" hidden>
+        <!-- BLOG CARDS: when a post is published, turn its <article> into <a href="blog-....html" class="post-card lift">,
+             change the status line to "Read the post →", and add the page to sitemap.xml. -->
+        <div class="blog-grid">
+          <article class="post-card">
+            <div class="post-media" aria-hidden="true">
+              <span class="pm-car"><i></i><b>STOCK LIST</b></span>
+              <span class="pm-car"><i></i><b>CAR PAGE</b></span>
+              <span class="pm-car dark"><i></i><b>ADMIN</b></span>
+            </div>
+            <div class="post-body">
+              <span class="case-tag">BUILD DIARY · CAR DEALER</span>
+              <h3>Moving a car dealer off Car Dealer 5, onto a system they own</h3>
+              <p>The stock list, car pages, leads inbox and invoices we built for Granite City Cars, and how 87 old links were kept working.</p>
+              <span class="post-status">COMING SOON</span>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-media compare" aria-hidden="true">
+              <span>RENTED</span><span class="o">OWNED</span>
+              <span>Shared with 3–4 trades</span><span class="o">They chose you</span>
+              <span>Keep nothing if you stop</span><span class="o">Keep everything</span>
+            </div>
+            <div class="post-body">
+              <span class="case-tag">GUIDE · LEAD SITES</span>
+              <h3>Rented vs owned: what lead sites really cost a trade</h3>
+              <p>Lead sites rent you a customer you share with three or four others. A side-by-side of what you pay, and what you keep if you stop.</p>
+              <span class="post-status">COMING SOON</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <p class="work-more"><a href="work.html" class="tlink">See all work →</a></p>
+    </div>
+  </section>
+
+<!-- REVIEWS TEASER -->
+  <section class="reviews-teaser" id="reviews">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Reviews</span>
+        <h2>What clients say.</h2>
+        <p>Every review is real and hosted on Google. Tap any card to read it there.</p>
+      </div>
+
+      <div class="review-grid two reveal-stagger">
+        <!-- SLOT: REVIEW 1 — paste the quote (shorten to 2–3 sentences if needed), the reviewer's
+             first name + trade/town as shown on Google. Keep the link as is. -->
+        <a href="https://maps.app.goo.gl/9SJKQKRJXjYDFWzR6" target="_blank" rel="noopener" class="review-card lift" data-slot="Review 1">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <blockquote>Very good customer service, definitely would recommend.</blockquote>
+          <div class="who">Harrison J<span>Google review · October 2026</span></div>
+          <span class="go">Read on Google ↗</span>
+        </a>
+        <!-- SLOT: REVIEW 2 -->
+        <a href="https://maps.app.goo.gl/9SJKQKRJXjYDFWzR6" target="_blank" rel="noopener" class="review-card lift" data-slot="Review 2">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <blockquote>Been very helpful for my website!</blockquote>
+          <div class="who">Aized R.<span>Google review · October 2026</span></div>
+          <span class="go">Read on Google ↗</span>
+        </a>
+      </div>
+
+      <p class="reviews-more"><a href="reviews.html" class="tlink">All reviews →</a><a href="https://g.page/r/CUqKTYzic4E9EBI/review" target="_blank" rel="noopener" class="tlink">Worked with us? Leave a review ↗</a></p>
+    </div>
+  </section>
+
+<!-- TWO KINDS OF JOB -->
+  <section class="two-jobs" id="custom">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What We Build</span>
+        <h2>Three kinds of job. All yours to keep.</h2>
+      </div>
+      <div class="jobs-grid reveal-stagger">
+        <div class="job-card">
+          <span class="tag">£397 FLAT · LIVE IN 5–7 DAYS</span>
+          <h3>Websites for trades</h3>
+          <p>A fast, mobile-first site that gets your phone ringing: quote form, click-to-call, reviews and job photos, connected to your Google Business Profile.</p>
+          <p class="own"><b>You own:</b> the site, the code, the domain, the words and the photos.</p>
+          <a href="#offer" class="tlink">See the offer <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="job-card">
+          <span class="tag">EXISTING SITE · QUOTED AFTER A FREE CHECK</span>
+          <h3>Redesigns that bring in more enquiries</h3>
+          <p>Already have a website? We look at where visitors drop off, then redesign the pages around what turns them into calls: fast on a phone, a clear call button and quote form, and your reviews up front. Google Search Console and Google Analytics are set up, so you can see what changed.</p>
+          <p class="own"><b>You own:</b> the redesigned site, the code, and your Google accounts.</p>
+          <a href="#book" class="tlink">Book a free site check <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="job-card dark">
+          <span class="tag">SCOPED TO THE JOB · QUOTED AFTER A CALL</span>
+          <h3>Custom systems and CRMs</h3>
+          <p>Stock lists, lead inboxes, quotes and invoicing, CRMs and admin dashboards built around how your business runs, like the system behind Granite City Cars.</p>
+          <p class="own"><b>You own:</b> the database, every customer record and invoice, in accounts in your name. No per-seat fees, no paying to export your own data.</p>
+          <a href="contact.html" class="tlink">Send an enquiry <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROCESS -->
+<!-- OFFER -->
+  <section class="offer" id="offer">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Offer</span>
+        <h2>£397. Built from scratch. Live in 5–7 days.</h2>
+        <p>One flat price for the build. An optional plan if you want us to look after it. And a clear promise for the day you leave.</p>
+      </div>
+      <div class="offer3 reveal-stagger">
+        <div class="o-card">
+          <span class="tag">THE BUILD · ONCE</span>
+          <div class="amt" data-count="397" data-prefix="£">£397</div>
+          <p class="note">One flat price, not an hourly rate.</p>
+          <ul class="ticks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>5 pages:</b> Home, Services (up to 6), About, Contact and Privacy</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>We write the words for you, from a 30-minute details call or by email</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Quote form, click-to-call, reviews and job photos</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Domain bought for you and registered in <b>your</b> name. First year included</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Google Business Profile, Search Console and Google Analytics set up, with you as owner</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>One round of changes before launch, 30 days of fixes after</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Live within 7 days of getting your photos and service list, or your first 3 months of care are free</span></li>
+          </ul>
+          <div class="o-foot"><a href="#book" class="btn btn-primary btn-sm">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a></div>
+        </div>
+        <div class="o-card dark">
+          <span class="tag">CARE PLAN · OPTIONAL</span>
+          <div class="amt">£29<small> /month</small></div>
+          <p class="note">Your site can run without us. This is for us looking after it.</p>
+          <ul class="ticks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Hosting, security, uptime checks and a backup of every version</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Domain renewals included, every year</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Up to 30 minutes of changes a month: photos, prices, hours, a new job</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>A monthly text: your enquiries and calls from Google</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Speed and security check every quarter</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Replies within 6 hours</span></li>
+          </ul>
+          <!-- EXAMPLE MONTHLY TEXT — an illustration of the care-plan text, not a real client's figures (the [brackets] say so). -->
+        <div class="text-bubble">
+          <span class="tb-label">MONTHLY TEXT · EXAMPLE</span>
+          <p>Your site brought in <b>9 enquiries</b> in October, and <b>41 people</b> tapped to call you from Google. Report attached.</p>
+        </div>
+          <p class="fine">Any other digital work gets a clear quote and timeline up front. Our recommendations are free, and you don't have to use us for the work. No contract.</p>
+        </div>
+        <div class="o-card cancel">
+          <span class="tag">IF YOU CANCEL</span>
+          <h3>You keep everything. We hand it all over.</h3>
+          <ol>
+            <li>Cancel any month. It stops at the end of the month you've paid for.</li>
+            <li>Within 5 working days you get the handover pack: the site files, every login, and a one-page guide.</li>
+            <li>Your domain is already in your name. We hand over control the same day. Your Google profile and reviews were always yours too.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- PROCESS -->
   <section id="process">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="eyebrow">The Process</span>
-        <h2>Four steps. You never chase us.</h2>
+        <h2>Four steps. We keep you updated at every one.</h2>
         <p>Here is what happens, step by step, from your first call to the day your phone starts ringing with new quotes.</p>
       </div>
 
-      <div class="process-list">
-        <input type="checkbox" class="p-toggle" id="pstep1" checked><div class="p-step">
-          <div class="step-num mono">STEP<span class="big">01</span></div>
+      <div class="process-list reveal-stagger">
+        <div class="p-step">
+          <div class="step-num">STEP<span class="big">01</span></div>
           <div class="p-step-body">
-            <label class="p-head" for="pstep1"><h3>Free 15-minute call &amp; site audit</h3><span class="pm" aria-hidden="true">+</span></label>
-            <div class="p-collapse"><p>Your trade, your area, where your leads come from now. No pitch — if we are not a fit, we say so. Already have a site? We audit it free, so you leave knowing what is holding it back either way.</p>
+            <h3>Free 15-minute call</h3>
+            <p>We ask about your trade, your service area, and where your leads come from now. No pitch, no pressure. If we are not a good fit, we say so on the call.</p>
             <div class="meta">
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 15 minutes</span>
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M15 10 20 5v14l-5-5"/><rect x="4" y="5" width="11" height="14" rx="1"/></svg> Video or phone</span>
             </div>
           </div>
-          </div>
         </div>
 
-        <input type="checkbox" class="p-toggle" id="pstep2"><div class="p-step">
-          <div class="step-num mono">STEP<span class="big">02</span></div>
+        <div class="p-step">
+          <div class="step-num">STEP<span class="big">02</span></div>
           <div class="p-step-body">
-            <label class="p-head" for="pstep2"><h3>Fixed quote, same day</h3><span class="pm" aria-hidden="true">+</span></label>
-            <div class="p-collapse"><p>You get one clear price for the full build. You approve it and pay half as a deposit — that saves your build slot.</p>
+            <h3>Confirm, then a 30-minute details call</h3>
+            <p>You confirm and pay half as a deposit to hold your build slot. Then we book a 30-minute call to gather your services, area, photos and reviews. Prefer email or messages? That works too.</p>
             <div class="meta">
-              <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Same-day quote</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 30-minute details call</span>
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v3M16 4v3"/></svg> 50% deposit to start</span>
             </div>
           </div>
-          </div>
         </div>
 
-        <input type="checkbox" class="p-toggle" id="pstep3"><div class="p-step">
-          <div class="step-num mono">STEP<span class="big">03</span></div>
+        <div class="p-step">
+          <div class="step-num">STEP<span class="big">03</span></div>
           <div class="p-step-body">
-            <label class="p-head" for="pstep3"><h3>We build, you review once</h3><span class="pm" aria-hidden="true">+</span></label>
-            <div class="p-collapse"><p>We build your site with your job photos, reviews, and service list. You see one draft and ask for changes once — simple and fast.</p>
+            <h3>We build, you review once</h3>
+            <p>We build your site with your job photos, reviews, and service list. You see one draft and ask for changes once — simple and fast.</p>
             <div class="meta">
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 4–5 business days</span>
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 1 review round</span>
             </div>
           </div>
-          </div>
         </div>
 
-        <input type="checkbox" class="p-toggle" id="pstep4"><div class="p-step">
-          <div class="step-num mono">STEP<span class="big">04</span></div>
+        <div class="p-step">
+          <div class="step-num">STEP<span class="big">04</span></div>
           <div class="p-step-body">
-            <label class="p-head" for="pstep4"><h3>Launch, then we stay close</h3><span class="pm" aria-hidden="true">+</span></label>
-            <div class="p-collapse"><p>We launch your site and connect your Google Business Profile and call tracking. Then we stay close for one month, fixing words, swapping photos, and solving problems fast.</p>
+            <h3>Launch, then we stay close</h3>
+            <p>We launch your site and connect your Google Business Profile. Then we stay close for one month, fixing words, swapping photos, and solving problems fast.</p>
             <div class="meta">
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Live day 7</span>
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 30-day support window</span>
             </div>
           </div>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRADES -->
+<!-- SPEC SHEET -->
+  <section class="spec" id="spec">
+    <div class="wrap spec-grid">
+      <div class="reveal">
+        <span class="eyebrow">Spec Sheet · What You Own</span>
+        <h2>Every build meets the same spec sheet.</h2>
+        <p>This is the technical detail behind the offer, and the list of what's handed to you on launch day.</p>
+        <a href="product.html" class="btn btn-ghost">Read the Build Spec <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+      <div class="spec-panel reveal">
+        <dl class="spec-rows">
+          <div><dt>SPEED</dt><dd>Under 2.5s</dd></div>
+          <div><dt>BUILD</dt><dd>Static, no database</dd></div>
+          <div><dt>SECURITY</dt><dd>HTTPS enforced</dd></div>
+          <div><dt>ACCESSIBILITY</dt><dd>WCAG AA</dd></div>
+        </dl>
+        <span class="tag">THE HANDOVER PACK · YOURS ON LAUNCH DAY</span>
+        <ul>
+          <li>Every site file, zipped</li>
+          <li>Domain login, in your name</li>
+          <li>Google Business Profile: you're the owner</li>
+          <li>Search Console: you're the owner</li>
+            <li>Google Analytics: you're the owner</li>
+          <li>A list of every account and who holds it</li>
+          <li>One-page guide to moving your site</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<!-- TRADES -->
   <div class="trades-bar">
     <div class="wrap">
       <span class="label">Built for</span>
-      <div class="trades-icons">
+      <div class="trades-icons reveal-stagger">
         <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg> Plumbers</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg> Electricians</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg> Roofers</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> HVAC &amp; Builders</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> Builders &amp; Joiners</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg> Any local trade</span>
       </div>
     </div>
   </div>
 
-  <!-- FAQ -->
+<!-- FAQ -->
   <section class="faq" id="faq">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="eyebrow">FAQs</span>
         <h2>Clear answers before you book.</h2>
         <p>These are the questions we hear most on our first call. We answer them here, so you know what to expect.</p>
       </div>
 
-      <input type="checkbox" id="faq-more" class="faq-more">
-      <div class="faq-list">
+      <div class="faq-list reveal">
         <details class="faq-item">
-          <summary><span class="qhead"><span class="qnum mono">Q1</span><span class="qtext">Do I own my website, or do you license it back to me?</span></span><span class="plus">+</span></summary>
-          <p class="faq-a">You own your website and the code from day one — we do not lease it to you. The £29 a month plan pays for hosting, security, and backups. Cancel it any time; your site keeps running, you just host it yourself.</p>
+          <summary><span class="qhead"><span class="qnum">Q1</span><span class="qtext">Do I own my website, or do you license it back to me?</span></span><span class="plus" aria-hidden="true">+</span></summary>
+          <p class="faq-a">You own your website and the code from day one — we do not lease it to you. The £29 a month plan pays for us looking after it, not for the right to keep it. Cancel it any time and your site keeps running.</p>
         </details>
         <details class="faq-item">
-          <summary><span class="qhead"><span class="qnum mono">Q2</span><span class="qtext">What happens if I cancel the care plan?</span></span><span class="plus">+</span></summary>
-          <p class="faq-a">Nothing goes away. You keep the site and the code and find your own hosting after that — no penalty, no minimum time to stay.</p>
+          <summary><span class="qhead"><span class="qnum">Q2</span><span class="qtext">What happens if I cancel the care plan?</span></span><span class="plus" aria-hidden="true">+</span></summary>
+          <p class="faq-a">Nothing goes away. Within 5 working days you get the handover pack: the site files, every login and a one-page guide. No penalty, no minimum time to stay.</p>
         </details>
         <details class="faq-item">
-          <summary><span class="qhead"><span class="qnum mono">Q3</span><span class="qtext">How fast is 5 to 7 days?</span></span><span class="plus">+</span></summary>
-          <p class="faq-a">This is our build time once we have your service list, job photos, and reviews. It runs from our first call to your live site. If something is missing, like a logo or photos, we start with a placeholder. We swap it in later. This can add a day or two.</p>
+          <summary><span class="qhead"><span class="qnum">Q3</span><span class="qtext">How fast is 5 to 7 days?</span></span><span class="plus" aria-hidden="true">+</span></summary>
+          <p class="faq-a">This is our build time once we have your service list, job photos, and reviews. It starts once we have your details from the 30-minute details call, or by email. If something is missing, like a logo or photos, we start with a placeholder. We swap it in later. This can add a day or two.</p>
         </details>
         <details class="faq-item">
-          <summary><span class="qhead"><span class="qnum mono">Q4</span><span class="qtext">I don't have professional photos or reviews yet — can you still build it?</span></span><span class="plus">+</span></summary>
+          <summary><span class="qhead"><span class="qnum">Q4</span><span class="qtext">I don't have professional photos or reviews yet — can you still build it?</span></span><span class="plus" aria-hidden="true">+</span></summary>
           <p class="faq-a">Yes. Most trades start this way. Phone photos work fine to begin with. We build a review section too. It fills up as your Google reviews come in.</p>
         </details>
         <details class="faq-item">
-          <summary><span class="qhead"><span class="qnum mono">Q5</span><span class="qtext">Do you set up my Google Business Profile too?</span></span><span class="plus">+</span></summary>
+          <summary><span class="qhead"><span class="qnum">Q5</span><span class="qtext">Do you set up my Google Business Profile too?</span></span><span class="plus" aria-hidden="true">+</span></summary>
           <p class="faq-a">If you don't have one, we help you set it up and link it to your site. If you already have one, we connect it. Your reviews and map listing show up on your site.</p>
         </details>
         <details class="faq-item">
-          <summary><span class="qhead"><span class="qnum mono">Q6</span><span class="qtext">What if something needs changing after launch?</span></span><span class="plus">+</span></summary>
+          <summary><span class="qhead"><span class="qnum">Q6</span><span class="qtext">What if something needs changing after launch?</span></span><span class="plus" aria-hidden="true">+</span></summary>
           <p class="faq-a">You get one review round before launch, plus 30 days after launch to fix words, swap photos, and solve problems — all part of your £397.</p>
         </details>
         <details class="faq-item">
-          <summary><span class="qhead"><span class="qnum mono">Q7</span><span class="qtext">Is there a contract or minimum tie-in?</span></span><span class="plus">+</span></summary>
+          <summary><span class="qhead"><span class="qnum">Q7</span><span class="qtext">Is there a contract or minimum tie-in?</span></span><span class="plus" aria-hidden="true">+</span></summary>
           <p class="faq-a">No. The £397 is a one-time build fee. The £29 a month plan has no contract. Cancel it any time.</p>
         </details>
+        <details class="faq-item">
+          <summary><span class="qhead"><span class="qnum">Q8</span><span class="qtext">Can you build something bigger, like a CRM?</span></span><span class="plus" aria-hidden="true">+</span></summary>
+          <p class="faq-a">Yes. Stock systems, lead inboxes, invoicing and CRMs are scoped to the job, like the Granite City Cars system. The database and every record sit in accounts in your name.</p>
+        </details>
       </div>
-      <label for="faq-more" class="faq-reveal">See all 7 questions +</label>
     </div>
   </section>
 
-  <!-- BOOKING -->
+<!-- BOOKING -->
   <section class="booking" id="book">
-    <div class="wrap">
-      <div class="section-head">
+    <div class="wrap book-grid">
+      <div class="book-side reveal">
         <span class="eyebrow">Book a Call</span>
-        <h2>Take 15 minutes. See if we fit.</h2>
-        <p>Pick a time below. It books right into my calendar and you get an instant confirmation — no forms, no back-and-forth emails. Already have a site? The call includes a free audit: you leave knowing exactly what is holding it back, whether you build with us or not.</p>
+        <h2>If your site brought in two jobs a month from people who'd already picked you, <em>would that be worth 15 minutes?</em></h2>
+        <p>Pick a time that suits you. It books straight into our calendar and you get an instant confirmation.</p>
+        <ol class="call-list">
+          <li><span class="n">01</span><div><b>Your trade and your area</b><span>Where your work comes from now, and where you want more.</span></div></li>
+          <li><span class="n">02</span><div><b>Your current site, if you have one</b><span>A quick, honest look at what's costing you calls.</span></div></li>
+          <li><span class="n">03</span><div><b>A straight answer</b><span>Whether we're a good fit, and the price, on the call.</span></div></li>
+        </ol>
+        <div class="book-alt">
+          <span class="tel-slot" data-slot="Phone number"><b>Rather call?</b> <a href="tel:+441224XXXXXX" class="tlink">01224 XXX XXX</a></span>
+          <span><b>Rather not call?</b> <a href="contact.html#enquiry" class="tlink">Send us a message</a></span>
+          <span><b>Prefer email?</b> <a href="mailto:mosa@tradeworksdigital.co.uk" class="tlink">mosa@tradeworksdigital.co.uk</a></span>
+          <span><b>Custom work?</b> Systems, CRMs or several sites: <a href="contact.html" class="tlink">send an enquiry</a></span>
+        </div>
       </div>
 
-      <div class="book-panel">
+      <div class="book-panel reveal">
         <div class="book-panel-head">
           <span class="t">Schedule the Call</span>
-          <span class="d mono">15 MIN · FREE · NO OBLIGATION</span>
+          <span class="d">15 MIN · FREE · NO OBLIGATION</span>
         </div>
-
         <div class="book-body-single">
           <div id="cal-inline"></div>
           <p class="book-note">Bookings update in real time. If you see an open slot, it is free. Reschedule or cancel any time from your confirmation email.</p>
@@ -964,45 +970,54 @@
     </div>
   </section>
 
+
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="fwrap">
-      <span class="flogo">
-        <svg viewBox="0 0 160 62" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="8" width="8" height="36" fill="#E85D2C"/>
-          <text x="16" y="20" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="16" fill="#F6F3EC" letter-spacing="2">TRADEWORKS</text>
-          <text x="14" y="44" font-family="Archivo Black, Arial, sans-serif" font-size="26" fill="#E85D2C" letter-spacing="-0.4">DIGITAL</text>
-        </svg>
-      </span>
-      <div class="flinks">
-        <a href="#offer">The Offer</a>
-        <a href="#value">The Value</a>
-        <a href="#process">The Process</a>
-        <a href="#faq">FAQs</a>
-        <a href="#book">Book a Call</a>
-        <a href="mailto:mosa@tradeworksdigital.co.uk">mosa@tradeworksdigital.co.uk</a>
-      </div>
+<footer class="site-footer">
+  <div class="wrap sf-grid">
+    <div class="sf-brand">
+      <svg viewBox="0 0 160 62" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tradeworks Digital">
+        <rect x="0" y="8" width="8" height="36" fill="#E85D2C"/>
+        <text x="16" y="20" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="16" fill="#F6F3EC" letter-spacing="2">TRADEWORKS</text>
+        <text x="14" y="44" font-family="Archivo Black, Arial, sans-serif" font-size="26" fill="#E85D2C" letter-spacing="-0.4">DIGITAL</text>
+      </svg>
+      <p>Websites for UK trades. One flat price, live in 5 to 7 days, and you own the site and the code.</p>
     </div>
-    <div class="fbottom">
-      <span>© 2026 Tradeworks Digital. <a href="privacy-policy.html" style="color:inherit; text-decoration:underline;">Privacy Policy</a></span>
+    <nav class="sf-col" aria-label="Footer">
+      <h2 class="sf-h">Pages</h2>
+      <ul>
+        <li><a href="work.html" class="sf-link">Work</a></li>
+        <li><a href="reviews.html" class="sf-link">Reviews</a></li>
+        <li><a href="about.html" class="sf-link">About</a></li>
+        <li><a href="contact.html" class="sf-link">Contact Us</a></li>
+        <li><a href="product.html" class="sf-link">Build Spec</a></li>
+      </ul>
+    </nav>
+    <div class="sf-col">
+      <h2 class="sf-h">Find us</h2>
+      <ul>
+        <li class="sf-plain">Aberdeen · UK-wide</li>
+        <li class="tel-slot" data-slot="Phone number"><a href="tel:+441224XXXXXX" class="sf-link">01224 XXX XXX</a></li>
+        <li><a href="mailto:mosa@tradeworksdigital.co.uk" class="sf-link">mosa@tradeworksdigital.co.uk</a></li>
+        <!-- SLOT: OPENING HOURS — add a line here written exactly as your Google Business Profile shows it, e.g.
+             <li class="sf-plain">Mon–Fri 9am–5pm</li>
+             and add the matching "openingHours" to the JSON-LD in index.html. -->
+        <li><a href="https://maps.app.goo.gl/9SJKQKRJXjYDFWzR6" class="sf-link" target="_blank" rel="noopener">Find us on Google ↗</a></li>
+        <li><a href="https://g.page/r/CUqKTYzic4E9EBI/review" class="sf-link" target="_blank" rel="noopener">Leave a review ↗</a></li>
+      </ul>
     </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>Trade Works Digital Ltd · Company No. 17391710</span>
+    <a href="privacy-policy.html" class="sf-link">Privacy Policy</a>
   </div>
 </footer>
 
-</div><!-- /.scroller -->
-
-<div class="cta-bar">
-  <div class="cta-bar-inner">
-    <div>
-      <div class="amt">£397</div>
-      <div class="sub mono">LIVE IN 5–7 DAYS</div>
-    </div>
-    <a href="#book" class="btn btn-primary">Book the call</a>
-  </div>
+<div class="m-cta" aria-label="Quick booking">
+  <a href="#book" class="btn btn-primary">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a>
+  <a href="tel:+441224XXXXXX" class="m-cta-mail tel-slot" data-slot="Phone" aria-label="Call us on 01224 XXX XXX"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+  <a href="mailto:mosa@tradeworksdigital.co.uk" class="m-cta-mail" aria-label="Email us"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
 </div>
-
 <!-- CAL.COM: booking widget wired to https://cal.com/tradeworks.digital/15min -->
 <script>
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
@@ -1026,18 +1041,6 @@
     Cal.ns["tradeworks-15min"]("ui", {"hideEventTypeDetails":false, "layout":"month_view"});
   }
 
-  (function () {
-    var bar = document.querySelector(".cta-bar");
-    if (!bar || !("IntersectionObserver" in window)) return;
-    var zones = [document.getElementById("book"), document.querySelector("footer")].filter(Boolean);
-    var seen = new Set();
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
-      bar.classList.toggle("is-hidden", seen.size > 0);
-    }, { root: matchMedia("(max-width:860px)").matches ? document.querySelector(".scroller") : null, threshold: 0 });
-    zones.forEach(function (z) { io.observe(z); });
-  })();
-
   var calBookingSection = document.getElementById("book");
   if (calBookingSection && "IntersectionObserver" in window) {
     var calBookingObserver = new IntersectionObserver(function (entries) {
@@ -1053,6 +1056,5 @@
     initCalBooking();
   }
 </script>
-
 </body>
 </html>
