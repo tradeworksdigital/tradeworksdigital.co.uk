@@ -90,6 +90,57 @@
     .browser{box-shadow:6px 6px 0 var(--ink);}
   }
 
+
+  /* ---------- 14 Nov: deeper case study ---------- */
+  .found{padding-top:24px;}
+  .found-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:20px;}
+  .found-card{background:var(--paper); border:1.5px solid var(--ink); border-radius:6px; padding:24px 24px 22px;}
+  .found-card .tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:11.5px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
+  .found-card h3{font-size:19px; margin:10px 0 8px; font-family:'Inter','Inter Fallback',sans-serif; font-weight:800;}
+  .found-card p{color:var(--ink-soft); font-size:15px;}
+  .found-card code{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:13px; background:var(--paper-dim); padding:1px 5px; border-radius:3px; overflow-wrap:anywhere;}
+  .ph{margin:0;}
+  .ph-frame{border:1.5px solid var(--ink); border-radius:20px; overflow:hidden; background:#111; box-shadow:6px 6px 0 rgba(28,32,36,.14);}
+  .ph-frame img{display:block; width:100%; height:auto; aspect-ratio:600/1299;}
+  .ph figcaption{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; color:var(--grey); margin-top:10px; letter-spacing:.04em;}
+  .ph.after .ph-frame{border-color:var(--orange); box-shadow:6px 6px 0 rgba(232,93,44,.22);}
+  .ph.after figcaption{color:var(--orange-dark); font-weight:600;}
+  .side{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .pairs{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:28px;}
+  .pair h3{font-size:17px; font-family:'Inter','Inter Fallback',sans-serif; font-weight:800; margin-bottom:12px;}
+  .pair-ph{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .journey{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .j-col{background:var(--paper); border:1.5px solid var(--ink); border-radius:6px; padding:24px; display:flex; flex-direction:column; gap:16px;}
+  .j-col.after{border-color:var(--orange); box-shadow:0 0 0 4px rgba(232,93,44,.10);}
+  .j-head .tag{display:block; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:11.5px; font-weight:600; letter-spacing:.08em; color:var(--grey);}
+  .j-col.after .j-head .tag{color:var(--orange-dark);}
+  .j-head b{display:block; font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:clamp(22px,2.4vw,28px); margin-top:6px; line-height:1.15;}
+  .j-steps{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;}
+  .j-steps li{display:flex; gap:12px; align-items:flex-start; font-size:15px; line-height:1.45;}
+  .j-steps .n{flex-shrink:0; width:26px; height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:inline-flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600;}
+  .j-col.after .j-steps .n{background:var(--orange);}
+  .j-steps li.extra .n, .j-steps li.type .n{background:var(--paper-dim); color:var(--ink); border:1px dashed var(--grey);}
+  .j-steps li.type{font-weight:600;}
+  .j-msg{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:13px; background:#E7F4EA; color:#14532D; border-radius:10px; padding:12px 14px;}
+  .j-shot{max-width:220px;}
+  .j-bars{margin-top:28px; border:1.5px solid var(--ink); border-radius:6px; padding:20px 22px; background:var(--paper);}
+  .j-bars-h{font-weight:700; margin-bottom:12px;}
+  .bar-row{display:grid; grid-template-columns:64px 1fr 56px; gap:12px; align-items:center; margin-top:8px; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:13px;}
+  .bar{height:14px; background:var(--paper-dim); border-radius:7px; overflow:hidden;}
+  .bar i{display:block; height:100%; background:var(--grey); border-radius:7px;}
+  .bar-row.after .bar i{background:var(--orange);}
+  .bar-row b{text-align:right;}
+  .admin-wrap{background:var(--paper-dim); border-top:1px solid var(--line);}
+  .admin-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:28px 24px;}
+  .admin-grid .ph figcaption{font-family:inherit; font-size:14.5px; letter-spacing:0; color:var(--ink-soft); line-height:1.5;}
+  .admin-grid .ph figcaption b{display:block; color:var(--ink); font-size:15px; margin-bottom:2px;}
+  .admin-grid .ph-frame img{aspect-ratio:600/1000; object-fit:cover; object-position:top;}
+  .admin-desk{margin:40px 0 0; max-width:820px;}
+  .admin-desk figcaption{font-size:14px; color:var(--grey); margin-top:14px;}
+  .admin-desk .browser img{aspect-ratio:auto; height:auto;}
+  @media (max-width:1000px){ .pairs{grid-template-columns:1fr; max-width:520px;} .admin-grid{grid-template-columns:repeat(2, minmax(0,1fr));} }
+  @media (max-width:760px){ .found-grid, .journey{grid-template-columns:1fr;} .j-shot{max-width:180px;} }
+  @media (max-width:480px){ .admin-grid{grid-template-columns:1fr 1fr; gap:22px 14px;} .admin-grid .ph figcaption{font-size:13px;} }
 </style>
 <script src="site.js" defer></script>
 </head>
@@ -159,6 +210,23 @@
     </div>
   </section>
 
+  
+  <section class="found">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What we found</span>
+        <h2>Before building anything, we checked the old site.</h2>
+        <p>Every point here is dated and measured, so you can see exactly what changed.</p>
+      </div>
+      <div class="found-grid reveal-stagger">
+        <div class="found-card"><span class="tag">SPEED · 10 NOV 2026</span><h3>Slow on a phone</h3><p>Google's PageSpeed test on a phone scored the homepage 48 out of 100. Its main content took 9.9 seconds to appear, and the page jumped about as it loaded (layout shift 0.834; Google counts anything over 0.25 as poor).</p></div>
+        <div class="found-card"><span class="tag">SEARCH · 6 OCT 2026</span><h3>The stock page pointed Google at Nottingham</h3><p>The homepage's “View Stock” link went to <code>/used/cars/nottingham/</code>. The page said Aberdeen, but its code gave Google the Nottingham address as its official one. It has since been changed to an Aberdeen address.</p></div>
+        <div class="found-card"><span class="tag">GOOGLE · SEARCH CONSOLE</span><h3>No sitemap given to Google</h3><p>Google had never been sent a list of the site's pages. The new site's sitemap, with every car on it, is submitted in Search Console at launch.</p></div>
+        <div class="found-card"><span class="tag">CONTACT · CAR PAGES</span><h3>No WhatsApp, and the buttons were below the photos</h3><p>Car pages offered Enquire Now, Request Callback and Test Drive further down the page. Each opened a form asking for a name, phone number and email.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section class="built">
     <div class="wrap">
       <div class="section-head reveal">
@@ -189,6 +257,86 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="side">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Side by side</span>
+        <h2>The same pages, on the same phone.</h2>
+        <p>Before on the left, after on the right.</p>
+      </div>
+      <div class="pairs">
+        <div class="pair reveal"><h3>Homepage</h3><div class="pair-ph"><figure class="ph "><div class="ph-frame"><img src="images/cs/cd5-home.webp" width="600" height="1299" alt="Old homepage on Car Dealer 5, on a phone" loading="lazy" decoding="async"></div><figcaption>Before</figcaption></figure><figure class="ph after"><div class="ph-frame"><img src="images/cs/new-home.webp" width="600" height="1299" alt="New Granite City Cars homepage on a phone" loading="lazy" decoding="async"></div><figcaption>After</figcaption></figure></div></div>
+        <div class="pair reveal"><h3>Stock list</h3><div class="pair-ph"><figure class="ph "><div class="ph-frame"><img src="images/cs/cd5-stock.webp" width="600" height="1299" alt="Old stock list on Car Dealer 5, on a phone" loading="lazy" decoding="async"></div><figcaption>Before</figcaption></figure><figure class="ph after"><div class="ph-frame"><img src="images/cs/new-stock.webp" width="600" height="1299" alt="New stock list on a phone" loading="lazy" decoding="async"></div><figcaption>After</figcaption></figure></div></div>
+        <div class="pair reveal"><h3>Car page</h3><div class="pair-ph"><figure class="ph "><div class="ph-frame"><img src="images/cs/cd5-car.webp" width="600" height="1299" alt="Old car page for the Volkswagen up!, on a phone" loading="lazy" decoding="async"></div><figcaption>Before</figcaption></figure><figure class="ph after"><div class="ph-frame"><img src="images/cs/new-car.webp" width="600" height="1299" alt="New car page for the Volkswagen up!, with WhatsApp and Call on screen" loading="lazy" decoding="async"></div><figcaption>After</figcaption></figure></div></div>
+      </div>
+      <p class="table-note">Phone-sized screen, 13 Nov 2026. The old site's cookie banner is shown as visitors saw it. The new site is shown on its preview address, ahead of the switch.</p>
+    </div>
+  </section>
+
+  <section class="journey-wrap">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Time to get in touch</span>
+        <h2>From the homepage to a message about a car.</h2>
+        <p>The same task on both sites: a buyer on their phone wants to ask about the Volkswagen up!</p>
+      </div>
+      <div class="journey">
+        <div class="j-col reveal">
+          <div class="j-head"><span class="tag">BEFORE · CAR DEALER 5</span><b>6 taps, 3 things to type</b></div>
+          <ol class="j-steps">
+            <li><span class="n">1</span>Accept cookies (the only button)</li>
+            <li><span class="n">2</span>Tap Search</li>
+            <li><span class="n">3</span>Tap the car</li>
+            <li class="extra"><span class="n">↓</span>Scroll past the photos</li>
+            <li><span class="n">4</span>Tap Enquire Now</li>
+            <li class="type"><span class="n">⌨</span>Type name, phone number and email</li>
+            <li><span class="n">5</span>Tick the consent box</li>
+            <li><span class="n">6</span>Send, then wait for a reply</li>
+          </ol>
+          <figure class="ph j-shot"><div class="ph-frame"><img src="images/cs/cd5-form.webp" width="600" height="1299" alt="The old enquiry form: full name, telephone, email, message and a consent box" loading="lazy" decoding="async"></div><figcaption>The form at the end</figcaption></figure>
+        </div>
+        <div class="j-col after reveal">
+          <div class="j-head"><span class="tag">AFTER · NEW SITE</span><b>5 taps, nothing to type</b></div>
+          <ol class="j-steps">
+            <li><span class="n">1</span>Choose cookies (Accept or Reject)</li>
+            <li><span class="n">2</span>Tap Browse all cars</li>
+            <li><span class="n">3</span>Tap the car: WhatsApp and Call are already on screen</li>
+            <li><span class="n">4</span>Tap WhatsApp: the message is already written, with the car, its reg and a link</li>
+            <li><span class="n">5</span>Send, straight to Mumin's WhatsApp</li>
+          </ol>
+          <p class="j-msg">“Hi, I'm interested in the 2014 Volkswagen up! (EK14 SOA) – granitecitycars.co.uk/cars/…”</p>
+          <figure class="ph j-shot after"><div class="ph-frame"><img src="images/cs/new-car.webp" width="600" height="1299" alt="The new car page with the WhatsApp and Call bar at the bottom of the screen" loading="lazy" decoding="async"></div><figcaption>WhatsApp on screen from the start</figcaption></figure>
+        </div>
+      </div>
+      <div class="j-bars reveal" aria-label="Car page main photo on a slow phone connection: 32 seconds before, 2.7 seconds after">
+        <p class="j-bars-h">Car page, main photo on screen (slow phone connection)</p>
+        <div class="bar-row"><span>Before</span><div class="bar"><i style="width:100%"></i></div><b>32 s</b></div>
+        <div class="bar-row after"><span>After</span><div class="bar"><i style="width:8.4%"></i></div><b>2.7 s</b></div>
+      </div>
+      <p class="table-note">Taps counted on a phone-sized screen, 13 Nov 2026. Load times from Google PageSpeed Insights (mobile, slow 4G), 10–11 Nov 2026.</p>
+    </div>
+  </section>
+
+  <section class="admin-wrap">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The system behind it</span>
+        <h2>Run from a phone.</h2>
+        <p>Mumin manages stock, enquiries and invoices from his phone. Nothing goes through a platform.</p>
+      </div>
+      <div class="admin-grid reveal-stagger">
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-stock.webp" width="600" height="1299" alt="Admin stock list on a phone" loading="lazy" decoding="async"></div><figcaption><b>Stock</b> Every car, its status, days in stock and WhatsApp and Call taps</figcaption></figure>
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-car.webp" width="600" height="1299" alt="Adding a car: number plate and Look up button" loading="lazy" decoding="async"></div><figcaption><b>Add a car</b> Type the plate and press Look up: make, model, spec and features fill in</figcaption></figure>
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-photos.webp" width="600" height="1299" alt="Car photos in the admin with reorder buttons" loading="lazy" decoding="async"></div><figcaption><b>Photos</b> Shrunk on the phone before upload, then reordered with one tap</figcaption></figure>
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-leads.webp" width="600" height="1299" alt="Leads inbox on a phone" loading="lazy" decoding="async"></div><figcaption><b>Leads</b> Every website enquiry lands here, plus WhatsApp and phone enquiries added in seconds</figcaption></figure>
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-lead.webp" width="600" height="1299" alt="One enquiry with WhatsApp and Call buttons and status buttons" loading="lazy" decoding="async"></div><figcaption><b>One enquiry</b> One-tap WhatsApp or call, a status and private notes</figcaption></figure>
+        <figure class="ph "><div class="ph-frame"><img src="images/cs/admin-invoices.webp" width="600" height="1299" alt="Invoice list on a phone" loading="lazy" decoding="async"></div><figcaption><b>Invoices</b> PDF invoices shared on WhatsApp, with a CSV export for the accountant</figcaption></figure>
+      </div>
+      <figure class="admin-desk reveal"><div class="browser"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="images/cs/admin-desktop-stock.webp" width="800" height="500" alt="The admin stock list on a desktop screen" loading="lazy" decoding="async"></div><figcaption>The same admin on a desktop.</figcaption></figure>
+      <p class="table-note">Customer names, numbers and totals are hidden. The enquiries shown are our own pre-launch test enquiries.</p>
     </div>
   </section>
 
