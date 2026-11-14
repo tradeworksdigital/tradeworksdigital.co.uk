@@ -42,14 +42,14 @@
   .c-card{background:var(--paper); border:1.5px solid var(--ink); border-radius:6px; padding:30px;}
   .c-card .tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
   .c-card h2{font-size:24px; margin:12px 0 12px;}
-  .c-card > p{color:var(--ink-muted); font-size:15px;}
+  .c-card > p{color:var(--ink-muted); font-size:16px;}
   .c-recommend{background:var(--ink); color:var(--paper); border-color:var(--ink); box-shadow:8px 8px 0 var(--orange);}
   .c-recommend .tag{color:var(--yellow);}
   .c-recommend > p{color:rgba(246,243,236,.8);}
   .c-points{list-style:none; margin:20px 0 24px; display:flex; flex-direction:column; gap:10px;}
-  .c-points li{display:flex; align-items:center; gap:10px; font-size:14.5px;}
+  .c-points li{display:flex; align-items:center; gap:10px; font-size:14px;}
   .c-points li::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--orange); flex-shrink:0;}
-  .c-or{margin-top:22px; padding-top:18px; border-top:1px dashed rgba(246,243,236,.22); font-size:14.5px; color:rgba(246,243,236,.8);}
+  .c-or{margin-top:22px; padding-top:18px; border-top:1px dashed rgba(246,243,236,.22); font-size:14px; color:rgba(246,243,236,.8);}
   .c-or .tlink{color:var(--yellow);}
   .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 16px; margin-top:22px;}
   .field{display:flex; flex-direction:column; gap:6px; margin-bottom:16px;}
@@ -62,7 +62,7 @@
   .field input:focus, .field textarea:focus{outline:none; border-color:var(--ink); box-shadow:3px 3px 0 var(--orange);}
   .hp{position:absolute; left:-9999px;}
   .form-foot{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
-  .form-foot small{font-size:13px; color:var(--grey); max-width:300px;}
+  .form-foot small{font-size:14px; color:var(--grey); max-width:300px;}
   .form-status{margin-top:14px; padding:12px 14px; border:1.5px solid var(--orange-dark); border-radius:3px; font-size:14px; background:#FBE9E1;}
   .form-done{display:flex; gap:14px; align-items:flex-start; background:var(--paper-dim); border:1.5px solid var(--ink); border-radius:6px; padding:20px; margin-top:20px;}
   .form-done .ok{width:30px; height:30px; border-radius:50%; background:var(--orange); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
@@ -76,6 +76,17 @@
   .sf-legal{display:inline-flex; gap:20px; flex-wrap:wrap;}
 </style>
 <script src="site.js" defer></script>
+<style id="ux">
+  .btn{font-size:16px;}
+  .btn-sm{min-height:44px; font-size:14px;}
+  .sh-link,.sf-link{min-width:44px;}
+  .reviews-more .tlink,.work-more .tlink{display:inline-flex; align-items:center; min-height:44px;}
+  .doc > *{max-width:70ch;}
+  .table-note{max-width:75ch;}
+  .stars,.review-card .stars{color:#86600A;}
+  .hero > .wrap > p{max-width:70ch;}
+  .review-grid.two{max-width:none;}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>

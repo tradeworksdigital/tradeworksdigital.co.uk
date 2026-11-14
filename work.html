@@ -63,11 +63,11 @@
   .case-body{padding:34px 34px 32px; display:flex; flex-direction:column; gap:14px;}
   .case-tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
   .case-body h3, .case-body h2{font-size:28px;}
-  .case-body p{color:var(--ink-muted); font-size:15.5px;}
+  .case-body p{color:var(--ink-muted); font-size:16px;}
   .case-stats{list-style:none; display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; margin:6px 0 8px;}
   .case-stats li{border:1.5px solid var(--ink); border-radius:4px; padding:12px 12px 10px;}
   .case-stats b{display:block; font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-size:22px; font-weight:400; line-height:1.1;}
-  .case-stats span{display:block; margin-top:4px; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:11px; color:var(--grey); line-height:1.35;}
+  .case-stats span{display:block; margin-top:4px; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; color:var(--grey); line-height:1.35;}
   .case-body .btn{align-self:flex-start; margin-top:auto;}
   .work-more{margin-top:28px;}
   .work-more .tlink{color:var(--yellow);}
@@ -81,7 +81,7 @@
   .service{border:1.5px solid var(--ink); border-radius:6px; padding:28px 26px; background:var(--paper); display:flex; flex-direction:column; gap:12px;}
   .service .tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
   .service h3{font-size:24px;}
-  .service p{color:var(--ink-muted); font-size:15.5px; flex-grow:1;}
+  .service p{color:var(--ink-muted); font-size:16px; flex-grow:1;}
   .service .btn{align-self:flex-start;}
   .services-wrap{background:var(--paper-dim); border-top:1px solid var(--line);}
   @media (max-width:860px){
@@ -94,7 +94,7 @@
 
   /* ---------- 6 Nov: Case studies / Blog tabs on light pages ---------- */
   .work-tabs{display:flex; flex-wrap:wrap; gap:10px; margin:0 0 26px;}
-  .work-tab{font:inherit; font-weight:700; font-size:15px; min-height:44px; padding:10px 18px; border-radius:var(--radius); border:1.5px solid rgba(28,32,36,.35); background:transparent; color:var(--ink); cursor:pointer; display:inline-flex; align-items:center; gap:10px; transition:background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);}
+  .work-tab{font:inherit; font-weight:700; font-size:16px; min-height:44px; padding:10px 18px; border-radius:var(--radius); border:1.5px solid rgba(28,32,36,.35); background:transparent; color:var(--ink); cursor:pointer; display:inline-flex; align-items:center; gap:10px; transition:background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);}
   .work-tab .count{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; opacity:.8;}
   .work-tab[aria-selected="true"]{background:var(--ink); color:var(--paper); border-color:var(--ink);}
   @media (hover:hover){ .work-tab[aria-selected="false"]:hover{border-color:var(--ink);} }
@@ -105,19 +105,19 @@
   .post-media{background:var(--steel); padding:20px; display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; min-height:150px; box-sizing:border-box;}
   .post-media .pm-car{background:var(--paper); border-radius:4px; overflow:hidden; display:flex; flex-direction:column;}
   .post-media .pm-car i{display:block; flex-grow:1; min-height:62px; background:var(--paper-dim);}
-  .post-media .pm-car b{display:block; padding:7px 8px; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:10px; font-weight:600; letter-spacing:.06em;}
+  .post-media .pm-car b{display:block; padding:7px 8px; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.06em;}
   .post-media .pm-car.dark{background:var(--ink);}
   .post-media .pm-car.dark i{background:#2a3036;}
   .post-media .pm-car.dark b{color:var(--yellow);}
-  .post-media.compare{grid-template-columns:1fr 1fr; gap:1px; padding:0; background:rgba(28,32,36,.2); font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:11px;}
+  .post-media.compare{grid-template-columns:1fr 1fr; gap:1px; padding:0; background:rgba(28,32,36,.2); font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px;}
   .post-media.compare span{background:var(--ink); color:rgba(246,243,236,.75); padding:12px 14px;}
   .post-media.compare span.o{background:var(--paper); color:var(--ink); font-weight:600;}
   .post-body{padding:24px 26px 22px; display:flex; flex-direction:column; gap:12px; flex-grow:1;}
   .post-body h3{font-size:22px; line-height:1.2;}
-  .post-body p{color:var(--ink-muted); font-size:15px;}
+  .post-body p{color:var(--ink-muted); font-size:16px;}
   .post-status{margin-top:auto; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.06em; color:var(--grey);}
   a.case-card{color:var(--ink);}
-  .case-go{font-weight:700; font-size:15px; color:var(--orange-dark); margin-top:auto;}
+  .case-go{font-weight:700; font-size:16px; color:var(--orange-dark); margin-top:auto;}
   .case-go .arrow{display:inline-block; transition:transform var(--dur) var(--ease);}
   @media (hover:hover){ a.case-card:hover .case-go .arrow{transform:translateX(4px);} }
   a.case-card:focus-visible{outline:3px solid var(--orange); outline-offset:4px;}
@@ -126,6 +126,17 @@
   .sf-legal{display:inline-flex; gap:20px; flex-wrap:wrap;}
 </style>
 <script src="site.js" defer></script>
+<style id="ux">
+  .btn{font-size:16px;}
+  .btn-sm{min-height:44px; font-size:14px;}
+  .sh-link,.sf-link{min-width:44px;}
+  .reviews-more .tlink,.work-more .tlink{display:inline-flex; align-items:center; min-height:44px;}
+  .doc > *{max-width:70ch;}
+  .table-note{max-width:75ch;}
+  .stars,.review-card .stars{color:#86600A;}
+  .hero > .wrap > p{max-width:70ch;}
+  .review-grid.two{max-width:none;}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>

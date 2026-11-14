@@ -33,8 +33,8 @@
 <style>
   .hero{padding:64px 0 8px;}
   .hero h1{font-size:clamp(30px,4vw,46px); margin-bottom:18px; max-width:760px;}
-  .hero p{color:var(--ink-soft); font-size:17px; max-width:680px;}
-  section{padding:48px 0;}
+  .hero p{color:var(--ink-soft); font-size:18px; max-width:680px;}
+  section{padding:64px 0;}
   .founder-row{
     display:grid; grid-template-columns:96px 1fr; gap:22px; align-items:flex-start;
     margin-top:8px; padding-top:28px; border-top:1.5px solid var(--line);
@@ -51,7 +51,7 @@
     font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
     color:var(--grey); margin-bottom:10px;
   }
-  .founder-copy p{color:var(--ink-soft); font-size:15px; max-width:680px;}
+  .founder-copy p{color:var(--ink-soft); font-size:16px; max-width:680px;}
   .larger{background:var(--ink); color:var(--paper);}
   .larger .wrap{
     display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
@@ -59,14 +59,14 @@
   .larger .eyebrow{color:var(--yellow);}
   .larger .eyebrow::before{background:var(--yellow);}
   .larger h2{font-size:clamp(24px,3vw,32px); color:var(--paper); margin-bottom:16px;}
-  .larger p{color:rgba(246,243,236,0.75); font-size:15px; margin-bottom:14px;}
+  .larger p{color:rgba(246,243,236,0.75); font-size:16px; margin-bottom:14px;}
   .larger-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:22px;}
   .larger-card{
     background:rgba(246,243,236,0.06); border:1.5px solid rgba(246,243,236,0.18); border-radius:6px;
     padding:26px 24px;
   }
   .larger-card .lbl{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
     color:var(--yellow); margin-bottom:10px;
   }
   .larger-card ul{list-style:none;}
@@ -80,24 +80,24 @@
     display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; margin-top:36px;
   }
   .why-card{border-top:1.5px solid var(--ink); padding-top:20px;}
-  .why-card h3{font-family:'Inter', sans-serif; font-weight:800; font-size:17px; margin-bottom:8px;}
-  .why-card p{color:var(--ink-muted); font-size:14.5px;}
+  .why-card h3{font-family:'Inter', sans-serif; font-weight:800; font-size:18px; margin-bottom:8px;}
+  .why-card p{color:var(--ink-muted); font-size:14px;}
   .company-ticket{
     background:var(--paper-dim); border:1.5px solid var(--ink); border-radius:6px;
     padding:28px 30px; margin-top:8px;
     display:flex; flex-wrap:wrap; gap:28px; justify-content:space-between;
   }
   .ct-item .lbl{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
     color:var(--grey); margin-bottom:6px;
   }
-  .ct-item .val{font-weight:700; font-size:14.5px;}
+  .ct-item .val{font-weight:700; font-size:14px;}
   .li-panel{
     margin-top:0; background:var(--paper); border:1.5px dashed var(--line); border-radius:8px;
     padding:32px 30px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
   }
   .li-panel h2{font-size:22px; margin-bottom:6px;}
-  .li-panel p{color:var(--ink-muted); font-size:14.5px; max-width:520px;}
+  .li-panel p{color:var(--ink-muted); font-size:14px; max-width:520px;}
   @media (max-width:860px){
   .larger .wrap{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
@@ -112,7 +112,7 @@
   .mission .eyebrow{color:var(--yellow);}
   .mission .eyebrow::before{background:var(--yellow);}
   .mission h2{font-size:clamp(22px,2.6vw,30px); margin:14px 0 14px; line-height:1.15;}
-  .mission p{color:rgba(246,243,236,.82); font-size:15.5px; line-height:1.65; max-width:720px;}
+  .mission p{color:rgba(246,243,236,.82); font-size:16px; line-height:1.65; max-width:720px;}
   .why-card{transition:transform .2s var(--ease), box-shadow .2s var(--ease);}
   @media (hover:hover){ .why-card:hover{transform:translate(-3px,-3px); box-shadow:7px 7px 0 var(--ink);} }
   @media (max-width:860px){ .mission{padding:26px 22px; box-shadow:5px 5px 0 var(--orange);} }
@@ -126,6 +126,17 @@
   .sf-legal{display:inline-flex; gap:20px; flex-wrap:wrap;}
 </style>
 <script src="site.js" defer></script>
+<style id="ux">
+  .btn{font-size:16px;}
+  .btn-sm{min-height:44px; font-size:14px;}
+  .sh-link,.sf-link{min-width:44px;}
+  .reviews-more .tlink,.work-more .tlink{display:inline-flex; align-items:center; min-height:44px;}
+  .doc > *{max-width:70ch;}
+  .table-note{max-width:75ch;}
+  .stars,.review-card .stars{color:#86600A;}
+  .hero > .wrap > p{max-width:70ch;}
+  .review-grid.two{max-width:none;}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
