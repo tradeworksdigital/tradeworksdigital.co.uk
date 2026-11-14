@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
 <title>Website Design for Trades in Aberdeen | Tradeworks Digital</title>
-<meta name="description" content="We build websites for plumbers, electricians, roofers, and other trades across Aberdeen and the UK. Pay one flat price: £397. Your site goes live in 5 to 7 days. It gets your phone ringing.">
+<meta name="description" content="We build websites for plumbers, electricians, roofers, and other trades across Aberdeen and the UK. Pay one flat price: £397. Your site goes live in 5–7 days. It gets your phone ringing.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#1C2024">
 <link rel="canonical" href="https://www.tradeworksdigital.co.uk/">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tradeworks Digital">
 <meta property="og:title" content="Website Design for Trades in Aberdeen | Tradeworks Digital">
-<meta property="og:description" content="We build websites for plumbers, electricians, roofers, and other trades across Aberdeen and the UK. Pay one flat price: £397. Your site goes live in 5 to 7 days. It gets your phone ringing.">
+<meta property="og:description" content="We build websites for plumbers, electricians, roofers, and other trades across Aberdeen and the UK. Pay one flat price: £397. Your site goes live in 5–7 days. It gets your phone ringing.">
 <meta property="og:url" content="https://www.tradeworksdigital.co.uk/">
 <!-- Share image (4 Nov 2026): source is build-scripts/share-image/share.html, rendered at 1200×630. -->
 <meta property="og:image" content="https://www.tradeworksdigital.co.uk/images/share.jpg">
@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.tradeworksdigital.co.uk/images/share.jpg">
 <meta name="twitter:title" content="Website Design for Trades in Aberdeen | Tradeworks Digital">
-<meta name="twitter:description" content="We build websites for plumbers, electricians, roofers, and other trades across Aberdeen and the UK. Pay one flat price: £397. Your site goes live in 5 to 7 days. It gets your phone ringing.">
+<meta name="twitter:description" content="We build websites for plumbers, electricians, roofers, and other trades across Aberdeen and the UK. Pay one flat price: £397. Your site goes live in 5–7 days. It gets your phone ringing.">
 <link rel="preload" as="font" type="font/woff2" href="fonts/archivo-black-400.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/inter-400.woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
@@ -438,13 +438,9 @@
   .book-alt a.tlink{display:inline-flex; align-items:center; min-height:44px;}
   .book-steps{font-size:16px; color:var(--ink-soft); margin:18px 0 6px; padding:12px 14px; border:1px dashed var(--line); border-radius:6px; background:var(--paper);}
 
-  .o-card.brand{margin-top:24px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr); gap:8px 40px; align-items:start; border-width:2px;}
-  .o-card.brand .brand-head{display:flex; flex-direction:column; align-items:flex-start;}
-  .o-card.brand .btn{margin-top:6px;}
-  .o-card.brand ul.ticks{display:grid; grid-template-columns:1fr 1fr; column-gap:28px;}
-  .o-card.brand ul.ticks li:nth-last-child(2){border-bottom:none;}
-  @media (max-width:1100px){ .o-card.brand{grid-template-columns:1fr;} .o-card.brand ul.ticks{margin-top:14px;} }
-  @media (max-width:760px){ .o-card.brand ul.ticks{grid-template-columns:1fr;} .o-card.brand ul.ticks li:nth-last-child(2){border-bottom:1px dashed var(--line);} }
+  .brand-strip{margin-top:24px; padding:18px 22px; border:1.5px dashed var(--ink); border-radius:6px; background:var(--paper);}
+  .brand-strip p{font-size:16px; color:var(--ink-soft); max-width:none;}
+  .brand-strip b{color:var(--ink);}
   .sf-legal{display:inline-flex; gap:20px; flex-wrap:wrap;}
 </style>
 <script type="application/ld+json">
@@ -452,7 +448,7 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Tradeworks Digital",
-  "description": "We build websites for plumbers, electricians, roofers, and other local trades. You pay one fixed price.",
+  "description": "We build websites for plumbers, electricians, roofers, and other local trades. You pay one flat price.",
   "url": "https://www.tradeworksdigital.co.uk/",
   "priceRange": "£397–£897",
   "areaServed": [
@@ -497,13 +493,6 @@
   .review-grid.two{max-width:none;}
 </style>
 <style id="home-layout">
-  .offer3{grid-template-columns:repeat(2, minmax(0,1fr));}
-  .o-card.cancel{grid-column:auto;}
-  .o-card.brand{margin-top:0; display:flex; flex-direction:column; gap:0; border-width:1.5px; box-shadow:8px 8px 0 var(--orange);}
-  .o-card.brand ul.ticks{display:block; margin-top:0;}
-  .o-card.brand ul.ticks li:nth-last-child(2){border-bottom:1px dashed var(--line);}
-  .o-card.brand ul.ticks li:last-child{border-bottom:none;}
-  .o-card.dark{box-shadow:none;}
   .o-card details.more{margin-top:4px;}
   .o-card details.more summary{list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px; min-height:44px; font-weight:700; font-size:14px; color:var(--orange-dark); text-decoration:underline; text-underline-offset:4px;}
   .o-card details.more summary::-webkit-details-marker{display:none;}
@@ -511,7 +500,6 @@
   .o-card details.more[open] summary span{display:inline-block; transform:rotate(45deg);}
   .o-card details.more > ul.ticks{border-top:1px dashed var(--line);}
   .o-card.dark details.more > ul.ticks{border-top-color:rgba(246,243,236,.16);}
-  @media (max-width:760px){ .offer3{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -542,9 +530,9 @@
   <section class="hero" data-pause-offscreen>
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">Website build · £397 fixed price</span>
+        <span class="eyebrow">Website build · £397 flat price</span>
         <h1>A website that <em>brings in the calls</em>. Built in a week. Yours to keep.</h1>
-        <p class="lede">One fixed price of £397. Live in 5–7 days. We write it, build it and set it up on Google, so you can get back to the job. Based in Aberdeen, working with trades across the UK.</p>
+        <p class="lede">One flat price of £397. Live in 5–7 days. We write it, build it and set it up on Google, so you can get back to the job. Based in Aberdeen, working with trades across the UK.</p>
         <div class="hero-ctas">
           <a href="#book" class="btn btn-primary">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a>
           <a href="product.html#handover" class="btn btn-ghost">See What You Own</a>
@@ -552,7 +540,7 @@
         <div class="trust-row">
           <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg> You own the site and the code</span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg> No contract</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg> Monthly enquiries &amp; calls report</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg> Monthly report with the care plan</span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg> Live in 5–7 days</span>
         </div>
       </div>
@@ -762,7 +750,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">The Offer</span>
         <h2>£397. New site or redesign. Live in 5–7 days.</h2>
-        <p>One flat price for the build. An optional plan if you want us to look after it. A clear promise for the day you leave. And a bigger package if you want the brand done too.</p>
+        <p>One flat price for the build. An optional plan if you want us to look after it. And a clear promise for the day you leave.</p>
       </div>
       <div class="offer3 reveal-stagger">
         <div class="o-card">
@@ -774,37 +762,12 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>5 pages:</b> Home, Services (up to 6), About, Contact and Privacy</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>We write the words for you, from a 30-minute details call or by email</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Quote form, click-to-call, reviews and job photos</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Domain bought for you and registered in <b>your</b> name. First year included</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Google Business Profile, Search Console and Google Analytics set up, with you as owner</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>One round of changes before launch, 30 days of fixes after</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Live within 7 days of getting your photos and service list, or your first 3 months of care are free</span></li>
           </ul>
-          <details class="more"><summary>Show all 8 <span aria-hidden="true">+</span></summary>
-            <ul class="ticks">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Domain bought for you and registered in <b>your</b> name. First year included</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Google Business Profile, Search Console and Google Analytics set up, with you as owner</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>One round of changes before launch, 30 days of fixes after</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Live within 7 days of getting your photos and service list, or your first 3 months of care are free</span></li>
-            </ul>
-          </details>
           <div class="o-foot"><a href="#book" class="btn btn-primary btn-sm">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a></div>
-        </div>
-        <div class="o-card brand" id="brand">
-        
-          <span class="tag">BRAND + WEBSITE · ONCE · MOST COMPLETE</span>
-          <div class="amt">£897</div>
-          <p class="note">Everything in the £397 build, plus a brand that looks the part on the van, the invoice and the site. Live in 10–14 days.</p>
-        <ul class="ticks">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Logo and brand kit:</b> logo files, colour scheme, fonts and a one-page guide</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Business email</b> on your domain, set up on your phone. The mailbox is billed to you by the email provider</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Up to 10 pages:</b> a page for each service or area you cover</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Google Business Profile tidy-up:</b> categories, services, photos, new logo and cover</span></li>
-          </ul>
-          <details class="more"><summary>Show all 8 <span aria-hidden="true">+</span></summary>
-            <ul class="ticks">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Matching profile and cover images for Facebook and Google</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Print-ready artwork for a business card and your van or sign</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>A review QR card your customers can scan</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Two rounds of changes before launch, 30 days of fixes after</span></li>
-            </ul>
-          </details>
-        <div class="o-foot"><a href="#book" class="btn btn-primary btn-sm">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a></div>
         </div>
         <div class="o-card dark">
           <span class="tag">CARE PLAN · OPTIONAL</span>
@@ -834,6 +797,9 @@
             <li>Your domain is already in your name. We hand over control the same day. Your Google profile and reviews were always yours too.</li>
           </ol>
         </div>
+      </div>
+      <div class="brand-strip reveal" id="brand">
+        <p><b>Want a logo, brand kit and business email too?</b> Brand + Website is £897: everything in the build, plus your brand, up to 10 pages and print-ready artwork. Live in 10–14 days. Ask about it on your call.</p>
       </div>
     </div>
   </section>
@@ -935,7 +901,7 @@
           <p class="faq-a">Nothing goes away. Within 5 working days you get the handover pack: the site files, every login and a one-page guide. No penalty, no minimum time to stay.</p>
         </details>
         <details class="faq-item">
-          <summary><span class="qhead"><span class="qnum">Q3</span><span class="qtext">How fast is 5 to 7 days?</span></span><span class="plus" aria-hidden="true">+</span></summary>
+          <summary><span class="qhead"><span class="qnum">Q3</span><span class="qtext">How fast is 5–7 days?</span></span><span class="plus" aria-hidden="true">+</span></summary>
           <p class="faq-a">This is our build time once we have your service list, job photos, and reviews. It starts once we have your details from the 30-minute details call, or by email. If something is missing, like a logo or photos, we start with a placeholder. We swap it in later. This can add a day or two.</p>
         </details>
         <details class="faq-item">
@@ -982,7 +948,7 @@
           <li><span class="n">02</span><div><b>Your current site, if you have one</b><span>A quick, honest look at what's costing you calls.</span></div></li>
           <li><span class="n">03</span><div><b>A straight answer</b><span>Whether we're a good fit, and the price, on the call.</span></div></li>
         </ol>
-        <p class="book-steps"><b>Booked in 4 steps:</b> pick a day → pick a time → your name and email → confirmed. Instant confirmation by email.</p>
+        <p class="book-steps"><b>Booking takes a minute:</b> pick a day → pick a time → your name and email → confirmed. Instant confirmation by email.</p>
         <div class="book-alt">
           <span class="tel-slot" data-slot="Phone number"><b>Rather call?</b> <a href="tel:+441224XXXXXX" class="tlink">01224 XXX XXX</a></span>
           <span><b>Rather not call?</b> <a href="contact.html#enquiry" class="tlink">Send us a message</a></span>
@@ -1015,7 +981,7 @@
         <text x="16" y="20" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="16" fill="#F6F3EC" letter-spacing="2">TRADEWORKS</text>
         <text x="14" y="44" font-family="Archivo Black, Arial, sans-serif" font-size="26" fill="#E85D2C" letter-spacing="-0.4">DIGITAL</text>
       </svg>
-      <p>Websites for UK trades. One flat price, live in 5 to 7 days, and you own the site and the code.</p>
+      <p>Websites for UK trades. One flat price, live in 5–7 days, and you own the site and the code.</p>
     </div>
     <nav class="sf-col" aria-label="Footer">
       <h2 class="sf-h">Pages</h2>
