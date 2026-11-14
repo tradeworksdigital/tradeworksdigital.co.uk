@@ -202,7 +202,7 @@
       <a href="granite-city-cars.html" class="tlink back-link">← Case study summary</a>
       <div style="margin-top:10px;"><span class="eyebrow">Build diary · Car dealer · Aberdeen · November 2026</span></div>
       <h1>Moving a car dealer off Car Dealer 5, onto a system they <em>own</em>.</h1>
-      <p class="lede">The full story behind the Granite City Cars build: what we found on the old site, every screen before and after, how long it takes a buyer to get in touch, how we moved everything across, the admin GCC run from a phone, and the security audit before go-live.</p>
+      <p class="lede">The full story behind the Granite City Cars build. What we found on the old site, and every screen before and after. How long it takes a buyer to get in touch, and how we moved everything across. The admin GCC run from a phone, and the security audit before go-live.</p>
     </div>
   </section>
 
@@ -214,7 +214,7 @@
         <p>Every point here is dated and measured, so you can see exactly what changed.</p>
       </div>
       <div class="found-grid reveal-stagger">
-        <div class="found-card"><span class="tag">SPEED · 10 NOV 2026</span><h3>Slow on a phone</h3><p>Google's PageSpeed test on a phone scored the homepage 48 out of 100. Its main content took 9.9 seconds to appear, and the page jumped about as it loaded (layout shift 0.834; Google counts anything over 0.25 as poor).</p></div>
+        <div class="found-card"><span class="tag">SPEED · 10 NOV 2026</span><h3>Slow on a phone</h3><p>Google's PageSpeed test on a phone scored the homepage 48 out of 100. Its main content took 9.9 seconds to appear. The page jumped about as it loaded (layout shift 0.834; Google counts anything over 0.25 as poor).</p></div>
         <div class="found-card"><span class="tag">SEARCH · 6 OCT 2026</span><h3>The stock page pointed Google at Nottingham</h3><p>The homepage's “View Stock” link went to <code>/used/cars/nottingham/</code>. The page said Aberdeen, but its code gave Google the Nottingham address as its official one. It has since been changed to an Aberdeen address.</p></div>
         <div class="found-card"><span class="tag">GOOGLE · SEARCH CONSOLE</span><h3>No sitemap given to Google</h3><p>Google had never been sent a list of the site's pages. The new site's sitemap, with every car on it, is submitted in Search Console at launch.</p></div>
         <div class="found-card"><span class="tag">CONTACT · CAR PAGES</span><h3>No WhatsApp, and the buttons were below the photos</h3><p>Car pages offered Enquire Now, Request Callback and Test Drive further down the page. Each opened a form asking for a name, phone number and email.</p></div>
@@ -310,9 +310,9 @@
         <p>The riskiest part of the job wasn't the new site. It was getting everything out of the old one before it was switched off.</p>
       </div>
       <ul class="ticks reveal">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Photos first.</b> Every car photo was downloaded from the old platform while it was still live, compressed and re-uploaded in the same order, with the originals kept as a backup.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Photos first.</b> We downloaded every car photo from the old platform while it was still live. Each was compressed and re-uploaded in the same order, and the originals were kept as a backup.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Stock, sales, invoices and enquiries</b> were exported and imported, so the new system started with real history. Invoice numbers carry on from the old system.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Every old address still works.</b> All 87 old addresses (car pages, stock searches, forms, reviews) go to the right new page, so links in Google, old adverts and customers' messages don't break.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Every old address still works.</b> All 87 old addresses (car pages, stock searches, forms, reviews) go to the right new page. Links in Google, old adverts and customers' messages don't break.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>A final export on switch day</b> picked up the last enquiries and a sale that came in during the build.</span></li>
       </ul>
     </div>
@@ -323,8 +323,8 @@
       <div class="reveal">
         <span class="eyebrow">Security audit</span>
         <h2>Checked from the outside, before go-live.</h2>
-        <p>The new system holds customer names, phone numbers, invoices and photos, so before launch we audited it the way an outsider would: using only what any visitor's browser can see, and trying to read, change and upload things that should be off limits.</p>
-        <p>It found one real issue. A database rule let a visitor read more about each car than the website shows, including figures GCC keep private. We tightened it so the public can only read what the site displays, then tested again. We also switched off public sign-ups, capped what can be uploaded, shortened how long invoice share links last, and made the spreadsheet exports safe to open.</p>
+        <p>The new system holds customer names, phone numbers, invoices and photos. So before launch we audited it the way an outsider would. We used only what any visitor's browser can see, and tried to read, change and upload things that should be off limits.</p>
+        <p>It found one real issue. A database rule let a visitor read more about each car than the website shows, including figures GCC keep private. We tightened it so the public can only read what the site displays, then tested again. We also switched off public sign-ups and capped what can be uploaded. Invoice share links now expire sooner, and the spreadsheet exports are safe to open.</p>
       </div>
       <ul class="ticks reveal">
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Customer records stay private.</b> Enquiries, customers, invoices and sales refused every outside attempt to read, add or change them.</span></li>
