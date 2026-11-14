@@ -157,6 +157,8 @@
   .moved{padding-top:24px;}
   @media (max-width:900px){ .sum-grid{grid-template-columns:1fr 1fr;} .sum-pair{grid-template-columns:1fr;} .sum-pair .pair-ph{max-width:420px;} }
   .sf-legal{display:inline-flex; gap:20px; flex-wrap:wrap;}
+  .secure{border-top:1px solid var(--line);}
+  .secure p + p{margin-top:12px;}
 </style>
 <script src="site.js" defer></script>
 <style id="ux">
@@ -200,7 +202,7 @@
       <a href="granite-city-cars.html" class="tlink back-link">← Case study summary</a>
       <div style="margin-top:10px;"><span class="eyebrow">Build diary · Car dealer · Aberdeen · November 2026</span></div>
       <h1>Moving a car dealer off Car Dealer 5, onto a system they <em>own</em>.</h1>
-      <p class="lede">The full story behind the Granite City Cars build: what we found on the old site, every screen before and after, how long it takes a buyer to get in touch, how we moved everything across, and the admin GCC run from a phone.</p>
+      <p class="lede">The full story behind the Granite City Cars build: what we found on the old site, every screen before and after, how long it takes a buyer to get in touch, how we moved everything across, the admin GCC run from a phone, and the security audit before go-live.</p>
     </div>
   </section>
 
@@ -312,6 +314,25 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Stock, sales, invoices and enquiries</b> were exported and imported, so the new system started with real history. Invoice numbers carry on from the old system.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Every old address still works.</b> All 87 old addresses (car pages, stock searches, forms, reviews) go to the right new page, so links in Google, old adverts and customers' messages don't break.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>A final export on switch day</b> picked up the last enquiries and a sale that came in during the build.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="secure">
+    <div class="wrap cs-two">
+      <div class="reveal">
+        <span class="eyebrow">Security audit</span>
+        <h2>Checked from the outside, before go-live.</h2>
+        <p>The new system holds customer names, phone numbers, invoices and photos, so before launch we audited it the way an outsider would: using only what any visitor's browser can see, and trying to read, change and upload things that should be off limits.</p>
+        <p>It found one real issue. A database rule let a visitor read more about each car than the website shows, including figures GCC keep private. We tightened it so the public can only read what the site displays, then tested again. We also switched off public sign-ups, capped what can be uploaded, shortened how long invoice share links last, and made the spreadsheet exports safe to open.</p>
+      </div>
+      <ul class="ticks reveal">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Customer records stay private.</b> Enquiries, customers, invoices and sales refused every outside attempt to read, add or change them.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Private files stay private.</b> Customer photos and invoice PDFs can only be opened through short-lived links from the admin.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Admin tools need the admin login.</b> Number plate lookups, publishing and invoice numbering all refuse anyone not logged in.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>No secrets in the code.</b> Service keys live only in the hosting settings, never in the website files.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Forms are checked twice.</b> Every website form is validated and spam-checked on the server before anything is saved.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Safe to open in Excel.</b> Exports can't carry hidden spreadsheet formulas typed into a form.</span></li>
       </ul>
     </div>
   </section>
