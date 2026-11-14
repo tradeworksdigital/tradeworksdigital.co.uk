@@ -302,7 +302,7 @@
   .post-status{margin-top:auto; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.06em; color:var(--grey);}
 
   .two-jobs{padding:96px 0 40px;}
-  .jobs-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px;}
+  .jobs-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:24px;}
   .job-card{background:#FFFFFF; border:1.5px solid var(--ink); border-radius:6px; padding:32px 30px; display:flex; flex-direction:column; gap:14px;}
   .job-card.dark{background:var(--ink); color:var(--paper); border-color:var(--ink); box-shadow:8px 8px 0 var(--orange);}
   .job-card .tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
@@ -425,7 +425,7 @@
   @media (hover:hover){ .phone-link .phone{transition:transform var(--dur) var(--ease);} .phone-link:hover .phone{transform:translateY(-4px);} }
   .phone-cap a{display:inline-flex; align-items:center; min-height:44px; color:var(--orange-dark); font-weight:600; text-decoration:none;}
   .phone-cap a:hover{text-decoration:underline;}
-  @media (min-width:761px) and (max-width:1100px){ .jobs-grid{grid-template-columns:1fr 1fr;} .jobs-grid .job-card.dark{grid-column:1 / -1;} }
+  @media (min-width:761px) and (max-width:1100px){ .jobs-grid{grid-template-columns:1fr 1fr;} }
   /* 13 Nov: process cards, no side bar, soft glow on hover, final step in steel blue */
   #process .p-step::before{display:none;}
   #process .p-step:hover h3{transform:none;}
@@ -465,7 +465,7 @@
   },
   "email": "mosa@tradeworksdigital.co.uk",
   "sameAs": [
-    "https://g.page/r/CUqKTYzic4E9EBI/review"
+    "https://maps.app.goo.gl/9SJKQKRJXjYDFWzR6"
   ],
   "makesOffer": {
     "@type": "Offer",
@@ -698,22 +698,15 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">What We Build</span>
-        <h2>Three kinds of job. All yours to keep.</h2>
+        <h2>Two kinds of job. All yours to keep.</h2>
       </div>
       <div class="jobs-grid reveal-stagger">
         <div class="job-card">
           <span class="tag">£397 FLAT · LIVE IN 5–7 DAYS</span>
-          <h3>Websites for trades</h3>
-          <p>A fast, mobile-first site that gets your phone ringing: quote form, click-to-call, reviews and job photos, connected to your Google Business Profile.</p>
+          <h3>Websites for trades, new or redesigned</h3>
+          <p>A new site, or a redesign of the one you already have, for the same price. Fast and mobile-first, built to get your phone ringing: quote form, click-to-call, reviews and job photos, connected to your Google Business Profile.</p>
           <p class="own"><b>You own:</b> the site, the code, the domain, the words and the photos.</p>
           <a href="#offer" class="tlink">See the offer <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-        <div class="job-card">
-          <span class="tag">EXISTING SITE · QUOTED AFTER A FREE CHECK</span>
-          <h3>Redesigns that bring in more enquiries</h3>
-          <p>Already have a website? We look at where visitors drop off, then redesign the pages around what turns them into calls: fast on a phone, a clear call button and quote form, and your reviews up front. Google Search Console and Google Analytics are set up, so you can see what changed.</p>
-          <p class="own"><b>You own:</b> the redesigned site, the code, and your Google accounts.</p>
-          <a href="#book" class="tlink">Book a free site check <span class="arrow" aria-hidden="true">→</span></a>
         </div>
         <div class="job-card dark">
           <span class="tag">SCOPED TO THE JOB · QUOTED AFTER A CALL</span>
@@ -731,7 +724,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">The Offer</span>
-        <h2>£397. Built from scratch. Live in 5–7 days.</h2>
+        <h2>£397. New site or redesign. Live in 5–7 days.</h2>
         <p>One flat price for the build. An optional plan if you want us to look after it. And a clear promise for the day you leave.</p>
       </div>
       <div class="offer3 reveal-stagger">
@@ -740,6 +733,7 @@
           <div class="amt" data-count="397" data-prefix="£">£397</div>
           <p class="note">One flat price, not an hourly rate.</p>
           <ul class="ticks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>New site or a redesign</b> of the one you have. Same price, same 5–7 days</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>5 pages:</b> Home, Services (up to 6), About, Contact and Privacy</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>We write the words for you, from a 30-minute details call or by email</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Quote form, click-to-call, reviews and job photos</span></li>
@@ -926,7 +920,11 @@
           <p class="faq-a">No. The £397 is a one-time build fee. The £29 a month plan has no contract. Cancel it any time.</p>
         </details>
         <details class="faq-item">
-          <summary><span class="qhead"><span class="qnum">Q8</span><span class="qtext">Can you build something bigger, like a CRM?</span></span><span class="plus" aria-hidden="true">+</span></summary>
+          <summary><span class="qhead"><span class="qnum">Q8</span><span class="qtext">I already have a website. Does a redesign cost more?</span></span><span class="plus" aria-hidden="true">+</span></summary>
+          <p class="faq-a">No. A redesign is the same £397 and the same 5–7 days as a new site. We keep your domain and your Google reviews, and rebuild the pages around getting you calls: fast on a phone, a clear call button and quote form, and your reviews up front.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span class="qhead"><span class="qnum">Q9</span><span class="qtext">Can you build something bigger, like a CRM?</span></span><span class="plus" aria-hidden="true">+</span></summary>
           <p class="faq-a">Yes. Stock systems, lead inboxes, invoicing and CRMs are scoped to the job, like the Granite City Cars system. The database and every record sit in accounts in your name.</p>
         </details>
       </div>
