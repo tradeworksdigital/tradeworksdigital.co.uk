@@ -496,6 +496,23 @@
   .hero > .wrap > p{max-width:70ch;}
   .review-grid.two{max-width:none;}
 </style>
+<style id="home-layout">
+  .offer3{grid-template-columns:repeat(2, minmax(0,1fr));}
+  .o-card.cancel{grid-column:auto;}
+  .o-card.brand{margin-top:0; display:flex; flex-direction:column; gap:0; border-width:1.5px; box-shadow:8px 8px 0 var(--orange);}
+  .o-card.brand ul.ticks{display:block; margin-top:0;}
+  .o-card.brand ul.ticks li:nth-last-child(2){border-bottom:1px dashed var(--line);}
+  .o-card.brand ul.ticks li:last-child{border-bottom:none;}
+  .o-card.dark{box-shadow:none;}
+  .o-card details.more{margin-top:4px;}
+  .o-card details.more summary{list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px; min-height:44px; font-weight:700; font-size:14px; color:var(--orange-dark); text-decoration:underline; text-underline-offset:4px;}
+  .o-card details.more summary::-webkit-details-marker{display:none;}
+  .o-card.dark details.more summary{color:var(--yellow);}
+  .o-card details.more[open] summary span{display:inline-block; transform:rotate(45deg);}
+  .o-card details.more > ul.ticks{border-top:1px dashed var(--line);}
+  .o-card.dark details.more > ul.ticks{border-top-color:rgba(246,243,236,.16);}
+  @media (max-width:760px){ .offer3{grid-template-columns:1fr;} }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -530,7 +547,7 @@
         <p class="lede">One fixed price of £397. Live in 5–7 days. We write it, build it and set it up on Google, so you can get back to the job. Based in Aberdeen, working with trades across the UK.</p>
         <div class="hero-ctas">
           <a href="#book" class="btn btn-primary">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a>
-          <a href="#spec" class="btn btn-ghost">See What You Own</a>
+          <a href="product.html#handover" class="btn btn-ghost">See What You Own</a>
         </div>
         <div class="trust-row">
           <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg> You own the site and the code</span>
@@ -757,12 +774,37 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>5 pages:</b> Home, Services (up to 6), About, Contact and Privacy</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>We write the words for you, from a 30-minute details call or by email</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Quote form, click-to-call, reviews and job photos</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Domain bought for you and registered in <b>your</b> name. First year included</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Google Business Profile, Search Console and Google Analytics set up, with you as owner</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>One round of changes before launch, 30 days of fixes after</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Live within 7 days of getting your photos and service list, or your first 3 months of care are free</span></li>
           </ul>
+          <details class="more"><summary>Show all 8 <span aria-hidden="true">+</span></summary>
+            <ul class="ticks">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Domain bought for you and registered in <b>your</b> name. First year included</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Google Business Profile, Search Console and Google Analytics set up, with you as owner</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>One round of changes before launch, 30 days of fixes after</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Live within 7 days of getting your photos and service list, or your first 3 months of care are free</span></li>
+            </ul>
+          </details>
           <div class="o-foot"><a href="#book" class="btn btn-primary btn-sm">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a></div>
+        </div>
+        <div class="o-card brand" id="brand">
+        
+          <span class="tag">BRAND + WEBSITE · ONCE · MOST COMPLETE</span>
+          <div class="amt">£897</div>
+          <p class="note">Everything in the £397 build, plus a brand that looks the part on the van, the invoice and the site. Live in 10–14 days.</p>
+        <ul class="ticks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Logo and brand kit:</b> logo files, colour scheme, fonts and a one-page guide</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Business email</b> on your domain, set up on your phone. The mailbox is billed to you by the email provider</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Up to 10 pages:</b> a page for each service or area you cover</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Google Business Profile tidy-up:</b> categories, services, photos, new logo and cover</span></li>
+          </ul>
+          <details class="more"><summary>Show all 8 <span aria-hidden="true">+</span></summary>
+            <ul class="ticks">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Matching profile and cover images for Facebook and Google</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Print-ready artwork for a business card and your van or sign</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>A review QR card your customers can scan</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Two rounds of changes before launch, 30 days of fixes after</span></li>
+            </ul>
+          </details>
+        <div class="o-foot"><a href="#book" class="btn btn-primary btn-sm">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a></div>
         </div>
         <div class="o-card dark">
           <span class="tag">CARE PLAN · OPTIONAL</span>
@@ -792,24 +834,6 @@
             <li>Your domain is already in your name. We hand over control the same day. Your Google profile and reviews were always yours too.</li>
           </ol>
         </div>
-      </div>
-      <div class="o-card brand reveal" id="brand">
-        <div class="brand-head">
-          <span class="tag">BRAND + WEBSITE · ONCE</span>
-          <div class="amt">£897</div>
-          <p class="note">Everything in the £397 build, plus a brand that looks the part on the van, the invoice and the site. Live in 10–14 days.</p>
-          <a href="#book" class="btn btn-primary btn-sm">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-        <ul class="ticks">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Logo and brand kit:</b> logo files, colour scheme, fonts and a one-page guide</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Business email</b> on your domain, set up on your phone. The mailbox is billed to you by the email provider</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Up to 10 pages:</b> a page for each service or area you cover</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Google Business Profile tidy-up:</b> categories, services, photos, new logo and cover</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Matching profile and cover images for Facebook and Google</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Print-ready artwork for a business card and your van or sign</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>A review QR card your customers can scan</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Two rounds of changes before launch, 30 days of fixes after</span></li>
-        </ul>
       </div>
     </div>
   </section>
@@ -876,34 +900,7 @@
   </section>
 
 <!-- SPEC SHEET -->
-  <section class="spec" id="spec">
-    <div class="wrap spec-grid">
-      <div class="reveal">
-        <span class="eyebrow">Spec Sheet · What You Own</span>
-        <h2>Every build meets the same spec sheet.</h2>
-        <p>This is the technical detail behind the offer, and the list of what's handed to you on launch day.</p>
-        <a href="product.html" class="btn btn-ghost">Read the Build Spec <span class="arrow" aria-hidden="true">→</span></a>
-      </div>
-      <div class="spec-panel reveal">
-        <dl class="spec-rows">
-          <div><dt>SPEED</dt><dd>Under 2.5s</dd></div>
-          <div><dt>BUILD</dt><dd>Static, no database</dd></div>
-          <div><dt>SECURITY</dt><dd>HTTPS enforced</dd></div>
-          <div><dt>ACCESSIBILITY</dt><dd>WCAG AA</dd></div>
-        </dl>
-        <span class="tag">THE HANDOVER PACK · YOURS ON LAUNCH DAY</span>
-        <ul>
-          <li>Every site file, zipped</li>
-          <li>Domain login, in your name</li>
-          <li>Google Business Profile: you're the owner</li>
-          <li>Search Console: you're the owner</li>
-            <li>Google Analytics: you're the owner</li>
-          <li>A list of every account and who holds it</li>
-          <li>One-page guide to moving your site</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+
 
 <!-- TRADES -->
   <div class="trades-bar">
