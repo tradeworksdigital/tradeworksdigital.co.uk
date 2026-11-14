@@ -343,6 +343,19 @@
   .hero > .wrap > p{max-width:70ch;}
   .review-grid.two{max-width:none;}
 </style>
+<style id="design-v2">
+  /* Text links: one underline, the same distance under the words everywhere (was a bar at the bottom of the tap area) */
+  .tlink{text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:6px; text-decoration-color:color-mix(in srgb, currentColor 45%, transparent); transition:text-decoration-color var(--dur) var(--ease);}
+  .tlink::after{display:none;}
+  @media (hover:hover){ .tlink:hover{text-decoration-color:currentColor;} }
+  /* Section heads: heading left, intro right on wide screens, so the intro uses the full width at a readable line length */
+  @media (min-width:980px){
+    .section-head{max-width:none; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); column-gap:64px; align-items:start;}
+    .section-head > .eyebrow{grid-column:1 / -1;}
+    .section-head > h2{grid-column:1; margin-bottom:0;}
+    .section-head > p{grid-column:2; margin:22px 0 0;}
+  }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -418,7 +431,7 @@
         <div class="offer-col">
           <h3>The Targets</h3>
           <ul class="offer-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <span><strong>Main content on screen in under 2.5 seconds</strong> on a phone. That's Google's "Good" line; we aim for about 1 second.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <span><strong>Main content on screen in under 2.5 seconds</strong> on a phone. That's Google's "Good" line, and every build is tested against it.</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <span><strong>Nothing jumps around while it loads</strong> (layout shift under 0.1), so nobody taps the wrong button.</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <span><strong>Taps answered straight away</strong> (under 200 milliseconds), even with the booking calendar on the page.</span></li>
           </ul>
@@ -427,7 +440,7 @@
           <h3>How We Get There</h3>
           <ul class="offer-list">
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Every image is compressed and sized for the screen it's shown on — no full-resolution photos served to a phone.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Fonts are hosted with the site, not fetched from Google or anyone else — and the main body font loads instantly with the page, so text is never left waiting.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Fonts are hosted with the site, not fetched from Google or anyone else — and the main body font loads with the page, so text shows straight away.</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No page builder, no database, no plugins — just the code the page actually needs, and nothing extra slowing it down.</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Third-party embeds only load once a visitor scrolls near them, not the moment the page opens.</li>
           </ul>
@@ -443,7 +456,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">Security</span>
         <h2>A static site has far less to attack.</h2>
-        <p>Most small-business sites get compromised the same few ways: a leaked admin password, an outdated plugin, or a database that was never patched. A site built the way we build it doesn't have any of those doors.</p>
+        <p>Most small-business sites get compromised the same few ways: a leaked admin password, an outdated plugin, or a database that was never patched. A standard website built the way we build it has none of those doors. Custom systems, which do need a database, get a security audit before launch.</p>
       </div>
 
       <div class="process-list">
@@ -471,8 +484,8 @@
         <div class="p-step">
           <div class="step-num mono"><span class="big">04</span></div>
           <div class="p-step-body">
-            <h3>One vetted third party, not a dozen unknown ones</h3>
-            <p>Outside code is kept to what you ask for, like a booking calendar. We don't bolt on trackers or widgets you didn't ask for — fewer scripts means a smaller attack surface and a faster page.</p>
+            <h3>Only the outside code you ask for</h3>
+            <p>Outside code is kept to what you ask for, like a booking calendar, or Google Analytics after visitors accept cookies. We don't add widgets you didn't ask for. Fewer scripts means less to attack and a faster page.</p>
           </div>
         </div>
       </div>
@@ -495,7 +508,7 @@
           <ul class="offer-list">
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Text and background colours are checked against WCAG AA contrast ratios by calculation, not by eye.</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Semantic, structured markup that screen readers can navigate properly, not just a visual layout.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Fully responsive, tested against real phone, tablet, and desktop widths — not just a resized browser window.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Fully responsive: tested at phone, tablet and desktop sizes, and on a real phone.</li>
           </ul>
         </div>
         <div class="offer-col dark">
@@ -586,7 +599,7 @@
         </details>
         <details class="faq-item">
           <summary><span class="qhead"><span class="qnum mono">Q2</span><span class="qtext">Do you handle cookie and GDPR compliance?</span></span><span class="plus" aria-hidden="true">+</span></summary>
-          <p class="faq-a">Every site ships with a privacy policy, and we keep the number of third parties deliberately small — usually just the booking calendar. Fewer third parties means less to disclose and less risk, not just a longer policy document.</p>
+          <p class="faq-a">Every site ships with a privacy policy, and we keep the number of third parties deliberately small — usually just a booking calendar and Google Analytics. Fewer third parties means less to disclose and less risk, not just a longer policy document.</p>
         </details>
         <details class="faq-item">
           <summary><span class="qhead"><span class="qnum mono">Q3</span><span class="qtext">What if I need a contact form that emails me, or payment processing?</span></span><span class="plus" aria-hidden="true">+</span></summary>

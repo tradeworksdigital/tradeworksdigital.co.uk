@@ -123,6 +123,7 @@
       new FormData(form).forEach(function (v, k) { data[k] = String(v).trim(); });
       if (data.website) return; // spam trap: real people never see or fill this field
       delete data.website;
+      if (data.service) { data.message = 'Service: ' + data.service + '\n\n' + (data.message || ''); delete data.service; } // the CRM relay keeps the message, so the choice travels inside it
       data.elapsed_ms = Date.now() - formShownAt; // the relay ignores forms filled in under 3 seconds (bots)
       if (form.getAttribute('action').indexOf('CRM_ENQUIRY_URL') !== -1) {
         status.textContent = 'This form isn\u2019t connected yet. Please email mosa@tradeworksdigital.co.uk instead.';

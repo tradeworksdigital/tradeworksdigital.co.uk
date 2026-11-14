@@ -137,6 +137,20 @@
   .hero > .wrap > p{max-width:70ch;}
   .review-grid.two{max-width:none;}
 </style>
+<style>.mission p{max-width:none;} .company-aim{max-width:none; font-size:18px; line-height:1.6; color:var(--ink-soft); margin:14px 0 24px;} .company-aim b{color:var(--ink);}</style>
+<style id="design-v2">
+  /* Text links: one underline, the same distance under the words everywhere (was a bar at the bottom of the tap area) */
+  .tlink{text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:6px; text-decoration-color:color-mix(in srgb, currentColor 45%, transparent); transition:text-decoration-color var(--dur) var(--ease);}
+  .tlink::after{display:none;}
+  @media (hover:hover){ .tlink:hover{text-decoration-color:currentColor;} }
+  /* Section heads: heading left, intro right on wide screens, so the intro uses the full width at a readable line length */
+  @media (min-width:980px){
+    .section-head{max-width:none; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); column-gap:64px; align-items:start;}
+    .section-head > .eyebrow{grid-column:1 / -1;}
+    .section-head > h2{grid-column:1; margin-bottom:0;}
+    .section-head > p{grid-column:2; margin:22px 0 0;}
+  }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -176,7 +190,8 @@
         <div class="founder-copy">
           <div class="name">Mosa Al-Mahtot</div>
           <div class="role">Founder</div>
-          <p>I'm Mosa. I plan your site, build it and set it up on Google. No account manager. No junior learning on your job. You talk to me, and I'm still the one you call in month three.</p>
+          <p>I'm Mosa. I plan your site, build it and set it up on Google. You brief me directly, and I'm still the one you call in month three.</p>
+          <p>Every site is built for phones first and built to pass Google's Core Web Vitals: its checks for speed and stability. The technical SEO is done properly too: clean code, page titles, a sitemap and structured data, so Google understands your business.</p>
           <p>I trained as an engineer at the University of Aberdeen. Then I moved into business analysis, data and software. I've worked in energy, tech consulting, consumer brands and logistics, including running projects on site.</p>
           <p>I've also driven for work and answered customers from my phone between jobs. So I know both sides: the customer who wants a quick answer, and the person replying mid-job. Every site I build works for both.</p>
           <ul class="creds" aria-label="Credentials">
@@ -209,7 +224,7 @@
         <p>The £397 build is one fast website. Need more? A stock or booking system, a CRM, invoices or several sites? We plan it with you first.</p>
         <p>You get a written price and timeline before we start. You own everything we build.</p>
         <div class="larger-actions">
-          <a href="index.html#book" class="btn btn-primary">Book a Scoping Call <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="contact.html?service=custom#enquiry" class="btn btn-primary">Book a Scoping Call <span class="arrow" aria-hidden="true">→</span></a>
           <a href="mailto:mosa@tradeworksdigital.co.uk" class="btn btn-ghost">Email Directly</a>
         </div>
       </div>
@@ -252,6 +267,7 @@
   <section style="padding-top:0;">
     <div class="wrap">
       <span class="eyebrow reveal">The Company</span>
+      <p class="company-aim reveal"><b>Our aim:</b> you own your business, so you should own your website and your customer data too. You decide who works on it, and you can change your mind at any time. Your data stays in your control, never rented back to you.</p>
       <div class="company-ticket reveal">
         <div class="ct-item">
           <div class="lbl mono">Registered Name</div>

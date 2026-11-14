@@ -137,6 +137,20 @@
   .hero > .wrap > p{max-width:70ch;}
   .review-grid.two{max-width:none;}
 </style>
+<style>@media (min-width:761px){ .service .tag{min-height:1.4em;} .service h3{min-height:1.25em;} }</style>
+<style id="design-v2">
+  /* Text links: one underline, the same distance under the words everywhere (was a bar at the bottom of the tap area) */
+  .tlink{text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:6px; text-decoration-color:color-mix(in srgb, currentColor 45%, transparent); transition:text-decoration-color var(--dur) var(--ease);}
+  .tlink::after{display:none;}
+  @media (hover:hover){ .tlink:hover{text-decoration-color:currentColor;} }
+  /* Section heads: heading left, intro right on wide screens, so the intro uses the full width at a readable line length */
+  @media (min-width:980px){
+    .section-head{max-width:none; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); column-gap:64px; align-items:start;}
+    .section-head > .eyebrow{grid-column:1 / -1;}
+    .section-head > h2{grid-column:1; margin-bottom:0;}
+    .section-head > p{grid-column:2; margin:22px 0 0;}
+  }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -271,7 +285,7 @@
       <div class="services reveal-stagger">
         <div class="service">
           <span class="tag">£397 FLAT · LIVE IN 5–7 DAYS</span>
-          <h3>Websites for trades, new or redesigned</h3>
+          <h3>Websites for trades</h3>
           <p>A new site or a redesign, for the same £397. Fast on a phone and built to get your phone ringing: quote form, call button, reviews and job photos. You own the site and the code.</p>
           <a href="index.html#offer" class="btn btn-ghost btn-sm">See the offer <span class="arrow" aria-hidden="true">→</span></a>
         </div>

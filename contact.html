@@ -87,6 +87,21 @@
   .hero > .wrap > p{max-width:70ch;}
   .review-grid.two{max-width:none;}
 </style>
+<style>.field select{width:100%; max-width:100%; min-width:0; text-overflow:ellipsis; font:15px/1.4 'Inter','Inter Fallback',sans-serif; padding:12px 13px; min-height:46px; border:1.5px solid rgba(28,32,36,.35); border-radius:3px; background:var(--paper); color:var(--ink);}
+  .field select:hover{border-color:var(--ink);} .field select:focus{outline:none; border-color:var(--ink); box-shadow:3px 3px 0 var(--orange);}</style>
+<style id="design-v2">
+  /* Text links: one underline, the same distance under the words everywhere (was a bar at the bottom of the tap area) */
+  .tlink{text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:6px; text-decoration-color:color-mix(in srgb, currentColor 45%, transparent); transition:text-decoration-color var(--dur) var(--ease);}
+  .tlink::after{display:none;}
+  @media (hover:hover){ .tlink:hover{text-decoration-color:currentColor;} }
+  /* Section heads: heading left, intro right on wide screens, so the intro uses the full width at a readable line length */
+  @media (min-width:980px){
+    .section-head{max-width:none; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); column-gap:64px; align-items:start;}
+    .section-head > .eyebrow{grid-column:1 / -1;}
+    .section-head > h2{grid-column:1; margin-bottom:0;}
+    .section-head > p{grid-column:2; margin:22px 0 0;}
+  }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -151,7 +166,8 @@
           <div class="field"><label for="f-email">EMAIL</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
           <div class="field"><label for="f-phone">PHONE <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
           <div class="field full"><label for="f-when">BEST TIME TO CALL BACK <span class="opt">(optional)</span></label><input id="f-when" name="callback_time" type="text" placeholder="e.g. weekday afternoons"></div>
-          <div class="field full"><label for="f-msg">WHAT DO YOU NEED?</label><textarea id="f-msg" name="message" required placeholder="A few lines on what you need, e.g. a new website for my roofing business, or a system for booking jobs across 3 vans"></textarea></div>
+          <div class="field full"><label for="f-service">WHAT CAN WE HELP WITH?</label><select id="f-service" name="service" required><option value="">Choose one</option><option value="A new website (£397)" data-key="website">A new website (£397)</option><option value="A redesign of my current site (£397)" data-key="redesign">A redesign of my current site (£397)</option><option value="Brand + Website (£897)" data-key="brand">Brand + Website (£897)</option><option value="A custom system or CRM" data-key="custom">A custom system or CRM</option><option value="Something else" data-key="other">Something else</option></select></div>
+          <div class="field full"><label for="f-msg">TELL US A BIT MORE</label><textarea id="f-msg" name="message" required placeholder="A few lines on what you need, e.g. a new website for my roofing business, or a system for booking jobs across 3 vans"></textarea></div>
         </div>
         <div class="form-foot">
           <button type="submit" class="btn btn-primary">Send Message</button>
@@ -213,5 +229,11 @@
   <a href="mailto:mosa@tradeworksdigital.co.uk" class="m-cta-mail" aria-label="Email us"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
 </div>
 
+<script>
+  (function () { // preselect the service from links like contact.html?service=custom
+    try { var k = new URLSearchParams(location.search).get('service'); if (!k) return;
+      var o = document.querySelector('#f-service option[data-key="' + k.replace(/[^a-z]/g, '') + '"]'); if (o) o.selected = true; } catch (e) {}
+  })();
+</script>
 </body>
 </html>
