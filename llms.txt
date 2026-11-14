@@ -19,7 +19,7 @@ Tradeworks Digital is Trade Works Digital Ltd, company no. 17391710, registered 
 ## Key facts
 
 - Process: a free 15-minute call, then a 50% deposit and a 30-minute details call (or email) to gather services, photos and reviews.
-- Price: £397 one-time build, 50% deposit to start. Care plan £29 a month, optional, cancel any time.
+- Price: £397 one-time build, 50% deposit to start. Brand + Website package £897: adds a logo and brand kit, business email, up to 10 pages, a Google Business Profile tidy-up and print-ready artwork, live in 10–14 days. Care plan £29 a month, optional, cancel any time.
 - Included in the build: 5 pages (Home, Services, About, Contact, Privacy), words written from a 30-minute details call or by email, quote form, click-to-call, reviews and job photos, domain registered in the client's name with the first year included, Google Business Profile, Search Console and Google Analytics set up with the client as owner, one round of changes before launch and 30 days of fixes after.
 - Timing: live within 7 days of receiving photos and the service list, or the first 3 months of the care plan are free.
 - Ownership: the client owns the site and code from day one. If they cancel the care plan, they get a handover pack within 5 working days: the site files, every login and a one-page guide.
@@ -29,3 +29,4 @@ Tradeworks Digital is Trade Works Digital Ltd, company no. 17391710, registered 
 ## Optional
 
 - [Privacy policy](https://www.tradeworksdigital.co.uk/privacy-policy.html)
+- [Terms of business](https://www.tradeworksdigital.co.uk/terms.html): prices, payment, changes, cancellation, refunds and ownership
