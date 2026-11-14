@@ -56,10 +56,12 @@
   .review-grid.two{max-width:none;}
 </style>
 <style id="design-v2">
-  /* Text links: one underline, the same distance under the words everywhere (was a bar at the bottom of the tap area) */
-  .tlink{text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:6px; text-decoration-color:color-mix(in srgb, currentColor 45%, transparent); transition:text-decoration-color var(--dur) var(--ease);}
+  /* Text links: like the footer links on desktop, a line slides in under the words on hover; touch screens keep a steady line */
+  .tlink{text-decoration:none; background:linear-gradient(currentColor, currentColor) left bottom / 0 2px no-repeat; background-origin:content-box; background-clip:content-box; transition:background-size var(--dur) var(--ease);}
   .tlink::after{display:none;}
-  @media (hover:hover){ .tlink:hover{text-decoration-color:currentColor;} }
+  @media (hover:hover){ .tlink:hover, .tlink:focus-visible{background-size:100% 2px;} }
+  @media (hover:none){ .tlink{background-size:100% 2px;} }
+  .reviews-more .tlink, .work-more .tlink, .diary-band .tlink, .custom-band .tlink, .book-alt a.tlink, .job-card .tlink, .back-link.tlink{display:inline-block; min-height:0; padding:10px 0;}
   /* Section heads: heading left, intro right on wide screens, so the intro uses the full width at a readable line length */
   @media (min-width:980px){
     .section-head{max-width:none; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); column-gap:64px; align-items:start;}

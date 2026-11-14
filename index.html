@@ -524,11 +524,28 @@
   @media (max-width:860px){ .hero-visual .mini-ticket{width:min(100%, 420px);} }
   @media (max-width:480px){ .mt-cols{grid-template-columns:1fr 1fr;} .mt-cols .mt-col:first-child{grid-column:1 / -1;} .trust-row{grid-template-columns:1fr;} }
 </style>
+<style id="hero-v3">
+  .hero-grid{align-items:start;}
+  .hero-visual{display:block; padding:0; min-height:0;}
+  .hero-visual .phone-link{width:260px; margin:40px 0 0 auto;}
+  .hero-visual .mini-ticket{position:absolute; left:0; right:auto; bottom:64px; width:292px; margin:0; z-index:3;}
+  .hero-visual .mt-head{flex-wrap:nowrap; justify-content:space-between;}
+  .hero-visual .phone-cap{position:static; margin:18px 0 0; text-align:right;}
+  @media (max-width:860px){
+    .hero-grid{align-items:center;}
+    .hero-visual{display:flex; flex-direction:column; align-items:center;}
+    .hero-visual .phone-link{width:230px; margin:0 auto;}
+    .hero-visual .mini-ticket{position:relative; bottom:auto; align-self:flex-start; width:min(100%, 292px); margin:-64px 0 0;}
+    .hero-visual .phone-cap{text-align:center;}
+  }
+</style>
 <style id="design-v2">
-  /* Text links: one underline, the same distance under the words everywhere (was a bar at the bottom of the tap area) */
-  .tlink{text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:6px; text-decoration-color:color-mix(in srgb, currentColor 45%, transparent); transition:text-decoration-color var(--dur) var(--ease);}
+  /* Text links: like the footer links on desktop, a line slides in under the words on hover; touch screens keep a steady line */
+  .tlink{text-decoration:none; background:linear-gradient(currentColor, currentColor) left bottom / 0 2px no-repeat; background-origin:content-box; background-clip:content-box; transition:background-size var(--dur) var(--ease);}
   .tlink::after{display:none;}
-  @media (hover:hover){ .tlink:hover{text-decoration-color:currentColor;} }
+  @media (hover:hover){ .tlink:hover, .tlink:focus-visible{background-size:100% 2px;} }
+  @media (hover:none){ .tlink{background-size:100% 2px;} }
+  .reviews-more .tlink, .work-more .tlink, .diary-band .tlink, .custom-band .tlink, .book-alt a.tlink, .job-card .tlink, .back-link.tlink{display:inline-block; min-height:0; padding:10px 0;}
   /* Section heads: heading left, intro right on wide screens, so the intro uses the full width at a readable line length */
   @media (min-width:980px){
     .section-head{max-width:none; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); column-gap:64px; align-items:start;}
@@ -597,12 +614,11 @@
         
         <div class="mini-ticket results-card enter-2" aria-label="Granite City Cars, monitored: mobile speed score up from 48 to 98. Enquiries and Google clicks for the first 30 days are due on 13 December.">
           <div class="mt-in">
-            <div class="mt-head"><span class="mt-status"><span class="pulse-dot"></span>MONITORED</span><span class="num">Granite City Cars · Aberdeen</span></div>
-            <div class="mt-cols">
-              <div class="mt-col"><div class="mt-big"><span class="mt-from">48</span><span class="mt-arrow" aria-hidden="true">→</span><span class="mt-price" data-count="98" data-from="48">98</span></div><span class="mt-lbl">Mobile speed score</span></div>
-              <div class="mt-col" data-slot="30-day enquiries"><b class="pending">Due 13 Dec</b><span class="mt-lbl">Enquiries, first 30 days</span></div>
-              <div class="mt-col" data-slot="30-day Google clicks"><b class="pending">Due 13 Dec</b><span class="mt-lbl">Google clicks, first 30 days</span></div>
-            </div>
+            <div class="mt-head"><span class="mt-status"><span class="pulse-dot"></span>MONITORED</span><span class="num">Granite City Cars</span></div>
+            <div class="mt-big"><span class="mt-from">48</span><span class="mt-arrow" aria-hidden="true">→</span><span class="mt-price" data-count="98" data-from="48">98</span></div>
+            <div class="mt-biglabel">Mobile speed score</div>
+            <div class="mt-row" data-slot="30-day enquiries"><span>ENQUIRIES (30 DAYS)</span><b class="pending">Due 13 Dec</b></div>
+            <div class="mt-row" data-slot="30-day Google clicks"><span>GOOGLE CLICKS (30 DAYS)</span><b class="pending">Due 13 Dec</b></div>
           </div>
         </div>
         <p class="phone-cap"><a href="granite-city-cars.html">LAST BUILD · GRANITE CITY CARS · READ THE CASE STUDY →</a></p>
