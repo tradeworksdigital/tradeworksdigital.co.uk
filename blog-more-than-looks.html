@@ -191,6 +191,9 @@
   .stat-card span{display:block; font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; letter-spacing:.04em; color:var(--grey);}
   @media (max-width:860px){ .stat-grid{grid-template-columns:1fr;} }
   .post-note p + p{margin-top:8px;}
+  .post .prose h2:not(:first-child){margin-top:44px;}
+  .stat-grid.two{grid-template-columns:repeat(2,minmax(0,1fr));}
+  @media (max-width:860px){ .stat-grid.two{grid-template-columns:1fr;} }
 </style>
 <script src="site.js" defer></script>
 <style id="ux">
@@ -249,7 +252,7 @@
       <a href="work.html" class="tlink back-link">← All work and posts</a>
       <div style="margin-top:10px;"><span class="eyebrow">Guide · Why a website · November 2026</span></div>
       <h1>A good website isn&#39;t about looks. It&#39;s about the <em>phone ringing</em>.</h1>
-      <p class="lede">The reasons trades give me for not having a proper website, the numbers on what a slow site costs you, and what Google says it actually looks at.</p>
+      <p class="lede">The reasons trades give me for not having a proper website, a job I lost to a missed call, the numbers on slow sites, and what Google says it actually looks at.</p>
     </div>
   </section>
 
@@ -276,8 +279,29 @@
         <p>Unfortunately, most designers build simply for looks. Slow sites, no call button, never linked to your Google Business Profile properly, and not built to what Google looks for. Google is weighing up how far it can trust your business, and every box you tick counts.</p>
       </div>
 
+      <div class="prose reveal">
+        <h2>The job I lost to a missed call</h2>
+        <p>When I was driving, I called a customer back after a job. He didn&#39;t pick up. Then he called me, and I missed it. I called back, and he didn&#39;t pick up again. In the end I had to send a message. By the time our schedules lined up, he&#39;d stopped replying. It was an urgent moving job, so he went with someone else.</p>
+        <p>He had already chosen me. He wanted to book. If I&#39;d had a website where he could put all his details in straight away, and I could see them as they came in, that would most likely have been a closed job.</p>
+        <p>With a website, you get all the information right away, even when the phone isn&#39;t picked up. Once your site grows, you can even add your own work calendar, so customers can book the job and pay a deposit themselves.</p>
+
+        <h2>Why a website comes first</h2>
+        <p>A website is the foundation of your digital setup. Other companies have one. Are they more skilled than you? Can they do the job quicker? Maybe, maybe not. But if you&#39;re not competing online at all, in a world that&#39;s almost all online, you&#39;re out of the running before you&#39;ve quoted.</p>
+      </div>
       <div class="reveal">
-        <div class="prose"><h2>The numbers</h2><p>Speed isn&#39;t a nice extra. It decides whether people stay long enough to call you.</p></div>
+        <div class="stat-grid two">
+          <div class="stat-card"><b>98%</b><p>of consumers used the internet to find information about local businesses in 2022, up from 90% in 2019.</p><span>BrightLocal, Local Consumer Review Survey 2023</span></div>
+          <div class="stat-card"><b>82%</b><p>of UK online adults use Google Search, and UK adults now spend four and a half hours online a day.</p><span>Ofcom, Online Nation 2025</span></div>
+        </div>
+      </div>
+      <div class="prose reveal">
+        <p>Nobody is asking you to change the way you work. A website takes some of the admin and customer questions off your plate. If you pick one thing, make it a website, even before social media. It links to your Google Business Profile.</p>
+        <p>How does a customer know you&#39;re a registered business? How can they decide to go ahead if you haven&#39;t shown yourself clearly, somewhere they can find you? Build that trust up front, and when you speak to them it&#39;s just about booking the job. An FAQ page answers their common questions before they even ring.</p>
+        <p>That&#39;s the time you save. As they say, time is money, and nobody likes wasting either when there&#39;s a quicker way.</p>
+      </div>
+
+      <div class="reveal">
+        <div class="prose"><h2>Speed: the numbers</h2><p>Speed isn&#39;t a nice extra. It decides whether people stay long enough to call you.</p></div>
         <div class="stat-grid">
           <div class="stat-card"><b>53%</b><p>of mobile visits are abandoned if a page takes longer than 3 seconds to load.</p><span>Google, &ldquo;The Need for Mobile Speed&rdquo;, 2016</span></div>
           <div class="stat-card"><b>3&times;</b><p>On sites where the goal is a contact form, pages that load in 1 second convert about 3 times better than pages that take 5 seconds.</p><span>Portent, 100m+ pageviews, 2022</span></div>
@@ -291,7 +315,7 @@
         <p>Google is the biggest search engine in the world. It tells local businesses that its results are based mainly on three things:</p>
         <ul class="ticks">
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Relevance:</b> how well your business matches what someone searched for. Google asks for complete, detailed business info. A page for each service you do, and the areas you cover, helps here.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Distance:</b> how far you are from the person searching. You can&#39;t move your yard, but you can set your service area properly.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Distance:</b> how far you are from the person searching. You can&#39;t change where you&#39;re based, but you can tell Google every area you cover.</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Prominence:</b> how well known you are. Google counts links and mentions of you across the web, and how many reviews you have and your score.</span></li>
         </ul>
         <p>On top of that, Google&#39;s guidance on content names four things it looks for: experience, expertise, authority and trust. It says trust matters most. Your before and after photos, your certifications, your real name and address, and your reviews are how you show it.</p>
@@ -306,7 +330,7 @@
 
       <div class="post-note reveal">
         <p>Written 15 November 2026 by Mosa, founder of Tradeworks Digital.</p>
-        <p>Sources: <a href="https://blog.google/products/admanager/the-need-for-mobile-speed/" target="_blank" rel="noopener">Google, The Need for Mobile Speed</a> · <a href="https://www.portent.com/blog/analytics/research-site-speed-hurting-everyones-revenue.htm" target="_blank" rel="noopener">Portent, site speed and conversion rate</a> · <a href="https://backlinko.com/search-engine-ranking" target="_blank" rel="noopener">Backlinko, search engine ranking study</a> · <a href="https://support.google.com/business/answer/7091" target="_blank" rel="noopener">Google, how local ranking works</a> · <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">Google, helpful, reliable, people-first content</a> · <a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">Google, Core Web Vitals</a></p>
+        <p>Sources: <a href="https://blog.google/products/admanager/the-need-for-mobile-speed/" target="_blank" rel="noopener">Google, The Need for Mobile Speed</a> · <a href="https://www.portent.com/blog/analytics/research-site-speed-hurting-everyones-revenue.htm" target="_blank" rel="noopener">Portent, site speed and conversion rate</a> · <a href="https://backlinko.com/search-engine-ranking" target="_blank" rel="noopener">Backlinko, search engine ranking study</a> · <a href="https://support.google.com/business/answer/7091" target="_blank" rel="noopener">Google, how local ranking works</a> · <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">Google, helpful, reliable, people-first content</a> · <a href="https://www.brightlocal.com/research/local-consumer-review-survey-2023/" target="_blank" rel="noopener">BrightLocal, Local Consumer Review Survey 2023</a> · <a href="https://www.ofcom.org.uk/media-use-and-attitudes/online-habits/from-apps-to-ai-search-how-the-uk-goes-online-in-2025" target="_blank" rel="noopener">Ofcom, Online Nation 2025</a> · <a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">Google, Core Web Vitals</a></p>
       </div>
     </div>
   </section>
