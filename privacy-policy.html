@@ -33,22 +33,22 @@
 <style>
   h1,h2{font-family:'Archivo Black', 'Archivo Black Fallback', sans-serif; font-weight:400; letter-spacing:-0.01em; line-height:1.1;}
   .hero{padding:60px 0 16px;}
-  .hero h1{font-size:clamp(30px,4vw,44px); margin-bottom:12px;}
-  .hero p{color:var(--ink-muted); font-size:16px;}
+  .hero h1{font-size:clamp(1.875rem,4vw,2.75rem); margin-bottom:12px;}
+  .hero p{color:var(--ink-muted); font-size:1rem;}
   main{padding:8px 0 72px;}
-  .doc h2{font-size:20px; margin:40px 0 12px;}
+  .doc h2{font-size:1.25rem; margin:40px 0 12px;}
   .doc h2:first-child{margin-top:0;}
-  .doc p{color:var(--ink-soft); font-size:16px; margin-bottom:14px;}
-  .doc ul{color:var(--ink-soft); font-size:16px; padding-left:20px; margin-bottom:14px;}
+  .doc p{color:var(--ink-soft); font-size:1rem; margin-bottom:14px;}
+  .doc ul{color:var(--ink-soft); font-size:1rem; padding-left:20px; margin-bottom:14px;}
   .doc li{margin-bottom:8px;}
   .doc a{color:var(--orange-dark); font-weight:600;}
   .doc strong{font-weight:700; color:var(--ink);}
   .notice{
     background:var(--paper-dim); border:1.5px dashed var(--line); border-radius:6px;
-    padding:18px 20px; margin-bottom:36px; font-size:13.5px; color:var(--steel);
+    padding:18px 20px; margin-bottom:36px; font-size:0.8438rem; color:var(--steel);
   }
   .updated{
-    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:12px; color:var(--grey);
+    font-family:'IBM Plex Mono', 'IBM Plex Mono Fallback', monospace; font-size:0.75rem; color:var(--grey);
     margin-bottom:36px; display:block;
   }
   .footer-wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
@@ -56,8 +56,8 @@
 </style>
 <script src="site.js" defer></script>
 <style id="ux">
-  .btn{font-size:16px;}
-  .btn-sm{min-height:44px; font-size:14px;}
+  .btn{font-size:1rem;}
+  .btn-sm{min-height:44px; font-size:0.875rem;}
   .sh-link,.sf-link{min-width:44px;}
   .reviews-more .tlink,.work-more .tlink{display:inline-flex; align-items:center; min-height:44px;}
   .doc > *{max-width:70ch;}
@@ -81,6 +81,9 @@
     .section-head > p{grid-column:2; margin:22px 0 0;}
   }
 </style>
+<script type="speculationrules">
+{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*\\?*"}},{"not":{"selector_matches":"[rel~=nofollow], [download]"}}]},"eagerness":"moderate"}]}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>

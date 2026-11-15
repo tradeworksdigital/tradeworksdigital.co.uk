@@ -32,8 +32,8 @@
 <link rel="stylesheet" href="site.css">
 <style>
   .hero{padding:64px 0 8px;}
-  .hero h1{font-size:clamp(30px,4vw,46px); margin-bottom:18px; max-width:760px;}
-  .hero p{color:var(--ink-soft); font-size:18px; max-width:680px;}
+  .hero h1{font-size:clamp(1.875rem,4vw,2.875rem); margin-bottom:18px; max-width:760px;}
+  .hero p{color:var(--ink-soft); font-size:1.125rem; max-width:680px;}
   section{padding:64px 0;}
   .founder-row{
     display:grid; grid-template-columns:96px 1fr; gap:22px; align-items:flex-start;
@@ -44,35 +44,35 @@
     display:flex; align-items:center; justify-content:center; flex-shrink:0;
   }
   .founder-badge span{
-    font-family:'Archivo Black', sans-serif; font-size:38px; color:var(--orange);
+    font-family:'Archivo Black', sans-serif; font-size:2.375rem; color:var(--orange);
   }
-  .founder-copy .name{font-weight:800; font-size:16px;}
+  .founder-copy .name{font-weight:800; font-size:1rem;}
   .founder-copy .role{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    font-family:'IBM Plex Mono', monospace; font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase;
     color:var(--grey); margin-bottom:10px;
   }
-  .founder-copy p{color:var(--ink-soft); font-size:16px; max-width:680px;}
+  .founder-copy p{color:var(--ink-soft); font-size:1rem; max-width:680px;}
   .larger{background:var(--ink); color:var(--paper);}
   .larger .wrap{
     display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
   }
   .larger .eyebrow{color:var(--yellow);}
   .larger .eyebrow::before{background:var(--yellow);}
-  .larger h2{font-size:clamp(24px,3vw,32px); color:var(--paper); margin-bottom:16px;}
-  .larger p{color:rgba(246,243,236,0.75); font-size:16px; margin-bottom:14px;}
+  .larger h2{font-size:clamp(1.5rem,3vw,2rem); color:var(--paper); margin-bottom:16px;}
+  .larger p{color:rgba(246,243,236,0.75); font-size:1rem; margin-bottom:14px;}
   .larger-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:22px;}
   .larger-card{
     background:rgba(246,243,236,0.06); border:1.5px solid rgba(246,243,236,0.18); border-radius:6px;
     padding:26px 24px;
   }
   .larger-card .lbl{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    font-family:'IBM Plex Mono', monospace; font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase;
     color:var(--yellow); margin-bottom:10px;
   }
   .larger-card ul{list-style:none;}
   .larger-card li{
     display:flex; gap:10px; align-items:flex-start; padding:9px 0;
-    border-bottom:1px dashed rgba(246,243,236,0.14); font-size:14px; color:rgba(246,243,236,0.85);
+    border-bottom:1px dashed rgba(246,243,236,0.14); font-size:0.875rem; color:rgba(246,243,236,0.85);
   }
   .larger-card li:last-child{border-bottom:none;}
   .larger-card svg{width:15px; height:15px; stroke:var(--yellow); flex-shrink:0; margin-top:3px;}
@@ -80,39 +80,39 @@
     display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; margin-top:36px;
   }
   .why-card{border-top:1.5px solid var(--ink); padding-top:20px;}
-  .why-card h3{font-family:'Inter', sans-serif; font-weight:800; font-size:18px; margin-bottom:8px;}
-  .why-card p{color:var(--ink-muted); font-size:14px;}
+  .why-card h3{font-family:'Inter', sans-serif; font-weight:800; font-size:1.125rem; margin-bottom:8px;}
+  .why-card p{color:var(--ink-muted); font-size:0.875rem;}
   .company-ticket{
     background:var(--paper-dim); border:1.5px solid var(--ink); border-radius:6px;
     padding:28px 30px; margin-top:8px;
     display:flex; flex-wrap:wrap; gap:28px; justify-content:space-between;
   }
   .ct-item .lbl{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    font-family:'IBM Plex Mono', monospace; font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase;
     color:var(--grey); margin-bottom:6px;
   }
-  .ct-item .val{font-weight:700; font-size:14px;}
+  .ct-item .val{font-weight:700; font-size:0.875rem;}
   .li-panel{
     margin-top:0; background:var(--paper); border:1.5px dashed var(--line); border-radius:8px;
     padding:32px 30px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
   }
-  .li-panel h2{font-size:22px; margin-bottom:6px;}
-  .li-panel p{color:var(--ink-muted); font-size:14px; max-width:520px;}
+  .li-panel h2{font-size:1.375rem; margin-bottom:6px;}
+  .li-panel p{color:var(--ink-muted); font-size:0.875rem; max-width:520px;}
   @media (max-width:860px){
   .larger .wrap{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
   .founder-row{grid-template-columns:72px 1fr;}
   .founder-badge{width:72px; height:72px;}
-  .founder-badge span{font-size:28px;}
+  .founder-badge span{font-size:1.75rem;}
 }
   .founder-copy p + p{margin-top:10px;}
   .creds{list-style:none; margin:14px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:8px;}
-  .creds li{font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:600; color:var(--ink); background:var(--paper-dim); border:1px solid var(--line); border-radius:999px; padding:5px 12px;}
+  .creds li{font-family:'IBM Plex Mono', monospace; font-size:0.75rem; font-weight:600; color:var(--ink); background:var(--paper-dim); border:1px solid var(--line); border-radius:999px; padding:5px 12px;}
   .mission{background:var(--ink); color:var(--paper); border-radius:6px; padding:34px 36px; box-shadow:8px 8px 0 var(--orange); max-width:880px;}
   .mission .eyebrow{color:var(--yellow);}
   .mission .eyebrow::before{background:var(--yellow);}
-  .mission h2{font-size:clamp(22px,2.6vw,30px); margin:14px 0 14px; line-height:1.15;}
-  .mission p{color:rgba(246,243,236,.82); font-size:16px; line-height:1.65; max-width:720px;}
+  .mission h2{font-size:clamp(1.375rem,2.6vw,1.875rem); margin:14px 0 14px; line-height:1.15;}
+  .mission p{color:rgba(246,243,236,.82); font-size:1rem; line-height:1.65; max-width:720px;}
   .why-card{transition:transform .2s var(--ease), box-shadow .2s var(--ease);}
   @media (hover:hover){ .why-card:hover{transform:translate(-3px,-3px); box-shadow:7px 7px 0 var(--ink);} }
   @media (max-width:860px){ .mission{padding:26px 22px; box-shadow:5px 5px 0 var(--orange);} }
@@ -127,8 +127,8 @@
 </style>
 <script src="site.js" defer></script>
 <style id="ux">
-  .btn{font-size:16px;}
-  .btn-sm{min-height:44px; font-size:14px;}
+  .btn{font-size:1rem;}
+  .btn-sm{min-height:44px; font-size:0.875rem;}
   .sh-link,.sf-link{min-width:44px;}
   .reviews-more .tlink,.work-more .tlink{display:inline-flex; align-items:center; min-height:44px;}
   .doc > *{max-width:70ch;}
@@ -137,7 +137,7 @@
   .hero > .wrap > p{max-width:70ch;}
   .review-grid.two{max-width:none;}
 </style>
-<style>.mission p{max-width:none;} .company-aim{max-width:none; font-size:18px; line-height:1.6; color:var(--ink-soft); margin:14px 0 24px;} .company-aim b{color:var(--ink);}</style>
+<style>.mission p{max-width:none;} .company-aim{max-width:none; font-size:1.125rem; line-height:1.6; color:var(--ink-soft); margin:14px 0 24px;} .company-aim b{color:var(--ink);}</style>
 <style id="design-v2">
   /* Text links: like the footer links on desktop, a line slides in under the words on hover; touch screens keep a steady line */
   .tlink{text-decoration:none; background:linear-gradient(currentColor, currentColor) left bottom / 0 2px no-repeat; background-origin:content-box; background-clip:content-box; transition:background-size var(--dur) var(--ease);}
@@ -153,6 +153,9 @@
     .section-head > p{grid-column:2; margin:22px 0 0;}
   }
 </style>
+<script type="speculationrules">
+{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*\\?*"}},{"not":{"selector_matches":"[rel~=nofollow], [download]"}}]},"eagerness":"moderate"}]}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -246,7 +249,7 @@
   <section id="why">
     <div class="wrap">
       <div class="reveal"><span class="eyebrow">How we build for trades</span>
-      <h2 style="font-size:clamp(24px,3vw,32px); max-width:640px;">Built around how trades win work.</h2></div>
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem); max-width:640px;">Built around how trades win work.</h2></div>
 
       <div class="why-grid reveal-stagger">
         <div class="why-card">

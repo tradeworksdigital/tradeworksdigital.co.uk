@@ -115,14 +115,14 @@
       var btn = form.querySelector('button[type="submit"]');
       status.hidden = true;
       var fields = form.querySelectorAll('input:not([type=hidden]):not([name=website]), select, textarea');
-      Array.prototype.forEach.call(fields, function (el) { el.removeAttribute('aria-invalid'); });
+      Array.prototype.forEach.call(fields, function (el) { el.removeAttribute('aria-invalid'); if (el.getAttribute('aria-describedby') === 'form-error') el.removeAttribute('aria-describedby'); });
       if (!form.checkValidity()) {
         var bad = form.querySelector(':invalid:not(fieldset)');
         var em = form.querySelector('[name=email]');
         var msg = 'Please add your name, email and a few lines about what you need.';
         if (bad === em && em.value.trim()) msg = 'That email address doesn\u2019t look right. Please check it.';
         else if (bad && bad.name === 'service') msg = 'Please choose what we can help with.';
-        Array.prototype.forEach.call(form.querySelectorAll(':invalid:not(fieldset)'), function (el) { el.setAttribute('aria-invalid', 'true'); });
+        Array.prototype.forEach.call(form.querySelectorAll(':invalid:not(fieldset)'), function (el) { el.setAttribute('aria-invalid', 'true'); if (status.id && !el.hasAttribute('aria-describedby')) el.setAttribute('aria-describedby', status.id); });
         status.textContent = msg;
         status.hidden = false;
         if (bad) bad.focus();

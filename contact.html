@@ -33,37 +33,37 @@
 <style>
 
   .page-hero{padding:72px 0 48px;}
-  .page-hero h1{font-size:clamp(34px,4.6vw,54px); margin:16px 0 18px; max-width:820px;}
+  .page-hero h1{font-size:clamp(2.125rem,4.6vw,3.375rem); margin:16px 0 18px; max-width:820px;}
   .page-hero h1 em{font-style:normal; color:var(--orange);}
-  .page-hero p.lede{font-size:18px; color:var(--ink-soft); max-width:640px;}
+  .page-hero p.lede{font-size:1.125rem; color:var(--ink-soft); max-width:640px;}
   @media (max-width:860px){ .page-hero{padding:44px 0 32px;} }
 
   .contact-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:28px; align-items:start; padding-bottom:88px;}
   .c-card{background:var(--paper); border:1.5px solid var(--ink); border-radius:6px; padding:30px;}
-  .c-card .tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
-  .c-card h2{font-size:24px; margin:12px 0 12px;}
-  .c-card > p{color:var(--ink-muted); font-size:16px;}
+  .c-card .tag{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:0.75rem; font-weight:600; letter-spacing:.08em; color:var(--orange-dark);}
+  .c-card h2{font-size:1.5rem; margin:12px 0 12px;}
+  .c-card > p{color:var(--ink-muted); font-size:1rem;}
   .c-recommend{background:var(--ink); color:var(--paper); border-color:var(--ink); box-shadow:8px 8px 0 var(--orange);}
   .c-recommend .tag{color:var(--yellow);}
   .c-recommend > p{color:rgba(246,243,236,.8);}
   .c-points{list-style:none; margin:20px 0 24px; display:flex; flex-direction:column; gap:10px;}
-  .c-points li{display:flex; align-items:center; gap:10px; font-size:14px;}
+  .c-points li{display:flex; align-items:center; gap:10px; font-size:0.875rem;}
   .c-points li::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--orange); flex-shrink:0;}
-  .c-or{margin-top:22px; padding-top:18px; border-top:1px dashed rgba(246,243,236,.22); font-size:14px; color:rgba(246,243,236,.8);}
+  .c-or{margin-top:22px; padding-top:18px; border-top:1px dashed rgba(246,243,236,.22); font-size:0.875rem; color:rgba(246,243,236,.8);}
   .c-or .tlink{color:var(--yellow);}
   .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 16px; margin-top:22px;}
   .field{display:flex; flex-direction:column; gap:6px; margin-bottom:16px;}
   .field.full{grid-column:1 / -1;}
-  .field label{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:12px; font-weight:600; letter-spacing:.06em; color:var(--ink-muted);}
+  .field label{font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; font-size:0.75rem; font-weight:600; letter-spacing:.06em; color:var(--ink-muted);}
   .field label .opt{font-weight:400; color:var(--grey);}
-  .field input, .field textarea{font:15px/1.4 'Inter','Inter Fallback',sans-serif; padding:12px 13px; min-height:46px; border:1.5px solid rgba(28,32,36,.35); border-radius:3px; background:var(--paper); color:var(--ink); transition:border-color .15s ease, box-shadow .15s ease;}
+  .field input, .field textarea{font:1rem/1.4 'Inter','Inter Fallback',sans-serif; padding:12px 13px; min-height:46px; border:1.5px solid rgba(28,32,36,.35); border-radius:3px; background:var(--paper); color:var(--ink); transition:border-color .15s ease, box-shadow .15s ease;}
   .field textarea{min-height:120px; resize:vertical;}
   .field input:hover, .field textarea:hover{border-color:var(--ink);}
   .field input:focus, .field textarea:focus{outline:none; border-color:var(--ink); box-shadow:3px 3px 0 var(--orange);}
   .hp{position:absolute; left:-9999px;}
   .form-foot{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
-  .form-foot small{font-size:14px; color:var(--grey); max-width:300px;}
-  .form-status{margin-top:14px; padding:12px 14px; border:1.5px solid var(--orange-dark); border-radius:3px; font-size:14px; background:#FBE9E1;}
+  .form-foot small{font-size:0.875rem; color:var(--grey); max-width:300px;}
+  .form-status{margin-top:14px; padding:12px 14px; border:1.5px solid var(--orange-dark); border-radius:3px; font-size:0.875rem; background:#FBE9E1;}
   .form-done{display:flex; gap:14px; align-items:flex-start; background:var(--paper-dim); border:1.5px solid var(--ink); border-radius:6px; padding:20px; margin-top:20px;}
   .form-done .ok{width:30px; height:30px; border-radius:50%; background:var(--orange); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
   .form-done .ok svg{width:16px; height:16px; stroke:var(--ink);}
@@ -77,8 +77,8 @@
 </style>
 <script src="site.js" defer></script>
 <style id="ux">
-  .btn{font-size:16px;}
-  .btn-sm{min-height:44px; font-size:14px;}
+  .btn{font-size:1rem;}
+  .btn-sm{min-height:44px; font-size:0.875rem;}
   .sh-link,.sf-link{min-width:44px;}
   .reviews-more .tlink,.work-more .tlink{display:inline-flex; align-items:center; min-height:44px;}
   .doc > *{max-width:70ch;}
@@ -87,7 +87,7 @@
   .hero > .wrap > p{max-width:70ch;}
   .review-grid.two{max-width:none;}
 </style>
-<style>.field select{width:100%; max-width:100%; min-width:0; text-overflow:ellipsis; font:15px/1.4 'Inter','Inter Fallback',sans-serif; padding:12px 13px; min-height:46px; border:1.5px solid rgba(28,32,36,.35); border-radius:3px; background:var(--paper); color:var(--ink);}
+<style>.field select{width:100%; max-width:100%; min-width:0; text-overflow:ellipsis; font:1rem/1.4 'Inter','Inter Fallback',sans-serif; padding:12px 13px; min-height:46px; border:1.5px solid rgba(28,32,36,.35); border-radius:3px; background:var(--paper); color:var(--ink);}
   .field select:hover{border-color:var(--ink);} .field select:focus{outline:none; border-color:var(--ink); box-shadow:3px 3px 0 var(--orange);}</style>
 <style id="design-v2">
   /* Text links: like the footer links on desktop, a line slides in under the words on hover; touch screens keep a steady line */
@@ -104,6 +104,9 @@
     .section-head > p{grid-column:2; margin:22px 0 0;}
   }
 </style>
+<script type="speculationrules">
+{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*\\?*"}},{"not":{"selector_matches":"[rel~=nofollow], [download]"}}]},"eagerness":"moderate"}]}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -160,12 +163,12 @@
       <!-- Form posts JSON (name, business, email, phone, callback_time, message, source, elapsed_ms) to the relay on the CRM server: Web_design_agency/crm-enquiry-relay. -->
       <form action="https://crm.tradeworksdigital.co.uk/enquiry" method="POST" data-enquiry data-slot="CRM enquiry address" novalidate>
         <input type="hidden" name="source" value="tradeworksdigital.co.uk contact form">
-        <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        <label class="hp" inert>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
         <div class="form-grid">
           <div class="field"><label for="f-name">NAME</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
           <div class="field"><label for="f-biz">BUSINESS / TRADE <span class="opt">(optional)</span></label><input id="f-biz" name="business" type="text" autocomplete="organization"></div>
           <div class="field"><label for="f-where">TOWN OR POSTCODE <span class="opt">(optional)</span></label><input id="f-where" name="location" type="text" autocomplete="address-level2" placeholder="e.g. Aberdeen or AB10"></div>
-          <div class="field"><label for="f-email">EMAIL</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-email">EMAIL</label><input id="f-email" name="email" type="email" autocomplete="email" autocapitalize="none" autocorrect="off" spellcheck="false" required></div>
           <div class="field"><label for="f-phone">PHONE <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
           <div class="field full"><label for="f-when">BEST TIME TO CALL BACK <span class="opt">(optional)</span></label><input id="f-when" name="callback_time" type="text" placeholder="e.g. weekday afternoons"></div>
           <div class="field full"><label for="f-service">WHAT CAN WE HELP WITH?</label><select id="f-service" name="service" required><option value="">Choose one</option><option value="A new website (£397)" data-key="website">A new website (£397)</option><option value="A redesign of my current site (£397)" data-key="redesign">A redesign of my current site (£397)</option><option value="Brand + Website (£897)" data-key="brand">Brand + Website (£897)</option><option value="A custom system or CRM" data-key="custom">A custom system or CRM</option><option value="Something else" data-key="other">Something else</option></select></div>
@@ -175,7 +178,7 @@
           <button type="submit" class="btn btn-primary">Send Message</button>
           <small>We only use these details to reply to you. See our <a href="privacy-policy.html" class="tlink">Privacy Policy</a>.</small>
         </div>
-        <p class="form-status" data-form-status role="alert" hidden></p>
+        <p class="form-status" id="form-error" data-form-status role="alert" hidden></p>
       </form>
       <div class="form-done" data-form-done tabindex="-1" hidden>
         <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.8" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
