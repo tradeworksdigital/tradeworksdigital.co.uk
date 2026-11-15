@@ -476,7 +476,7 @@
   },
   "email": "mosa@tradeworksdigital.co.uk",
   "sameAs": [
-    "https://maps.app.goo.gl/9SJKQKRJXjYDFWzR6"
+    "https://www.google.com/maps?cid=4431950925162973770"
   ],
   "makesOffer": {
     "@type": "Offer",
@@ -537,6 +537,31 @@
     .hero-visual .phone-link{width:230px; margin:0 auto;}
     .hero-visual .mini-ticket{position:relative; bottom:auto; align-self:flex-start; width:min(100%, 292px); margin:-64px 0 0;}
     .hero-visual .phone-cap{text-align:center;}
+  }
+</style>
+<style id="hero-v4">
+  .hero-visual{display:flex; flex-direction:column; align-items:center; padding:0;}
+  .hero-visual .phone-link{width:260px; margin:40px auto 0;}
+  .hero-visual .phone-cap{position:static; margin:18px 0 0; text-align:center;}
+  .mini-ticket.lm{position:absolute; left:0; right:auto; bottom:84px; width:236px; margin:0; z-index:3; padding:14px 16px 13px; border-radius:8px;
+    font-family:'IBM Plex Mono','IBM Plex Mono Fallback',monospace; background:var(--ink); color:var(--paper); box-shadow:8px 8px 0 rgba(232,93,44,.30);}
+  .mini-ticket.lm::before{display:none;}
+  .lm-top{display:flex; align-items:center; font-size:11px; font-weight:600; letter-spacing:.1em; color:var(--yellow);}
+  .lm-top .pulse-dot{width:7px; height:7px; margin-right:8px;}
+  .lm-name{margin-left:auto; color:rgba(246,243,236,.6);}
+  .lm-big{display:flex; align-items:flex-end; gap:10px; margin:10px 0 9px;}
+  .lm-big b{font-family:'Archivo Black','Archivo Black Fallback',sans-serif; font-weight:400; font-size:46px; line-height:.9; color:var(--orange);}
+  .lm-big > span{font-size:11px; line-height:1.3; color:rgba(246,243,236,.72);}
+  .lm-bar{position:relative; height:6px; border-radius:3px; background:rgba(246,243,236,.12);}
+  .lm-bar i, .lm-bar u{position:absolute; left:0; top:0; bottom:0; border-radius:3px;}
+  .lm-bar u{width:98%; background:var(--orange);}
+  .lm-bar i{width:48%; background:rgba(246,243,236,.45); z-index:1;}
+  .lm-bl{display:flex; justify-content:space-between; font-size:11px; color:rgba(246,243,236,.6); margin:5px 0 10px;}
+  .lm-foot{display:flex; justify-content:space-between; gap:8px; border-top:1px dashed rgba(246,243,236,.22); padding-top:9px; font-size:11px; color:rgba(246,243,236,.72);}
+  .lm-foot b{color:var(--yellow); font-weight:600;}
+  @media (max-width:860px){
+    .hero-visual .phone-link{width:230px; margin:0 auto;}
+    .mini-ticket.lm{left:0; bottom:60px; width:224px;}
   }
 </style>
 <style id="design-v2">
@@ -608,18 +633,16 @@
         <div class="breathe" aria-hidden="true"></div>
         <a href="granite-city-cars.html" class="phone-link" aria-label="Read the Granite City Cars case study"><figure class="phone">
           <div class="phone-screen">
-            <img src="images/gcc-phone.webp" width="780" height="1733" alt="The Granite City Cars website on a phone" decoding="async" fetchpriority="high">
+            <img src="images/gcc-phone-520.webp" width="520" height="1155" alt="The Granite City Cars website on a phone" decoding="async">
           </div>
         </figure></a>
         
-        <div class="mini-ticket results-card enter-2" aria-label="Granite City Cars, monitored: mobile speed score up from 48 to 98. Enquiries and Google clicks for the first 30 days are due on 13 December.">
-          <div class="mt-in">
-            <div class="mt-head"><span class="mt-status"><span class="pulse-dot"></span>MONITORED</span><span class="num">Granite City Cars</span></div>
-            <div class="mt-big"><span class="mt-from">48</span><span class="mt-arrow" aria-hidden="true">→</span><span class="mt-price" data-count="98" data-from="48">98</span></div>
-            <div class="mt-biglabel">Mobile speed score</div>
-            <div class="mt-row" data-slot="30-day enquiries"><span>ENQUIRIES (30 DAYS)</span><b class="pending">Due 13 Dec</b></div>
-            <div class="mt-row" data-slot="30-day Google clicks"><span>GOOGLE CLICKS (30 DAYS)</span><b class="pending">Due 13 Dec</b></div>
-          </div>
+        <div class="mini-ticket results-card lm enter-2" aria-label="Granite City Cars, live monitor: mobile speed score 98 out of 100, up from 48. Enquiries for the first 30 days are due on 13 December.">
+          <div class="lm-top"><span class="pulse-dot"></span>LIVE MONITOR<span class="lm-name">GCC</span></div>
+          <div class="lm-big"><b><span data-count="98" data-from="48">98</span></b><span>/100<br>mobile speed</span></div>
+          <div class="lm-bar" aria-hidden="true"><i></i><u></u></div>
+          <div class="lm-bl" aria-hidden="true"><span>was 48</span><span>now 98</span></div>
+          <div class="lm-foot" data-slot="30-day enquiries"><span>30-day enquiries</span><b>due 13 Dec</b></div>
         </div>
         <p class="phone-cap"><a href="granite-city-cars.html">LAST BUILD · GRANITE CITY CARS · READ THE CASE STUDY →</a></p>
       </div>
@@ -631,7 +654,7 @@
     <div class="wrap">
       <span>Trade Works Digital Ltd &middot; Co. No. 17391710</span>
       <!-- SLOT: REVIEW COUNT — keep this number matching your Google Business Profile. -->
-      <a href="https://maps.app.goo.gl/9SJKQKRJXjYDFWzR6" target="_blank" rel="noopener" data-slot="Review count">&#9733;&#9733;&#9733;&#9733;&#9733; 2 Google reviews ↗</a>
+      <a href="https://www.google.com/maps?cid=4431950925162973770" target="_blank" rel="noopener" data-slot="Review count">&#9733;&#9733;&#9733;&#9733;&#9733; 2 Google reviews ↗</a>
       <span>Based in Aberdeen &middot; UK-wide</span>
     </div>
   </div>
@@ -689,14 +712,14 @@
       <div class="review-grid two reveal-stagger">
         <!-- SLOT: REVIEW 1 — paste the quote (shorten to 2–3 sentences if needed), the reviewer's
              first name + trade/town as shown on Google. Keep the link as is. -->
-        <a href="https://maps.app.goo.gl/9SJKQKRJXjYDFWzR6" target="_blank" rel="noopener" class="review-card lift" data-slot="Review 1">
+        <a href="https://www.google.com/maps?cid=4431950925162973770" target="_blank" rel="noopener" class="review-card lift" data-slot="Review 1">
           <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
           <blockquote>Very good customer service, definitely would recommend.</blockquote>
           <div class="who">Harrison J<span>Google review · October 2026</span></div>
           <span class="go">Read on Google ↗</span>
         </a>
         <!-- SLOT: REVIEW 2 -->
-        <a href="https://maps.app.goo.gl/9SJKQKRJXjYDFWzR6" target="_blank" rel="noopener" class="review-card lift" data-slot="Review 2">
+        <a href="https://www.google.com/maps?cid=4431950925162973770" target="_blank" rel="noopener" class="review-card lift" data-slot="Review 2">
           <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
           <blockquote>Been very helpful for my website!</blockquote>
           <div class="who">Aized R.<span>Google review · October 2026</span></div>
@@ -810,7 +833,7 @@
             <h3>We build, you check it</h3>
             <p>You see the site and ask for changes once.</p>
             <div class="meta">
-              <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 4–5 business days</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 4–5 working days</span>
               <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 1 review round</span>
             </div>
           </div>
@@ -944,7 +967,7 @@
         <!-- SLOT: OPENING HOURS — add a line here written exactly as your Google Business Profile shows it, e.g.
              <li class="sf-plain">Mon–Fri 9am–5pm</li>
              and add the matching "openingHours" to the JSON-LD in index.html. -->
-        <li><a href="https://maps.app.goo.gl/9SJKQKRJXjYDFWzR6" class="sf-link" target="_blank" rel="noopener">Find us on Google ↗</a></li>
+        <li><a href="https://www.google.com/maps?cid=4431950925162973770" class="sf-link" target="_blank" rel="noopener">Find us on Google ↗</a></li>
         <li><a href="https://g.page/r/CUqKTYzic4E9EBI/review" class="sf-link" target="_blank" rel="noopener">Leave a review ↗</a></li>
       </ul>
     </div>
@@ -955,7 +978,7 @@
   </div>
 </footer>
 
-<div class="m-cta" aria-label="Quick booking">
+<div class="m-cta" role="region" aria-label="Quick booking">
   <a href="#book" class="btn btn-primary">Book a Free Call <span class="arrow" aria-hidden="true">→</span></a>
   <a href="tel:+441224XXXXXX" class="m-cta-mail tel-slot" data-slot="Phone" aria-label="Call us on 01224 XXX XXX"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
   <a href="mailto:mosa@tradeworksdigital.co.uk" class="m-cta-mail" aria-label="Email us"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>

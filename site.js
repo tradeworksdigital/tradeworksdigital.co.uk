@@ -114,9 +114,18 @@
       var status = form.querySelector('[data-form-status]');
       var btn = form.querySelector('button[type="submit"]');
       status.hidden = true;
+      var fields = form.querySelectorAll('input:not([type=hidden]):not([name=website]), select, textarea');
+      Array.prototype.forEach.call(fields, function (el) { el.removeAttribute('aria-invalid'); });
       if (!form.checkValidity()) {
-        status.textContent = 'Please add your name, email and a few lines about what you need.';
+        var bad = form.querySelector(':invalid:not(fieldset)');
+        var em = form.querySelector('[name=email]');
+        var msg = 'Please add your name, email and a few lines about what you need.';
+        if (bad === em && em.value.trim()) msg = 'That email address doesn\u2019t look right. Please check it.';
+        else if (bad && bad.name === 'service') msg = 'Please choose what we can help with.';
+        Array.prototype.forEach.call(form.querySelectorAll(':invalid:not(fieldset)'), function (el) { el.setAttribute('aria-invalid', 'true'); });
+        status.textContent = msg;
         status.hidden = false;
+        if (bad) bad.focus();
         return;
       }
       var data = {};
