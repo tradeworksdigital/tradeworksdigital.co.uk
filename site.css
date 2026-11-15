@@ -2,3 +2,6 @@
 
 /* QA 15 Nov: show which field is wrong */
 form[data-enquiry] [aria-invalid="true"]{border-color:#B42318 !important; box-shadow:0 0 0 1px #B42318;}
+
+/* QA 15 Nov: cards are whole-card links; no underline on their text */
+.post-card, .post-card:hover{text-decoration:none;}
