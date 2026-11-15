@@ -16,3 +16,9 @@ p, li, .faq-a{text-wrap:pretty;}
 .form-grid > *, .field input, .field textarea, .field select{min-width:0;}
 .field input, .field textarea{width:100%;}
 .c-card{min-width:0;}
+
+/* Modern Web Guidance (cross-document-transitions, motion): soft cross-fade between pages, opt-in to motion only */
+@media (prefers-reduced-motion: no-preference){
+  @view-transition{navigation:auto;}
+  ::view-transition-old(root), ::view-transition-new(root){animation-duration:.2s;}
+}
