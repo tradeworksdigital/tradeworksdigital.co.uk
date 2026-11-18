@@ -79,11 +79,21 @@ if (/CriOS|Chrome\/[\d.]+ Mobile/.test(navigator.userAgent)) document.documentEl
   }
   var counters = document.querySelectorAll('[data-count]');
   if (!reduceMotion && 'IntersectionObserver' in window) {
+    counters.forEach(function (el) {
+      el.textContent = (el.getAttribute('data-prefix') || '') + (el.getAttribute('data-from') || '0') + (el.getAttribute('data-suffix') || '');
+    });
+    function startWhenShown(el) {
+      var card = el.closest('.reveal, .reveal-stagger');
+      if (card && document.documentElement.classList.contains('reveal-ready') && !card.classList.contains('is-in')) {
+        return setTimeout(function () { startWhenShown(el); }, 150);
+      }
+      setTimeout(function () { countUp(el); }, card ? 350 : 0); /* let the fade-in finish first */
+    }
     var co = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) { countUp(entry.target); co.unobserve(entry.target); }
+        if (entry.isIntersecting) { co.unobserve(entry.target); startWhenShown(entry.target); }
       });
-    }, { threshold: 0.6 });
+    }, { threshold: 1, rootMargin: '-10% 0px -25% 0px' });
     counters.forEach(function (el) { co.observe(el); });
   }
 
