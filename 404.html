@@ -206,6 +206,12 @@ html{background:#1C2024;} body{background:var(--paper);}
   /* Hero buttons: too wide to sit side by side on a phone, so both full width, same size, stacked (main one first) */
   .hero-ctas{display:grid !important; grid-template-columns:1fr !important; gap:12px !important;}
   .hero-ctas .btn{width:100% !important; justify-content:center !important;}
+  /* All content buttons on phones: full width of their box, same height, text centred (one consistent button style) */
+  main .btn, section .btn{width:100% !important; justify-content:center !important; min-height:48px !important;}
+  /* Legal pages: left-aligned (long links and addresses leave big gaps when justified) */
+  .doc p, .doc li{text-align:left !important; -webkit-hyphens:manual !important; hyphens:manual !important;}
+  /* 404: space between the heading and the text */
+  .nf h1 + .lede{margin-top:16px !important;}
   /* Tap targets: text links that act as buttons get the full 44px height */
   .tlink.back-link, .book-alt .tlink, .book-alt span > .tlink, .contact-alt .tlink, p > .tlink:only-child{display:inline-flex !important; align-items:center; min-height:44px;}
   /* Smallest labels at least 12px (hero results card) */
