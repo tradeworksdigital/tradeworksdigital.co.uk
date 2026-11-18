@@ -242,5 +242,19 @@
       var o = document.querySelector('#f-service option[data-key="' + k.replace(/[^a-z]/g, '') + '"]'); if (o) o.selected = true; } catch (e) {}
   })();
 </script>
+<style id="mobile-v3">
+  /* --- 17 Nov mobile review --- */
+  .case-shot{display:block; width:100%; height:auto; border-radius:4px;}
+  .eyebrow + h1, .eyebrow + h2{margin-top:14px !important;}
+  .section-head h2{margin-bottom:14px !important;}
+  .section-head h2 + p{margin-top:0 !important;}
+  @media (max-width:760px){
+    .section-head{margin-bottom:32px !important;}
+    :where(main, section) p:not(.phone-cap):not(.book-note):not(.ps){text-align:justify; -webkit-hyphens:auto; hyphens:auto; text-wrap:wrap;}
+  }
+  @media (max-width:760px){
+    div.contact-grid{padding-bottom:48px !important;}
+  }
+</style>
 </body>
 </html>
