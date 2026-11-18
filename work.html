@@ -396,6 +396,9 @@ html{background:#1C2024;} body{background:var(--paper);}
   .p-step .step-num .big{display:inline !important; margin:0 !important; font-size:1.125rem !important; line-height:1 !important; color:var(--orange-dark);}
   .p-step .p-step-body > h3{margin:0 0 8px !important; min-height:0 !important; height:auto !important;}
   .p-step .p-step-body > p{margin:0 !important;}
+  /* Hero buttons: too wide to sit side by side on a phone, so both full width, same size, stacked (main one first) */
+  .hero-ctas{display:grid !important; grid-template-columns:1fr !important; gap:12px !important;}
+  .hero-ctas .btn{width:100% !important; justify-content:center !important;}
   /* Tap targets: text links that act as buttons get the full 44px height */
   .tlink.back-link, .book-alt .tlink, .book-alt span > .tlink, .contact-alt .tlink, p > .tlink:only-child{display:inline-flex !important; align-items:center; min-height:44px;}
   /* Smallest labels at least 12px (hero results card) */
