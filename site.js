@@ -67,11 +67,11 @@ if (/CriOS|Chrome\/[\d.]+ Mobile/.test(navigator.userAgent)) document.documentEl
     var from = parseFloat(el.getAttribute('data-from') || '0');
     var prefix = el.getAttribute('data-prefix') || '';
     var suffix = el.getAttribute('data-suffix') || '';
-    var start = null, dur = 1300;
+    var start = null, dur = 1600;
     function step(ts) {
       if (start === null) start = ts;
       var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
+      var eased = 1 - Math.pow(1 - p, 4);
       el.textContent = prefix + Math.round(from + (target - from) * eased) + suffix;
       if (p < 1) requestAnimationFrame(step);
     }
