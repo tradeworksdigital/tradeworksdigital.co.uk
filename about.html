@@ -360,6 +360,8 @@
 </style>
 
 <style id="mobile-v4">
+/* Overscroll past the footer (iPhone bounce, Chrome) shows the footer colour, not a cream block */
+html{background:#1C2024;} body{background:var(--paper);}
 @media (max-width:760px){
   /* Cards and narrow columns: left-aligned (justify leaves big gaps under ~300px) */
   :where(.case-body,.o-card,.text-bubble,.brand-strip,.p-step-body,.service,.founder-copy,.mission,.c-card,.stat-card,.found-card,.j-col,.j-bars,.review-card,.rev-card,.r-card,.faq-a,.book-side,.call-list,.meta) p,
@@ -376,23 +378,27 @@
   .founder-copy > :not(.name):not(.role){grid-column:1 / -1;}
   .founder-copy > .name + .role + *{margin-top:16px !important;}
 
-  /* Numbered steps: number on the same line as the step title, text full width below */
-  .p-step{display:grid !important; grid-template-columns:auto 1fr !important; column-gap:12px !important; row-gap:6px !important; align-items:baseline !important;}
-  .p-step .p-step-body{display:contents !important;}
-  .p-step .step-num{grid-column:1; grid-row:1; display:flex !important; align-items:baseline; gap:6px; margin:0 !important;}
-  .p-step .step-num .big{display:inline !important; margin:0 !important; font-size:1.375rem !important; line-height:1 !important;}
-  .p-step .p-step-body > h3{grid-column:2; grid-row:1; margin:0 !important; min-height:0 !important;}
-  .p-step .p-step-body > :not(h3){grid-column:1 / -1;}
+  /* Numbered steps: the number is its own small label above the title (clear space, nothing crowding it),
+     then the title, then the text, all on one left edge */
+  .p-step{display:grid !important; grid-template-columns:1fr !important; row-gap:0 !important;}
+  .p-step .p-step-body{display:block !important;}
+  .p-step .step-num{display:flex !important; align-items:baseline; gap:6px; margin:0 0 8px !important;}
+  .p-step .step-num .big{display:inline !important; margin:0 !important; font-size:1.125rem !important; line-height:1 !important; color:var(--orange-dark);}
+  .p-step .p-step-body > h3{margin:0 0 8px !important; min-height:0 !important; height:auto !important;}
+  .p-step .p-step-body > p{margin:0 !important;}
+  /* Tap targets: text links that act as buttons get the full 44px height */
+  .tlink.back-link, .book-alt .tlink, .book-alt span > .tlink, .contact-alt .tlink, p > .tlink:only-child{display:inline-flex !important; align-items:center; min-height:44px;}
+  /* Smallest labels at least 12px (hero results card) */
+  .proof-strip .wrap, .proof-strip .wrap *{font-size:0.75rem !important;}
+  .p-step .p-step-body > p{font-size:0.9375rem !important; line-height:1.55 !important;}
+  .hero [class*=lm-] span, .hero [class*=lm-], .lm-name{font-size:max(0.75rem, 1em) !important;}
+  /* Body copy in cards: 15px minimum on phones */
+  .why-card p, .text-bubble, .text-bubble p, .sum-grid p.sum-copy, p.sum-copy.sum-copy, .why-card{font-size:0.9375rem !important; line-height:1.55 !important;}
   /* Case-study stat boxes (home + work): one per row, number and label on the same line, no wrapped numbers */
   .case-stats{display:grid !important; grid-template-columns:1fr !important; gap:8px !important;}
   .case-stats > *{display:flex !important; align-items:center !important; gap:12px !important; padding:12px 14px !important; min-height:0 !important;}
   .case-stats b{white-space:nowrap !important; flex:0 0 auto; font-size:1.375rem !important; line-height:1.1 !important; min-width:5.2em;}
   .case-stats span, .case-stats small, .case-stats p{margin:0 !important; line-height:1.3 !important;}
-  /* Home page process cards: "STEP 01" as one short label, the title straight under it */
-  #process .p-step{grid-template-columns:1fr !important; row-gap:4px !important;}
-  #process .p-step .step-num{grid-column:1; grid-row:1;}
-  #process .p-step .p-step-body > h3{grid-column:1; grid-row:2; margin-top:2px !important; min-height:0 !important; height:auto !important; align-items:flex-start !important;}
-  #process .p-step .p-step-body > :not(h3){grid-column:1;}
 }
 </style>
 </body>
