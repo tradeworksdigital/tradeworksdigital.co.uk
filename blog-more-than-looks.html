@@ -413,7 +413,8 @@
   .section-head h2 + p{margin-top:0 !important;}
   @media (max-width:760px){
     .section-head{margin-bottom:32px !important;}
-    :where(main, section) p:not(.phone-cap):not(.book-note):not(.ps){text-align:justify; -webkit-hyphens:auto; hyphens:auto; text-wrap:wrap;}
+    /* Phones: left-aligned body text (WCAG 1.4.8: no justified text), with balanced line breaks instead */
+    :where(main, section) p:not(.phone-cap):not(.book-note):not(.ps){text-align:left; -webkit-hyphens:manual; hyphens:manual; text-wrap:pretty;}
   }
   @media (max-width:760px){
     section.cta-band{padding-top:48px !important;}
