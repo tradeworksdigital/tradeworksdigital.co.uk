@@ -854,6 +854,20 @@
 <!-- SPEC SHEET -->
 
 
+<!-- TRADES -->
+  <div class="trades-bar">
+    <div class="wrap">
+      <span class="label">Built for</span>
+      <div class="trades-icons reveal-stagger">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg> Plumbers</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg> Electricians</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg> Roofers</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> Builders &amp; Joiners</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg> Any local trade</span>
+      </div>
+    </div>
+  </div>
+
 <!-- FAQ -->
   <section class="faq" id="faq">
     <div class="wrap">
@@ -1030,6 +1044,13 @@
     .proof-strip .ps-sep{display:inline; color:var(--ink-muted);}
     .proof-strip span, .proof-strip a{font-size:0.6875rem !important; letter-spacing:0 !important; white-space:nowrap;}
     .case-stats b{white-space:nowrap;}
+    /* Built for: compact on phones, label and trades flow together on 2-3 short lines */
+    .trades-bar{padding:14px 0 !important;}
+    .trades-bar .wrap{display:flex !important; flex-wrap:wrap !important; align-items:center !important; gap:6px 12px !important;}
+    .trades-bar .label{margin:0 !important;}
+    .trades-icons{display:flex !important; flex-wrap:wrap !important; gap:6px 14px !important; margin:0 !important;}
+    .trades-icons span{font-size:0.8125rem !important; gap:5px !important;}
+    .trades-icons svg{width:15px !important; height:15px !important;}
   }
   @media (max-width:22em){
     /* very large text (200%): let the proof strip wrap instead of pushing the page sideways */
