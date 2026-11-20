@@ -17,6 +17,9 @@ p, li, .faq-a{text-wrap:pretty;}
 .field input, .field textarea{width:100%;}
 .c-card{min-width:0;}
 @media (max-width:860px){.js .m-cta{bottom:env(safe-area-inset-bottom,0px);padding:12px 16px;background:#1C2024 !important;will-change:transform;backface-visibility:hidden}.js .m-cta::after{content:"";position:absolute;left:0;right:0;top:100%;height:calc(env(safe-area-inset-bottom,0px) + max(160px, 40vh));background:#1C2024;pointer-events:none}.m-cta .btn{box-shadow:none !important;border-radius:6px !important}.m-cta-mail{border-radius:6px !important}}[data-count]{font-variant-numeric:tabular-nums}
+/* Phone-added links (iPhone data detectors): look like plain text, not tappable */
+a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !important;font:inherit !important;pointer-events:none !important;cursor:text}
+
 /* Modern Web Guidance (cross-document-transitions, motion): soft cross-fade between pages, opt-in to motion only */
 @media (prefers-reduced-motion: no-preference){
   @view-transition{navigation:auto;}
