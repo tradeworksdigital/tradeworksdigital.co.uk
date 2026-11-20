@@ -1,4 +1,3 @@
-if (/CriOS|Chrome\/[\d.]+ Mobile/.test(navigator.userAgent)) document.documentElement.classList.add('chrome-mobile'); // see site.css .m-cta
 /* Tradeworks Digital — shared behaviour (redesign, Oct 2026). No libraries. */
 (function () {
   var doc = document.documentElement;
