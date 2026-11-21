@@ -310,27 +310,15 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://www.tradeworksdigital.co.uk/#business",
   "name": "Tradeworks Digital",
   "description": "We build websites for plumbers, electricians, roofers, and other local trades. You pay one flat price.",
   "url": "https://www.tradeworksdigital.co.uk/",
   "priceRange": "£397–£897",
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Aberdeen"
-    },
-    "GB"
-  ],
+  "areaServed": "GB",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Aberdeen",
     "addressCountry": "GB"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 57.1497,
-    "longitude": -2.0943
   },
   "email": "mosa@tradeworksdigital.co.uk",
   "sameAs": [
@@ -341,9 +329,7 @@
     "name": "Lead-generating website build for trades businesses",
     "priceCurrency": "GBP",
     "price": "397"
-  },
-  "logo": "https://www.tradeworksdigital.co.uk/android-chrome-512.png",
-  "image": "https://www.tradeworksdigital.co.uk/images/share.jpg"
+  }
 }
 </script>
 <script src="site.js" defer></script>
@@ -409,7 +395,7 @@
       <div>
         <span class="eyebrow">Spec sheet · technical build</span>
         <h1>Every build meets <em>the same spec sheet.</em></h1>
-        <p class="lede">This page is the technical detail behind the offer — exactly what we build into performance, security, accessibility, and search, before your site ever goes live.</p>
+        <p class="lede">This page lists what goes into every build before it goes live: speed, security, accessibility and search.</p>
         <div class="hero-ctas">
           <a href="/#book" class="btn btn-primary">Book a Free Call</a>
           <a href="/#offer" class="btn btn-ghost">See The Offer</a>
@@ -442,13 +428,13 @@
   <section id="performance">
     <div class="wrap">
       <div class="section-head reveal">
-<h2>Built to pass Core Web Vitals, not just look fast.</h2>
+<h2>Built to pass Google's Core Web Vitals.</h2>
         <p>Google measures three things when it decides whether your site is "fast": how quickly the main content appears, whether anything jumps around while it loads, and how quickly the page responds when someone taps something. All three affect both your ranking and whether a visitor sticks around long enough to call you.</p>
       </div>
 
       <div class="offer-grid">
         <div class="offer-col">
-          <h3>The Targets</h3>
+          <h3>The targets</h3>
           <ul class="offer-list">
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <span><strong>Main content on screen in under 2.5 seconds</strong> on a phone. That's Google's "Good" line, and every build is tested against it.</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <span><strong>Nothing jumps around while it loads</strong> (layout shift under 0.1), so nobody taps the wrong button.</span></li>
@@ -456,12 +442,12 @@
           </ul>
         </div>
         <div class="offer-col dark">
-          <h3>How We Get There</h3>
+          <h3>How we get there</h3>
           <ul class="offer-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Every image is compressed and sized for the screen it's shown on — no full-resolution photos served to a phone.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Fonts are hosted with the site, not fetched from Google or anyone else — and the main body font loads with the page, so text shows straight away.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No page builder, no database, no plugins — just the code the page actually needs, and nothing extra slowing it down.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Third-party embeds only load once a visitor scrolls near them, not the moment the page opens.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Every image is compressed and sized for the screen it's shown on, so a phone never downloads a full-size photo.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Fonts are hosted with the site, and the fonts used on the first screen load with the page, so text shows straight away.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No page builder, database or plugins: the page loads only the code it uses.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Third-party embeds load only when a visitor scrolls near them.</li>
           </ul>
         </div>
       </div>
@@ -474,7 +460,7 @@
     <div class="wrap">
       <div class="section-head reveal">
 <h2>A static site has far less to attack.</h2>
-        <p>Most small-business sites get compromised the same few ways: a leaked admin password, an outdated plugin, or a database that was never patched. A standard website built the way we build it has none of those doors. Custom systems, which do need a database, get a security audit before launch.</p>
+        <p>The common ways into a small-business site are a leaked admin password, an outdated plugin, or a database that was never patched. A standard website built the way we build it has none of them. Custom systems, which do need a database, get a security audit before launch.</p>
       </div>
 
       <div class="process-list">
@@ -482,21 +468,21 @@
           <div class="step-num mono"><span class="big">01</span></div>
           <div class="p-step-body">
             <h3>HTTPS everywhere, renewed automatically</h3>
-            <p>Every page is served over HTTPS with a certificate that renews itself — no manual renewal to forget, no expired-certificate warning scaring visitors off.</p>
+            <p>Every page is served over HTTPS. The certificate renews automatically, so it can't lapse and show visitors a security warning.</p>
           </div>
         </div>
         <div class="p-step">
           <div class="step-num mono"><span class="big">02</span></div>
           <div class="p-step-body">
             <h3>No database, no admin login, nothing to break into</h3>
-            <p>There's no login page for someone to guess their way into, and no database to leak or inject code through. The classic ways a small-business site gets hacked simply don't apply here.</p>
+            <p>There's no login page for someone to guess their way into, and no database to leak or inject code through.</p>
           </div>
         </div>
         <div class="p-step">
           <div class="step-num mono"><span class="big">03</span></div>
           <div class="p-step-body">
             <h3>Every change is tracked and reversible</h3>
-            <p>The site is built under version control, so every edit is recorded. If anything ever needs undoing, it takes minutes, not a frantic phone call.</p>
+            <p>The site is built under version control, so every edit is recorded. Undoing a change takes minutes.</p>
           </div>
         </div>
         <div class="p-step">
@@ -517,15 +503,15 @@
       <div class="section-head reveal">
         <span class="eyebrow">Standards</span>
         <h2>Readable by people, and by search engines.</h2>
-        <p>A site that's easy for a screen reader to parse is usually also easy for Google to understand — the two go hand in hand more than people expect.</p>
+        <p>Clear headings, labels and structure help screen readers and Google read the same page.</p>
       </div>
 
       <div class="offer-grid">
         <div class="offer-col">
           <h3>Accessibility</h3>
           <ul class="offer-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Text and background colours are checked against WCAG AA contrast ratios by calculation, not by eye.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Semantic, structured markup that screen readers can navigate properly, not just a visual layout.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Text and background colours are checked against WCAG AA contrast ratios by calculation.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Semantic, structured markup that screen readers can navigate properly.</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Fully responsive: tested at phone, tablet and desktop sizes, and on a real phone.</li>
           </ul>
         </div>
@@ -534,7 +520,7 @@
           <ul class="offer-list">
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Structured data included so Google can understand who you are, what you do, and where you work.</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Proper page titles, descriptions, and a sitemap so search engines can find and index every page.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Fast load times aren't just nice to have — Core Web Vitals are one of the signals Google uses to rank pages.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Core Web Vitals are one of the signals Google uses to rank pages.</li>
           </ul>
         </div>
       </div>
@@ -547,7 +533,7 @@
     <div class="wrap">
       <div class="section-head reveal">
 <h2>Every build is tested before it goes live.</h2>
-        <p>We don't take our own word for it. Each site is run through Google's own tools, then checked for accessibility and design with open-source tools.</p>
+        <p>Each site is run through Google's own tools, then checked for accessibility and design with open-source tools.</p>
       </div>
       <div class="offer-grid">
         <div class="offer-col">
@@ -560,7 +546,7 @@
         <div class="offer-col dark">
           <h3>Accessibility &amp; design checks</h3>
           <ul class="offer-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <span><strong>Contrast worked out, not guessed:</strong> every text colour meets WCAG AA (4.5:1).</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <span><strong>Contrast checked by calculation:</strong> every text colour meets WCAG AA (4.5:1).</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <span><strong>Keyboard-only run-through</strong> of every page, with a visible focus outline.</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <span><strong>Buttons big enough for a thumb:</strong> at least 44px on a phone.</span></li>
             <li data-slot="Confirm the tool list"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <span><strong>Open-source tools:</strong> Google Lighthouse, run on every page before launch.</span></li>
@@ -603,22 +589,22 @@
   <section class="faq" id="tech-faq">
     <div class="wrap">
       <div class="section-head reveal">
-<h2>The questions that come up once people see the detail.</h2>
-        <p>Straight answers to the technical questions we get asked most.</p>
+<h2>Technical questions</h2>
+        <p>The ones we get asked most once people have read the detail above.</p>
       </div>
 
       <div class="faq-list">
         <details class="faq-item">
           <summary><span class="qhead"><span class="qnum mono">Q1</span><span class="qtext">What if I want a blog or extra pages later?</span></span><span class="plus" aria-hidden="true">+</span></summary>
-          <p class="faq-a">We add pages the same way the rest of the site is built — fast, static, no plugins. If you eventually need something that has to run on a server, like a members' area or a custom checkout, we tell you that upfront and scope it separately rather than bolting it onto a site that was never built for it.</p>
+          <p class="faq-a">We add pages the same way the rest of the site is built: static, with no plugins. If you eventually need something that has to run on a server, like a members' area or a custom checkout, we tell you before starting and price it as a separate job.</p>
         </details>
         <details class="faq-item">
           <summary><span class="qhead"><span class="qnum mono">Q2</span><span class="qtext">Do you handle cookie and GDPR compliance?</span></span><span class="plus" aria-hidden="true">+</span></summary>
-          <p class="faq-a">Every site ships with a privacy policy, and we keep the number of third parties deliberately small — usually just a booking calendar and Google Analytics. Fewer third parties means less to disclose and less risk, not just a longer policy document.</p>
+          <p class="faq-a">Every site ships with a privacy policy. We keep third parties to a minimum, usually a booking calendar and Google Analytics, which means less to disclose in the policy and fewer companies handling your visitors' data.</p>
         </details>
         <details class="faq-item">
           <summary><span class="qhead"><span class="qnum mono">Q3</span><span class="qtext">What if I need a contact form that emails me, or payment processing?</span></span><span class="plus" aria-hidden="true">+</span></summary>
-          <p class="faq-a">Both are possible without adding a server or a database — a form service or a hosted checkout page can handle it directly from the browser. If what you need genuinely requires custom server-side logic, we'll say so plainly rather than force-fitting it.</p>
+          <p class="faq-a">Both work without a server or database: a form service or a hosted checkout page handles them. If what you need does require code on a server, we'll tell you and price it separately.</p>
         </details>
         <details class="faq-item">
           <summary><span class="qhead"><span class="qnum mono">Q4</span><span class="qtext">How do you check a site before it goes live?</span></span><span class="plus" aria-hidden="true">+</span></summary>
