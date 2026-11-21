@@ -101,9 +101,13 @@
   if (bar) {
     var book = document.getElementById('book');
     var bookVisible = false;
+    var lastY = window.scrollY, goingUp = true;
     function update() {
-      var past = window.scrollY > window.innerHeight * 0.6;
-      bar.classList.toggle('is-shown', past && !bookVisible);
+      var y = window.scrollY;
+      if (Math.abs(y - lastY) > 6) { goingUp = y < lastY; lastY = y; }
+      var atEnd = window.innerHeight + y >= document.documentElement.scrollHeight - 4;
+      var past = y > window.innerHeight * 0.6;
+      bar.classList.toggle('is-shown', past && !bookVisible && (goingUp || atEnd));
     }
     if (book && 'IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
